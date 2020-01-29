@@ -4,14 +4,18 @@ $blackLink: #4c4c4c;
 $backgroundColorForText: #fafafa;
 $backgroundColor: rgb(240, 240, 240);
 $navbarColor: rgb(240, 240, 240);
-
 $accentColor: #3568cf;
 $accentColorIdle: rgb(77, 102, 153);
-$colorActive: $accentColor; //#ed9e38; // 50 50 50
 $colorIdle: #919191;
-
 $colorUnselected: rgb(200, 200, 200);
+
+// Possibility to override through this file
+@import '../../components/bitStyleOverride.scss';
+
+
 $colorHover: $accentColorIdle;
+$colorActive: $accentColor; //#ed9e38; // 50 50 50
+
 
 @mixin breakpoint($class) {
   @if $class == small {
@@ -91,3 +95,9 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
     sans-serif;
 }
+
+
+// Possibility to override through this file
+@import '../../components/bitMixinOverride.scss';
+
+
