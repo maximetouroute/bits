@@ -48,6 +48,13 @@ $colorActive: $accentColor; //#ed9e38; // 50 50 50
   transition: $type 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@mixin notSelectable() {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
 @mixin themedTagA() {
   $underlineColor: rgba($accentColor, 0.3); //rgba(150,150,150, 0.5);
   text-decoration: none;

@@ -103,7 +103,7 @@ MetaTags.defaultProps = {
 }
 
 const query = graphql`
-  query SEO {
+  query BitMetaTags {
     site {
       siteMetadata {
         defaultTitle: title

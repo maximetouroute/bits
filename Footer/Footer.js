@@ -182,7 +182,7 @@ const Footer = () => (
 export default Footer
 
 const query = graphql`
-  query Footer {
+  query BitFooter {
     site {
       siteMetadata {
         author
