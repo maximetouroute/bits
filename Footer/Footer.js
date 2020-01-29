@@ -1,6 +1,8 @@
 import React from 'react'
 import './Footer.scss'
 import { graphql, StaticQuery, Link } from 'gatsby'
+import PropTypes from 'prop-types'
+
 
 const Footer = () => (
   <StaticQuery
@@ -30,6 +32,18 @@ const Footer = () => (
         vimeo: vimeo === '' ? undefined : vimeo,
         soundcloud: soundcloud === '' ? undefined : soundcloud,
         youtube: youtube === '' ? undefined : youtube,
+      }
+
+      const authorBlockPersonal = () => {
+        return (
+        <>
+        <p>{author}</p>
+          <div className={'mail'} style={{ textAlign: 'center' }}>
+            <a href={`mailto:${authorMail}`}>{authorMail}</a>
+          </div>
+        <br />
+        <br />
+        </>)
       }
 
       return (
@@ -165,14 +179,15 @@ const Footer = () => (
               )}
             </div>
           </div>
-          {author && <p>{author}</p>}
-          {true && (
-            <div className={'mail'} style={{ textAlign: 'center' }}>
-              <a href={`mailto:${authorMail}`}>{authorMail}</a>
-            </div>
-          )}
-          <br />
-          <br />
+
+          <div className={"Links"}>
+            <Link to={'/'}>HOME</Link>
+            <Link to={'/gallery'}>GALLERY</Link>
+            <a href={"mailto:livedrawingproject@protonmail.com"}>CONTACT</a>
+            <Link to={'/jobs'}>JOBS</Link>
+          </div>
+
+          {author && authorBlockPersonal(author, authorMail)}
         </div>
       )
     }}
@@ -200,3 +215,11 @@ const query = graphql`
     }
   }
 `
+
+Footer.propTypes = {
+  links: PropTypes.array,
+}
+
+Footer.defaultProps = {
+  links: []
+}
