@@ -119,7 +119,7 @@ const Footer = () => (
           <div className={"Links"}>
             <Link to={'/'}>HOME</Link>
             <Link to={'/gallery'}>GALLERY</Link>
-            <a href={"mailto:livedrawingproject@pm.me"}>CONTACT</a>
+            <Link to={'/contact'}>CONTACT</Link>
             <Link to={'/jobs'}>JOBS</Link>
           </div>
         </div>
