@@ -181,10 +181,9 @@ const Footer = () => (
           </div>
 
           <div className={"Links"}>
-            <Link to={'/'}>HOME</Link>
-            <Link to={'/gallery'}>GALLERY</Link>
-            <a href={"mailto:livedrawingproject@protonmail.com"}>CONTACT</a>
-            <Link to={'/jobs'}>JOBS</Link>
+            <Link to={'/'}>WORK</Link>
+            <Link to={'/news'}>NEWS</Link>
+            <Link to={'/about'}>ABOUT</Link>
           </div>
 
           {author && authorBlockPersonal(author, authorMail)}
