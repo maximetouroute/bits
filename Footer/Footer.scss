@@ -24,6 +24,16 @@
     outline: 0;
   }
 
+  .Links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    a {
+      @include themedTagA();
+      margin: 0.5em;
+    }
+  }
+
   .mail {
     a {
       @include themedTagA();
