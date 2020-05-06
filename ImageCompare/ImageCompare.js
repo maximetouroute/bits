@@ -293,14 +293,14 @@ class ReactCompareImage extends React.Component {
       leftWord: {
         textAlign: 'left',
         color: 'white',
-        fontWeight: 400,
+        fontWeight: 900,
         textTransform: 'uppercase',
         padding: '1em',
       },
       rightWord: {
         textAlign: 'right',
         color: 'white',
-        fontWeight: 400,
+        fontWeight: 900,
         textTransform: 'uppercase',
         padding: '1em',
       },
