@@ -10,7 +10,8 @@ import PersonRoundedIcon from '@material-ui/icons/PersonRounded';
 
 const useStyles = makeStyles({
   root: {
-    boxShadow: '0 -1px 4px 0 rgba(99,99,99,.11)'
+   // boxShadow: '0 -1px 4px 0 rgba(99,99,99,.11)'
+   borderTop: " solid 1px #ebebeb"
   },
 });
 
@@ -20,7 +21,8 @@ const useChildStyles = makeStyles({
   },
   selected: {
     color: '#3568cf',
-    fontWeight: 600,
+    fontWeight: 700,
+    boxShadow: '0 -2px 0 0 #3568cf'
     }
 
 })
