@@ -151,7 +151,7 @@ export default class Footer extends React.Component
           <div className={"Inside"}>
 
             <div className={'logo'}>
-            <div className={'tldpLogo'}>  
+            <div className={'tldpFooterLogo'}>  
                     <svg xmlns="http://www.w3.org/2000/svg" width="66.824mm" height="70mm" viewBox="0 0 189.4224 198.4252">
                       <g id="b033bcea-250a-4236-8bec-3b9201489974" data-name="TEXTE" fill='#6d8879'>
                         <path d="M38.08,132.0853h6.63c4.5239,0,7.4882,3.042,7.4882,7.7226S49.2342,147.53,44.71,147.53H41.1219v12.7149H38.08Zm3.042,12.87H44.32c3.042,0,4.836-1.6377,4.836-5.1475s-1.794-5.1484-4.836-5.1484H41.1219Z"/>
