@@ -59,6 +59,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    // Perfect size for horizontal tldp logo
+    .MobileLogo {
+      width: 17rem;
+      height: 3rem;
+    }
   
     @include linkStyle();
     a {
@@ -69,7 +75,7 @@
       &:hover {
         color: $accentColor;
       }
-
+      margin: 0
      // box-shadow: inset 0 -2px 0 0 $accentColorIdle;
     }
     // Final
