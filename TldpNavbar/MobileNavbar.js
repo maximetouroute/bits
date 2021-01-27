@@ -6,9 +6,7 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded';
 import RssFeedRoundedIcon from '@material-ui/icons/RssFeedRounded';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import PhotoLibraryRoundedIcon from '@material-ui/icons/PhotoLibraryRounded';
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import EventIcon from '@material-ui/icons/Event';
 import PhotoLibraryOutlinedIcon from '@material-ui/icons/PhotoLibraryOutlined';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 //$accentColor: #85b94f; //#aac989; //#4d9933;
@@ -48,9 +46,9 @@ const populateIconForName = (name) => {
     return <PaletteRoundedIcon />;
   case 'NEWS':
     return <RssFeedRoundedIcon />;
-  case 'ABOUT':
-  case 'A PROPOS':
-    return <InfoOutlinedIcon />;
+  case 'BOOKING':
+  case 'RESERVER':
+    return <EventIcon />;
   case 'HOME':
   case 'ACCUEIL':
     return <HomeOutlinedIcon />;
