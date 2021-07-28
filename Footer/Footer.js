@@ -3,7 +3,6 @@ import './Footer.scss'
 import { graphql, StaticQuery, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-
 const Footer = () => (
   <StaticQuery
     query={query}
@@ -36,14 +35,15 @@ const Footer = () => (
 
       const authorBlockPersonal = () => {
         return (
-        <>
-        <p>{author}</p>
-          <div className={'mail'} style={{ textAlign: 'center' }}>
-            <a href={`mailto:${authorMail}`}>{authorMail}</a>
-          </div>
-        <br />
-        <br />
-        </>)
+          <>
+            <p>{author}</p>
+            <div className={'mail'} style={{ textAlign: 'center' }}>
+              <a href={`mailto:${authorMail}`}>{authorMail}</a>
+            </div>
+            <br />
+            <br />
+          </>
+        )
       }
 
       return (
@@ -180,7 +180,7 @@ const Footer = () => (
             </div>
           </div>
 
-          <div className={"Links"}>
+          <div className={'Links'}>
             <Link to={'/'}>WORK</Link>
             <Link to={'/news'}>NEWS</Link>
             <Link to={'/about'}>ABOUT</Link>
@@ -220,5 +220,5 @@ Footer.propTypes = {
 }
 
 Footer.defaultProps = {
-  links: []
+  links: [],
 }

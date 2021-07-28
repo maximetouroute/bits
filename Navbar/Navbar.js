@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import './Navbar.scss'
 import PropTypes from 'prop-types'
-import MobileNavbar from './MobileNavbar';
-
+import MobileNavbar from './MobileNavbar'
 
 export class Navbar extends Component {
-
   mobileMenuItems() {
-    const links = this.props.links;
-    return <MobileNavbar links={links}></MobileNavbar>;
+    const links = this.props.links
+    return <MobileNavbar links={links}></MobileNavbar>
   }
   menuItems() {
     const title = this.props.title
@@ -19,25 +17,22 @@ export class Navbar extends Component {
         <Link activeClassName="" className="siteTitle" to="/">
           {title}
         </Link>
-        {links.map(link => (
+        {links.map((link) => (
           <Link activeClassName="active" to={link.path} key={link.name}>
             {link.name}
           </Link>
         ))}
       </>
     )
-
   }
 
   render() {
     return (
       <div className="Navbar">
-      <div className="SmallNavbar">
-      {this.mobileMenuItems()}
-      </div>
-      <div className="BigNavbar">
-        <div className="headerLinks">{this.menuItems()}</div>
-      </div>
+        <div className="SmallNavbar">{this.mobileMenuItems()}</div>
+        <div className="BigNavbar">
+          <div className="headerLinks">{this.menuItems()}</div>
+        </div>
       </div>
     )
   }

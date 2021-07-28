@@ -1,17 +1,16 @@
 export const strings = {
+  followUs: {
+    en: 'Follow us!',
+    fr: 'Suivez nous !',
+  },
 
-    followUs: {
-        en: 'Follow us!',
-        fr: 'Suivez nous !'
-    },
+  moreContacts: {
+    en: 'More contacts',
+    fr: 'Plus de contacts',
+  },
 
-    moreContacts: {
-        en: 'More contacts',
-        fr: 'Plus de contacts'
-    },
-
-    contact: {
-        en: 'Contact',
-        fr: 'Nous contacter'
-    }
+  contact: {
+    en: 'Contact',
+    fr: 'Nous contacter',
+  },
 }

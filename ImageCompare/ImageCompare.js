@@ -99,7 +99,7 @@ class ReactCompareImage extends React.Component {
     this.finishSliding()
     window.removeEventListener('mouseup', this.finishSliding)
     window.removeEventListener('touchend', this.finishSliding)
-    this.autoReloadTasks.forEach(task => clearTimeout(task))
+    this.autoReloadTasks.forEach((task) => clearTimeout(task))
   }
 
   setImagesSize = () => {
@@ -118,7 +118,7 @@ class ReactCompareImage extends React.Component {
     })
   }
 
-  startSliding = e => {
+  startSliding = (e) => {
     // Prevent default behavior other than mobile scrolling
     if (!('touches' in e)) {
       e.preventDefault()
@@ -136,7 +136,7 @@ class ReactCompareImage extends React.Component {
     window.removeEventListener('touchmove', this.handleSliding)
   }
 
-  handleSliding = event => {
+  handleSliding = (event) => {
     const e = event || window.event
 
     // Calc Cursor Position from the left edge of the viewport
@@ -206,8 +206,9 @@ class ReactCompareImage extends React.Component {
         background: `url(${this.props.underImage})`,
       },
       overImage: {
-        clip: `rect(auto, ${this.state.imageWidth *
-          this.state.sliderPositionPercentage}px, auto, auto)`,
+        clip: `rect(auto, ${
+          this.state.imageWidth * this.state.sliderPositionPercentage
+        }px, auto, auto)`,
         display: 'block',
         height: '100%', // fit to the height of under image
         objectFit: 'cover', // protrudes is hidden

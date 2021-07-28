@@ -1,8 +1,6 @@
 @import '../styles/styles';
 
-
 .NavbarSlim {
-  
   $linkColorIdle: dimgray;
   $linkColorActive: $accentColor;
 
@@ -17,13 +15,12 @@
   @include breakpoint(small) {
     flex-direction: column;
     padding: 0;
-
   }
 
   .Title {
-   width: 3.5rem;
-   height: 3.5rem;
-   margin-left: 10vw;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-left: 10vw;
   }
 
   .Links {
@@ -45,7 +42,7 @@
       color: $linkColorActive;
       box-shadow: inset 0 -4px 0 0 $colorActive;
       transition: all 0.1s ease-out 0s;
-              font-weight: 600;
+      font-weight: 600;
     }
 
     a {
@@ -69,10 +66,10 @@
         transition: all 0.1s ease-out 0s;
       }
 
-      &:active, &:focus {
+      &:active,
+      &:focus {
         outline: 0;
         -moz-outline-style: none;
-
       }
 
       @include breakpoint(normal) {
@@ -85,7 +82,5 @@
         font-size: 0.9em;
       }
     }
-
   }
 }
-

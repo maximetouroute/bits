@@ -15,20 +15,16 @@
   margin-bottom: 1rem;
 }
 
-
-
 .Footer {
   color: black;
 
   @include breakpoint(normal) {
     min-width: 50rem;
     max-width: 90rem;
-
   }
   @include breakpoint(small) {
     min-width: 90vw;
   }
-
 
   .Links {
     padding-top: 2em;
@@ -45,7 +41,6 @@
     }
   }
   .Inside {
-
     padding-top: 3em;
     margin-bottom: 3em;
     font-size: 0.8em;
@@ -61,7 +56,6 @@
       align-items: center;
     }
 
-
     a {
       outline: 0;
     }
@@ -72,9 +66,9 @@
     }
 
     div {
-     // border: 3px solid red;
+      // border: 3px solid red;
       @include breakpoint(small) {
-       margin: 2em;
+        margin: 2em;
       }
     }
     .Header {
@@ -105,18 +99,17 @@
           margin: 0.1rem;
         }
         //width: 16em;
-    }
+      }
     }
 
     @mixin textContent() {
       font-size: 1.2em;
-        text-align: center;
-        color: rgb(40,40,40);
-        line-height: 1.6;
-          a {
-            @include themedTagA();
-          }
-      
+      text-align: center;
+      color: rgb(40, 40, 40);
+      line-height: 1.6;
+      a {
+        @include themedTagA();
+      }
     }
 
     .contact {
@@ -127,58 +120,51 @@
     }
 
     .followUs {
-
       @include threeBlocksMiddleCentered();
 
       .followUsStuff {
         @include textContent();
       }
-
-  
     }
-    }
-    
+  }
 
+  .socialLinks {
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
 
-
-    .socialLinks {
-      padding-left: 1em;
-      padding-right: 1em;
+    .social-media-list {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      font-size: 1em;
+      justify-content: center;
 
-      .social-media-list {
-        display: flex;
-        flex-direction: row;
-        font-size: 1em;
-        justify-content: center;
+      .socialIcon {
+        .svg-icon {
+          width: 30px;
+          height: 30px;
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-top: 20px;
+          margin-bottom: 20px;
 
-        .socialIcon {
+          path {
+            fill: $colorUnselected;
+            transition: all 0.2s ease-in;
+          }
+          transition: all 0.2s ease-in;
 
-          .svg-icon {
-            width: 30px;
-            height: 30px;
-            margin-left: 10px;
-            margin-right: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+          &:hover {
+            transition: all 0.1s ease-in;
 
             path {
-              fill: $colorUnselected;
-              transition: all 0.2s ease-in;
-            }
-            transition: all 0.2s ease-in;
-
-            &:hover {
+              fill: $colorHover;
               transition: all 0.1s ease-in;
-
-              path {
-                fill: $colorHover;
-                transition: all 0.1s ease-in;
-              }
             }
           }
         }
       }
     }
+  }
 }

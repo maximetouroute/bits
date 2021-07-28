@@ -76,8 +76,8 @@ const MetaTags = ({ title, description, image, pathname, author, article }) => (
               <meta property="og:site_name" content={seo.siteName} />
             )}
 
-          <meta http-equiv="cache-control" content="Private" />
-          <meta http-equiv="Expires" content="0" />
+            <meta http-equiv="cache-control" content="Private" />
+            <meta http-equiv="Expires" content="0" />
           </Helmet>
         </>
       )
