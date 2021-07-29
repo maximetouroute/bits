@@ -2,8 +2,13 @@ import React from 'react'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css' // This only needs to be imported once in your app
 import PropTypes from 'prop-types'
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import './PhotoGrid.scss'
 
+
+// import { convertToBgImage } from "gbimage-bridge";
+import BackgroundImage from 'gatsby-background-image';
+import { BgImage } from 'gbimage-bridge';
 // DIRTY test for custom component.
 /*
 
@@ -32,14 +37,16 @@ export class PhotoGrid extends React.Component {
   }
 
   generatePicture(picture, index, margin) {
+    const gatsbyImg = getImage(picture.thumb);
+    // const bgImage = convertToBgImage(gatsbyImg)
     let className = margin ? `photoThumbnail marginRight` : `photoThumbnail`
     return (
-      <div
-        key={index}
-        className={className}
-        style={styleBackgroundPhoto(picture)}
-        onClick={() => this.setState({ isOpen: true, photoIndex: index })}
-      />
+<BgImage
+      key={index}
+      image={gatsbyImg}
+      className={className}
+      onClick={() => this.setState({ isOpen: true, photoIndex: index })}
+    />
     )
   }
 
@@ -84,25 +91,33 @@ export class PhotoGrid extends React.Component {
   }
 
   render() {
-    const { isOpen, photoIndex } = this.state
-    const images = this.props.gatsbyImages
+    const { isOpen, photoIndex } = this.state;
+    const images = this.props.gatsbyImages;
+    console.log(this.props);
 
+    const prevIndex = (photoIndex + images.length - 1) % images.length;
+    const nextIndex  = (photoIndex + 1) % images.length;
+    const mainSrc = images[photoIndex]?.full?.images?.fallback?.src;
+    const nextSrc = images[nextIndex]?.full?.images?.fallback?.src;
+    const prevSrc = images[prevIndex]?.full?.images?.fallback?.src;
+
+    console.log(images)
     return (
       <div className="componentPhotoGrid">
         {isOpen && (
           <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+          mainSrc={mainSrc || ''}
+          nextSrc={nextSrc || ''}
+          prevSrc={prevSrc || ''}
             onCloseRequest={() => this.setState({ isOpen: false })}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + images.length - 1) % images.length,
+                photoIndex: nextIndex,
               })
             }
             onMoveNextRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + 1) % images.length,
+                photoIndex: nextIndex,
               })
             }
           />
@@ -119,7 +134,10 @@ export class PhotoGrid extends React.Component {
 PhotoGrid.propTypes = photoGridProptypes
 
 function PhotoGridGatsbyMethod({ children }) {
-  const photos = children.filter((child) => typeof child !== 'string')
+  // console.log(children);
+  const photos = children.filter((child) => typeof child !== 'string');
+  console.log(photos);
+  // [0].props.children[1].props.href
   const srcs = photos.map((photo) => photo.props.children[1].props.href) // Cleary a bad workaround to fetch gatsby image url.. but it works.
   return <PhotoGrid gatsbyImages={srcs} />
 }
