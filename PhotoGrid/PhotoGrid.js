@@ -25,7 +25,7 @@ function styleBackgroundPhoto(src) {
   }
 }
 
-const photoGridProptypes = { gatsbyImages: PropTypes.array.isRequired }
+const photoGridProptypes = { imageUrls: PropTypes.array.isRequired, gatsbyThumbs: PropTypes.array, useGatsbyThumbs: PropTypes.bool.isRequired }
 export class PhotoGrid extends React.Component {
   constructor(props) {
     super(props)
@@ -36,8 +36,8 @@ export class PhotoGrid extends React.Component {
     }
   }
 
-  generatePicture(picture, index, margin) {
-    const gatsbyImg = getImage(picture.thumb);
+  generatePicture(gatsbyThumb, index, margin) {
+    const gatsbyImg = getImage(gatsbyThumb);
     // const bgImage = convertToBgImage(gatsbyImg)
     let className = margin ? `photoThumbnail marginRight` : `photoThumbnail`
     return (
@@ -49,23 +49,37 @@ export class PhotoGrid extends React.Component {
     />
     )
   }
+  generatePictureOldSchool(imageUrl, index, margin) {
+    // const gatsbyImg = getImage(gatsbyThumb);
+    // const bgImage = convertToBgImage(gatsbyImg)
+    let className = margin ? `photoThumbnail marginRight` : `photoThumbnail`
+    return (
+      <div
+        key={index}
+        className={className}
+        style={styleBackgroundPhoto(imageUrl)}
+        onClick={() => this.setState({ isOpen: true, photoIndex: index })}
+      />
+
+    )
+  }
 
   //numberPerRow is a WIP, needs changes in sass too
-  generateGrid(pictures, numberPerRow = 3) {
-    let photoGrid = []
-    for (let i = 0; i < pictures.length; i += numberPerRow) {
-      let photoRow = []
+  generateGrid(gatsbyThumbs, numberPerRow = 3) {
+    let photoGrid = [];
+    for (let i = 0; i < gatsbyThumbs.length; i += numberPerRow) {
+      let photoRow = [];
 
       for (
         let columnIndex = 0;
-        columnIndex < numberPerRow && i + columnIndex < pictures.length;
+        columnIndex < numberPerRow && i + columnIndex < gatsbyThumbs.length;
         columnIndex++
       ) {
         // handle margin right
         if (columnIndex < numberPerRow) {
           photoRow.push(
             this.generatePicture(
-              pictures[i + columnIndex],
+              gatsbyThumbs[i + columnIndex],
               i + columnIndex,
               true
             )
@@ -73,7 +87,7 @@ export class PhotoGrid extends React.Component {
         } else {
           photoRow.push(
             this.generatePicture(
-              pictures[i + columnIndex],
+              gatsbyThumbs[i + columnIndex],
               i + columnIndex,
               false
             )
@@ -85,23 +99,60 @@ export class PhotoGrid extends React.Component {
           {photoRow}
         </div>
       )
-      photoRow = []
+      photoRow = [];
     }
-    return photoGrid
+    return photoGrid;
+  }
+
+  generateMockGrid(gatsbyThumbs, numberPerRow = 3) {
+    let photoGrid = [];
+    for (let i = 0; i < gatsbyThumbs.length; i += numberPerRow) {
+      let photoRow = [];
+
+      for (
+        let columnIndex = 0;
+        columnIndex < numberPerRow && i + columnIndex < gatsbyThumbs.length;
+        columnIndex++
+      ) {
+        // handle margin right
+        if (columnIndex < numberPerRow) {
+          photoRow.push(
+            this.generatePictureOldSchool(
+              gatsbyThumbs[i + columnIndex],
+              i + columnIndex,
+              true
+            )
+          )
+        } else {
+          photoRow.push(
+            this.generatePictureOldSchool(
+              gatsbyThumbs[i + columnIndex],
+              i + columnIndex,
+              false
+            )
+          )
+        }
+      }
+      photoGrid.push(
+        <div key={i} className="photoRowContainer">
+          {photoRow}
+        </div>
+      )
+      photoRow = [];
+    }
+    return photoGrid;
   }
 
   render() {
     const { isOpen, photoIndex } = this.state;
-    const images = this.props.gatsbyImages;
-    console.log(this.props);
-
+    const images = this.props.imageUrls;
     const prevIndex = (photoIndex + images.length - 1) % images.length;
     const nextIndex  = (photoIndex + 1) % images.length;
-    const mainSrc = images[photoIndex]?.full?.images?.fallback?.src;
-    const nextSrc = images[nextIndex]?.full?.images?.fallback?.src;
-    const prevSrc = images[prevIndex]?.full?.images?.fallback?.src;
-
-    console.log(images)
+    const mainSrc = images[photoIndex];
+    const nextSrc = images[nextIndex];
+    const prevSrc = images[prevIndex];
+    console.log(this.props);
+    console.log(this.props.gatsbyThumbs);
     return (
       <div className="componentPhotoGrid">
         {isOpen && (
@@ -124,7 +175,8 @@ export class PhotoGrid extends React.Component {
         )}
 
         <div className="photoGrid">
-          {this.generateGrid(this.props.gatsbyImages)}
+          {/* {this.generateGrid(this.props.gatsbyThumbs)} */}
+          {this.props.useGatsbyThumbs ? this.generateGrid(this.props.gatsbyThumbs) : this.generateMockGrid(this.props.imageUrls)}
         </div>
       </div>
     )
@@ -134,12 +186,14 @@ export class PhotoGrid extends React.Component {
 PhotoGrid.propTypes = photoGridProptypes
 
 function PhotoGridGatsbyMethod({ children }) {
+
+  // return <h1>no no  no</h1>;
   // console.log(children);
   const photos = children.filter((child) => typeof child !== 'string');
   console.log(photos);
   // [0].props.children[1].props.href
   const srcs = photos.map((photo) => photo.props.children[1].props.href) // Cleary a bad workaround to fetch gatsby image url.. but it works.
-  return <PhotoGrid gatsbyImages={srcs} />
+  return <PhotoGrid imageUrls={srcs} useGatsbyThumbs={false} />
 }
 
 PhotoGridGatsbyMethod.propTypes = {
