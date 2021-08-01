@@ -1,10 +1,8 @@
 import { CSSObject } from '@emotion/react'
 import { Link } from 'gatsby'
 import './PostGridFlat.scss'
-
-interface OwnProps {
-  posts: any
-}
+import { BgImage } from 'gbimage-bridge'
+import { getImage } from 'gatsby-plugin-image'
 
 const gridCSS: CSSObject = {
   margin: 'auto',
@@ -15,7 +13,12 @@ const gridCSS: CSSObject = {
   maxWidth: '90rem',
   // height: 30em;
   width: '100%',
+
   padding: 0,
+}
+
+interface OwnProps {
+  posts: any
 }
 export default function PostGridFlat({ posts }: OwnProps) {
   return (
@@ -23,6 +26,8 @@ export default function PostGridFlat({ posts }: OwnProps) {
       {posts
         .filter((post) => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
+          const image = post.frontmatter.image.childImageSharp
+          const gatsbyImage = getImage(image)
           return (
             <Link
               className={'post'}
@@ -35,15 +40,7 @@ export default function PostGridFlat({ posts }: OwnProps) {
                   {post.frontmatter.subtitle}{' '}
                 </span>
               </div>
-              <div
-                className={'postPicture'}
-                style={{
-                  backgroundImage:
-                    'url(' +
-                    post.frontmatter.image.childImageSharp.fluid.src +
-                    ')',
-                }}
-              ></div>
+              <BgImage image={gatsbyImage} className={'postPicture'} />
             </Link>
           )
         })}
