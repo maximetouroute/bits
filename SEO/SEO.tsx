@@ -1,9 +1,20 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-const MetaTags = ({ title, description, image, pathname, author, article }) => (
+
+
+interface OwnProps {
+  title: string;
+  description: string;
+  image: any;
+  pathname: string;
+  article: boolean;
+  author: string;
+  keywords: string[];
+  thumbImage: any;
+}
+const SEO = ({ title, description, image, pathname, author, article }: OwnProps) => (
   <StaticQuery
     query={query}
     render={({
@@ -85,25 +96,7 @@ const MetaTags = ({ title, description, image, pathname, author, article }) => (
   />
 )
 
-export default MetaTags
-
-MetaTags.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  pathname: PropTypes.string,
-  article: PropTypes.bool,
-  author: PropTypes.string,
-}
-
-MetaTags.defaultProps = {
-  title: null,
-  description: null,
-  image: null,
-  pathname: null,
-  article: false,
-  author: null,
-}
+export default SEO;
 
 const query = graphql`
   query BitMetaTags {
