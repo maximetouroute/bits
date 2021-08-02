@@ -6,7 +6,7 @@ import { supportedLanguages } from '../../locales/locales'
 
 class LanguageSwitcher extends React.Component {
   updateDefaultLanguage(defaultLanguage) {
-    console.log('update language to ', defaultLanguage)
+    // console.log('update language to ', defaultLanguage)
     window.localStorage.setItem('language', defaultLanguage)
   }
 

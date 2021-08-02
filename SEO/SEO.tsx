@@ -34,17 +34,17 @@ const SEO = ({
         },
       },
     }) => {
-      console.log(
-        'got global',
-        defaultTitle,
-        titleTemplate,
-        defaultDescription,
-        siteUrl,
-        defaultImage,
-        defaultAuthor,
-        siteName,
-        favicon
-      )
+      // console.log(
+      //   'got global',
+      //   defaultTitle,
+      //   titleTemplate,
+      //   defaultDescription,
+      //   siteUrl,
+      //   defaultImage,
+      //   defaultAuthor,
+      //   siteName,
+      //   favicon
+      // )
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
@@ -54,7 +54,7 @@ const SEO = ({
         siteName: siteName || title || defaultTitle,
         favicon: favicon || '',
       }
-      console.log('final seo', seo)
+      // console.log('final seo', seo)
 
       return (
         <>
