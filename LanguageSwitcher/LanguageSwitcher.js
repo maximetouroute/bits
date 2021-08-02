@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import './LanguageSwitcher.scss'
-import { supportedLanguages } from '../../locales/locales'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import './LanguageSwitcher.scss';
+import { supportedLanguages } from '../../locales/locales';
 
 class LanguageSwitcher extends React.Component {
   updateDefaultLanguage(defaultLanguage) {
     // console.log('update language to ', defaultLanguage)
-    window.localStorage.setItem('language', defaultLanguage)
+    window.localStorage.setItem('language', defaultLanguage);
   }
 
   render() {
@@ -21,7 +21,7 @@ class LanguageSwitcher extends React.Component {
               supportedLanguages[this.props.currentLanguage].urlPrefix,
               ''
             ) // Remove language prefix
-            .replace('//', '/') // Avoid possible double slash
+            .replace('//', '/'); // Avoid possible double slash
           // console.log('baseUrl' + baseUrl);
           // const fullUrl = '/' + supportedLanguages[availableLanguage].urlPrefix + baseUrl;
           // console.log('full', fullUrl);
@@ -30,15 +30,15 @@ class LanguageSwitcher extends React.Component {
               key={availableLanguage}
               to={baseUrl}
               onClick={() => {
-                this.updateDefaultLanguage(availableLanguage)
+                this.updateDefaultLanguage(availableLanguage);
               }}
             >
               {supportedLanguages[availableLanguage].name}
             </Link>
-          )
+          );
         })}
       </div>
-    )
+    );
   }
 }
 
@@ -46,6 +46,6 @@ LanguageSwitcher.propTypes = {
   currentLanguage: PropTypes.string.isRequired,
   availableLanguages: PropTypes.array.isRequired,
   currentUrl: PropTypes.string.isRequired,
-}
+};
 
-export default LanguageSwitcher
+export default LanguageSwitcher;

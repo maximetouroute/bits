@@ -1,14 +1,14 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
 interface OverrideDefaults {
-  title?: string
-  description?: string
-  image?: string
-  pathname: string
-  article: boolean
-  author: string
+  title?: string;
+  description?: string;
+  image?: string;
+  pathname: string;
+  article: boolean;
+  author: string;
 }
 const SEO = ({
   title,
@@ -53,7 +53,7 @@ const SEO = ({
         author: author || defaultAuthor,
         siteName: siteName || title || defaultTitle,
         favicon: favicon || '',
-      }
+      };
       // console.log('final seo', seo)
 
       return (
@@ -106,12 +106,12 @@ const SEO = ({
             <meta http-equiv="Expires" content="0" />
           </Helmet>
         </>
-      )
+      );
     }}
   />
-)
+);
 
-export default SEO
+export default SEO;
 
 const query = graphql`
   query BitMetaTags {
@@ -128,4 +128,4 @@ const query = graphql`
       }
     }
   }
-`
+`;

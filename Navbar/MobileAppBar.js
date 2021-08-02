@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-import './Navbar.scss'
+import './Navbar.scss';
 export default function HideAppBar(props) {
   return (
     <div className="Navbar">
@@ -11,5 +11,5 @@ export default function HideAppBar(props) {
         </Link>
       </div>
     </div>
-  )
+  );
 }
