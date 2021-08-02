@@ -2,19 +2,22 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-
-
-interface OwnProps {
-  title: string;
-  description: string;
-  image: any;
-  pathname: string;
-  article: boolean;
-  author: string;
-  keywords: string[];
-  thumbImage: any;
+interface OverrideDefaults {
+  title?: string
+  description?: string
+  image?: string
+  pathname: string
+  article: boolean
+  author: string
 }
-const SEO = ({ title, description, image, pathname, author, article }: OwnProps) => (
+const SEO = ({
+  title,
+  description,
+  image,
+  pathname,
+  author,
+  article,
+}: OverrideDefaults) => (
   <StaticQuery
     query={query}
     render={({
@@ -24,22 +27,34 @@ const SEO = ({ title, description, image, pathname, author, article }: OwnProps)
           titleTemplate,
           defaultDescription,
           siteUrl,
-          defaultThumbImage,
+          defaultImage,
           defaultAuthor,
           siteName,
           favicon,
         },
       },
     }) => {
+      console.log(
+        'got global',
+        defaultTitle,
+        titleTemplate,
+        defaultDescription,
+        siteUrl,
+        defaultImage,
+        defaultAuthor,
+        siteName,
+        favicon
+      )
       const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
-        image: `${siteUrl}${image || defaultThumbImage}`,
+        image: `${siteUrl}${image || defaultImage}`,
         url: `${siteUrl}${pathname || '/'}`,
         author: author || defaultAuthor,
         siteName: siteName || title || defaultTitle,
         favicon: favicon || '',
       }
+      console.log('final seo', seo)
 
       return (
         <>
@@ -76,11 +91,11 @@ const SEO = ({ title, description, image, pathname, author, article }: OwnProps)
             {seo.description && (
               <meta property="og:description" content={seo.description} />
             )}
-            {seo.thumbImage && <meta property="og:image" content={seo.image} />}
-            {seo.thumbImage && (
+            {seo.image && <meta property="og:image" content={seo.image} />}
+            {seo.image && (
               <meta property="og:image:secure_url" content={seo.image} />
             )}
-            {seo.thumbImage && (
+            {seo.image && (
               <meta property="og:image:type" content="image/jpeg" />
             )}
             {seo.title && (
@@ -96,7 +111,7 @@ const SEO = ({ title, description, image, pathname, author, article }: OwnProps)
   />
 )
 
-export default SEO;
+export default SEO
 
 const query = graphql`
   query BitMetaTags {
@@ -106,7 +121,7 @@ const query = graphql`
         titleTemplate
         defaultDescription: description
         siteUrl: url
-        defaultThumbImage: thumbImage
+        defaultImage: image
         defaultAuthor: author
         siteName: siteName
         favicon: favicon
