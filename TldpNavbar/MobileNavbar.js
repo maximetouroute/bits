@@ -7,28 +7,33 @@ import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded';
 import RssFeedRoundedIcon from '@material-ui/icons/RssFeedRounded';
 import EventIcon from '@material-ui/icons/Event';
-import PhotoLibraryOutlinedIcon from '@material-ui/icons/PhotoLibraryOutlined';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import PhotoLibraryRoundedIcon from '@material-ui/icons/PhotoLibraryRounded';
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 //$accentColor: #85b94f; //#aac989; //#4d9933;
 //$accentLight: #aac989;
 //$accentColorIdle: #2b6b15;
 
 const useStyles = makeStyles({
   root: {
-    boxShadow: '0 -2px 4px 0 rgba(99,99,99,.3)',
-    //borderTop: " solid 1px #ebebeb",
+    boxShadow: '0 -2px 2px 0 rgba(99,99,99,.1)',
+    borderTop: ' solid 1px rgba(99,99,99,.3)',
     backgroundColor: '#f2ede9',
   },
 });
 
 const useChildStyles = makeStyles({
   root: {
-    color: 'dimgray',
+    color: '#6b6b6b', //dimgray',
+    borderRadius: '10px',
+    margin: '0.2rem',
   },
+
   selected: {
     color: '#506b5c',
     fontWeight: 700,
-    boxShadow: 'inset 0 -2px 0 0 #506b5c',
+    // boxShadow: 'inset 0 -4px 0 0 #506b5c',
+    backgroundColor: '#f9f7f6',
+    boxShadow: '1px 1px 9px 0px rgb(0 0 0 / 23%)',
   },
 });
 
@@ -49,10 +54,10 @@ export default function MobileNavbar(props) {
         return <EventIcon />;
       case 'HOME':
       case 'ACCUEIL':
-        return <HomeOutlinedIcon />;
+        return <HomeRoundedIcon />;
       case 'GALLERY':
       case 'GALERIE':
-        return <PhotoLibraryOutlinedIcon />;
+        return <PhotoLibraryRoundedIcon />;
       default:
         return <></>;
     }
@@ -65,12 +70,25 @@ export default function MobileNavbar(props) {
       className={classes.root}
     >
       {links.map((link) => {
+        // --- Workaround to enable active CSS even if there is a trailing slash on the URL
+        const otherLinkVersion = link.path.endsWith('/')
+          ? link.path.slice(0, -1)
+          : `${link.path}/`;
+        // Skip gatsby build, Browsers only
+        let otherLinkIsActive = false;
+        if (typeof window !== 'undefined') {
+          otherLinkIsActive = window.location.pathname === otherLinkVersion;
+        }
+        const standardClass = otherLinkIsActive
+          ? [childClasses.root, childClasses.selected]
+          : childClasses.root;
+
         return (
           <BottomNavigationAction
             key={link.path}
             label={link.path}
             component={Link}
-            className={childClasses.root}
+            className={standardClass}
             to={link.path}
             label={link.name}
             activeClassName={childClasses.selected}
