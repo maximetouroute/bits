@@ -9,6 +9,7 @@ interface OverrideDefaults {
   pathname: string;
   article: boolean;
   author: string;
+  langCode: string;
 }
 const SEO = ({
   title,
@@ -17,6 +18,7 @@ const SEO = ({
   pathname,
   author,
   article,
+  langCode,
 }: OverrideDefaults) => (
   <StaticQuery
     query={query}
@@ -104,6 +106,8 @@ const SEO = ({
 
             <meta http-equiv="cache-control" content="Private" />
             <meta http-equiv="Expires" content="0" />
+
+            <html lang={langCode} />
           </Helmet>
         </>
       );
