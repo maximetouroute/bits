@@ -17,23 +17,25 @@ const useStyles = makeStyles({
   root: {
     boxShadow: '0 -2px 2px 0 rgba(99,99,99,.1)',
     borderTop: ' solid 1px rgba(99,99,99,.3)',
-    backgroundColor: '#f2ede9',
+    backgroundColor: '#fbfaf9', //'white'//'#f2ede9',
   },
 });
 
 const useChildStyles = makeStyles({
   root: {
-    color: '#6b6b6b', //dimgray',
-    borderRadius: '10px',
-    margin: '0.2rem',
+    color: '#8d918f', // '#84998d',//\'#6b6b6b', //dimgray',
+    // borderRadius: '10px',
+    // margin: '0.2rem',
+    transform: 'scale(0.9)',
   },
 
   selected: {
     color: '#506b5c',
     fontWeight: 700,
-    // boxShadow: 'inset 0 -4px 0 0 #506b5c',
-    backgroundColor: '#f9f7f6',
-    boxShadow: '1px 1px 9px 0px rgb(0 0 0 / 23%)',
+    // boxShadow: 'inset 0 -2px 0 0 #506b5c',
+    // backgroundColor: '#f9f7f6',
+    transform: 'scale(1)',
+    // boxShadow: '1px 1px 9px 0px rgb(0 0 0 / 23%)',
   },
 });
 
