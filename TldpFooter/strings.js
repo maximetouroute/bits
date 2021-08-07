@@ -13,4 +13,4 @@ export const strings = {
     en: 'Contact',
     fr: 'Nous contacter',
   },
-};
+}

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import './PostGrid.scss';
+import React from 'react'
+import { Link } from 'gatsby'
+import './PostGrid.scss'
 
 export default class PostGrid extends React.Component {
   render() {
-    const posts = this.props.posts;
+    const posts = this.props.posts
 
     return (
       <div className="postGrid">
@@ -32,9 +32,9 @@ export default class PostGrid extends React.Component {
                   </div>
                 </div>
               </Link>
-            );
+            )
           })}
       </div>
-    );
+    )
   }
 }

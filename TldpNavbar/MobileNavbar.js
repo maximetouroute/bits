@@ -1,14 +1,14 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import './Navbar.scss';
-import { makeStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded';
-import RssFeedRoundedIcon from '@material-ui/icons/RssFeedRounded';
-import EventIcon from '@material-ui/icons/Event';
-import PhotoLibraryRoundedIcon from '@material-ui/icons/PhotoLibraryRounded';
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import React from 'react'
+import { Link } from 'gatsby'
+import './Navbar.scss'
+import { makeStyles } from '@material-ui/core/styles'
+import BottomNavigation from '@material-ui/core/BottomNavigation'
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
+import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded'
+import RssFeedRoundedIcon from '@material-ui/icons/RssFeedRounded'
+import EventIcon from '@material-ui/icons/Event'
+import PhotoLibraryRoundedIcon from '@material-ui/icons/PhotoLibraryRounded'
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded'
 //$accentColor: #85b94f; //#aac989; //#4d9933;
 //$accentLight: #aac989;
 //$accentColorIdle: #2b6b15;
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     borderTop: ' solid 1px rgba(99,99,99,.3)',
     backgroundColor: '#fbfaf9', //'white'//'#f2ede9',
   },
-});
+})
 
 const useChildStyles = makeStyles({
   root: {
@@ -37,33 +37,33 @@ const useChildStyles = makeStyles({
     transform: 'scale(1)',
     // boxShadow: '1px 1px 9px 0px rgb(0 0 0 / 23%)',
   },
-});
+})
 
 export default function MobileNavbar(props) {
-  const { links } = props;
-  const classes = useStyles();
-  const childClasses = useChildStyles();
-  const [value, setValue] = React.useState(0);
+  const { links } = props
+  const classes = useStyles()
+  const childClasses = useChildStyles()
+  const [value, setValue] = React.useState(0)
   // TODO: to make something truly factorised, user shall be able to override ths method by injecting it in the component
   const populateIconForName = (name) => {
     switch (name) {
       case 'WORK':
-        return <PaletteRoundedIcon />;
+        return <PaletteRoundedIcon />
       case 'NEWS':
-        return <RssFeedRoundedIcon />;
+        return <RssFeedRoundedIcon />
       case 'BOOKING':
       case 'RESERVER':
-        return <EventIcon />;
+        return <EventIcon />
       case 'HOME':
       case 'ACCUEIL':
-        return <HomeRoundedIcon />;
+        return <HomeRoundedIcon />
       case 'GALLERY':
       case 'GALERIE':
-        return <PhotoLibraryRoundedIcon />;
+        return <PhotoLibraryRoundedIcon />
       default:
-        return <></>;
+        return <></>
     }
-  };
+  }
 
   return (
     <BottomNavigation
@@ -75,15 +75,15 @@ export default function MobileNavbar(props) {
         // --- Workaround to enable active CSS even if there is a trailing slash on the URL
         const otherLinkVersion = link.path.endsWith('/')
           ? link.path.slice(0, -1)
-          : `${link.path}/`;
+          : `${link.path}/`
         // Skip gatsby build, Browsers only
-        let otherLinkIsActive = false;
+        let otherLinkIsActive = false
         if (typeof window !== 'undefined') {
-          otherLinkIsActive = window.location.pathname === otherLinkVersion;
+          otherLinkIsActive = window.location.pathname === otherLinkVersion
         }
         const standardClass = otherLinkIsActive
           ? [childClasses.root, childClasses.selected]
-          : childClasses.root;
+          : childClasses.root
 
         return (
           <BottomNavigationAction
@@ -97,8 +97,8 @@ export default function MobileNavbar(props) {
             label={link.name}
             icon={populateIconForName(link.name)}
           />
-        );
+        )
       })}
     </BottomNavigation>
-  );
+  )
 }

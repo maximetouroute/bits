@@ -1,7 +1,7 @@
-import React from 'react';
-import './Footer.scss';
-import { graphql, StaticQuery, Link } from 'gatsby';
-import PropTypes from 'prop-types';
+import React from 'react'
+import './Footer.scss'
+import { graphql, StaticQuery, Link } from 'gatsby'
+import PropTypes from 'prop-types'
 
 const Footer = () => (
   <StaticQuery
@@ -31,7 +31,7 @@ const Footer = () => (
         vimeo: vimeo === '' ? undefined : vimeo,
         soundcloud: soundcloud === '' ? undefined : soundcloud,
         youtube: youtube === '' ? undefined : youtube,
-      };
+      }
 
       const authorBlockPersonal = () => {
         return (
@@ -43,8 +43,8 @@ const Footer = () => (
             <br />
             <br />
           </>
-        );
-      };
+        )
+      }
 
       return (
         <div className="Footer">
@@ -182,18 +182,17 @@ const Footer = () => (
 
           <div className={'Links'}>
             <Link to={'/'}>WORK</Link>
-            <Link to={'/news'}>NEWS</Link>
             <Link to={'/about'}>ABOUT</Link>
           </div>
 
           {author && authorBlockPersonal(author, authorMail)}
         </div>
-      );
+      )
     }}
   />
-);
+)
 
-export default Footer;
+export default Footer
 
 const query = graphql`
   query BitFooter {
@@ -213,12 +212,12 @@ const query = graphql`
       }
     }
   }
-`;
+`
 
 Footer.propTypes = {
   links: PropTypes.array,
-};
+}
 
 Footer.defaultProps = {
   links: [],
-};
+}
