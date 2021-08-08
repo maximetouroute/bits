@@ -29,8 +29,6 @@ interface OwnProps {
   posts: any
 }
 export default function PostGridFlat({ posts }: OwnProps) {
-  console.log(posts)
-
   return (
     <div css={gridCSS}>
       {posts

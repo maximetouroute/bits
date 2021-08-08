@@ -42,20 +42,20 @@ export const socialIconCSS = (theme: Theme): CSSObject => {
   return {
     width: '30px',
     height: '30px',
-    marginLeft: '10px',
-    marginRight: '10px',
-    marginTop: '20px',
-    marginBottom: '20px',
+    paddingLeft: '10px',
+    paddingRight: '10px',
+    paddingTop: '20px',
+    paddingBottom: '20px',
 
     path: {
       fill: 'gray',
-      transition: 'all 0.2s ease-in',
+      transition: 'all 0.1s ease-in',
     },
-    transition: 'all 0.2s ease-in',
+    transition: 'all 0.1s ease-in',
 
     '&:hover': {
       transition: 'all 0.1s ease-in',
-      transform: 'scale(1.1)',
+      transform: 'scale(1.2)',
 
       path: {
         fill: theme.palette.primary.main,

@@ -307,14 +307,14 @@ class ReactCompareImage extends React.Component {
       leftWord: {
         textAlign: 'left',
         color: 'white',
-        fontWeight: 900,
+        fontWeight: 600,
         textTransform: 'uppercase',
         padding: '1em',
       },
       rightWord: {
         textAlign: 'right',
         color: 'white',
-        fontWeight: 900,
+        fontWeight: 600,
         textTransform: 'uppercase',
         padding: '1em',
       },
@@ -381,21 +381,16 @@ class ReactCompareImage extends React.Component {
 ReactCompareImage.propTypes = propTypes
 ReactCompareImage.defaultProps = defaultProps
 
-function GatsbyImageCompare({ children }) {
-  const photos = children.filter((child) => typeof child !== 'string')
+interface OwnProps {
+  left: any
+  right: any
+}
+export default function GatsbyImageCompare({ left, right }: OwnProps) {
+  // const photos = children.filter((child) => typeof child !== 'string')
   // Cleary a bad workaround to fetch gatsby image url.. but it works.
-  const leftImage = photos[0].props.children[1].props.href
-  const rightImage = photos[1].props.children[1].props.href
-  return (
-    <ReactCompareImage
-      leftImage={leftImage ? leftImage : null}
-      rightImage={rightImage ? rightImage : null}
-    />
-  )
+  const leftSrc = left.full.images?.fallback?.src
+  const rightSrc = right.full.images?.fallback?.src
+  // const leftImage = photos[0].props.children[1].props.href
+  // const rightImage = photos[1].props.children[1].props.href
+  return <ReactCompareImage leftImage={leftSrc} rightImage={rightSrc} />
 }
-
-GatsbyImageCompare.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default GatsbyImageCompare
