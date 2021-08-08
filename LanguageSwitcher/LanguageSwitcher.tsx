@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import './LanguageSwitcher.scss'
 import { LangCode, supportedLangs } from '../../locales/locales'
+import { useTheme } from '@emotion/react'
+import { containerCSS } from './styles'
 
 const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
   // console.log('update language to ', defaultLanguage)
@@ -17,9 +17,10 @@ export default function LanguageSwitcher({
   currentLangCode,
   currentUrl,
 }: OwnProps) {
+  const theme = useTheme()
   // Compute current language from URL directly
   return (
-    <div className={'Container'}>
+    <div css={containerCSS}>
       {Object.keys(supportedLangs).map((langCode: string, index: number) => {
         // alert(this.props.currentUrl);
         const baseUrl = currentUrl

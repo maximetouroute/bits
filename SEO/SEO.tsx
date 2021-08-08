@@ -6,9 +6,9 @@ interface OverrideDefaults {
   title?: string
   description?: string
   image?: string
-  pathname: string
-  article: boolean
-  author: string
+  pathname?: string
+  article?: boolean
+  author?: string
   langCode: string
 }
 const SEO = ({

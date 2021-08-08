@@ -1,28 +1,28 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import './Navbar.scss'
+import './../Navbar.scss'
 import { makeStyles } from '@material-ui/core/styles'
 import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded'
 import RssFeedRoundedIcon from '@material-ui/icons/RssFeedRounded'
 import PersonRoundedIcon from '@material-ui/icons/PersonRounded'
-
+import { DEFAULT_MAIN_COLOR } from '../../styles/styles'
 const useStyles = makeStyles({
   root: {
-    boxShadow: '0 -1px 4px 0 rgba(99,99,99,.11)',
+    boxShadow: '0 -2px 2px 0 rgb(99 99 99 / 10%)',
     // borderTop: ' solid 1px #ebebeb',
   },
 })
 
 const useChildStyles = makeStyles({
   root: {
-    color: '#99858a',
+    color: '${DEFAULT_MAIN_COLOR}4A',
   },
   selected: {
-    color: '#800f2f',
+    color: `${DEFAULT_MAIN_COLOR}`,
     fontWeight: 700,
-    boxShadow: 'inset 0 2px 0 0 #800f2f',
+    boxShadow: `inset 0 2px 0 0 ${DEFAULT_MAIN_COLOR}`,
   },
 })
 
