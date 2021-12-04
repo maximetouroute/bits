@@ -36,7 +36,7 @@
     }
     text-align: center;
     a {
-      @include themedTagA();
+      @include themedTagAObsoleteTldp();
       margin: 0.5em;
     }
   }
@@ -108,7 +108,7 @@
       color: rgb(40, 40, 40);
       line-height: 1.6;
       a {
-        @include themedTagA();
+        @include themedTagAObsoleteTldp();
       }
     }
 

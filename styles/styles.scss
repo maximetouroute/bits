@@ -53,6 +53,33 @@ $colorActive: $accentColor; //#ed9e38; // 50 50 50
   user-select: none; /* Standard */
 }
 
+@mixin themedTagAObsoleteTldp() {
+  $underlineColor: rgba($accentColor, 0.3); //rgba(150,150,150, 0.5);
+  text-decoration: none;
+  border-bottom: 4px solid $underlineColor;
+  color: black;
+  line-height: 1.5;
+  @include basicTransition();
+  &:hover {
+    background-color: $underlineColor;
+    border-bottom: 4px solid transparent;
+    outline: 0;
+    @include basicTransition();
+  }
+
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+    -moz-outline-style: none;
+    outline-style: none;
+  }
+}
+
 @mixin themedTagA() {
   // $underlineColor: rgba($accentColor, 0.3); //rgba(150,150,150, 0.5);
   // text-decoration: none;

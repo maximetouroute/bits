@@ -49,7 +49,7 @@ export default function PostGridFlat({ posts }: OwnProps) {
           postDate.setDate(postDate.getDate() + 1);
           const isUpcoming = tomorrow < postDate;
           
-          const options = { weekday: 'short', year: isUpcoming ? void 0 : 'numeric', month: 'short', day: 'numeric' };
+          const options = { weekday: isUpcoming ? 'short' : void 0, year: isUpcoming ? void 0 : 'numeric', month: 'short', day: isUpcoming ? 'numeric' : void 0 };
           // @ts-ignore
           const displayDate = new Date(post.frontmatter.date).toLocaleDateString(post.frontmatter.language, options);
           
