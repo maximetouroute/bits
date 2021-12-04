@@ -79,11 +79,12 @@ export class PhotoGrid extends React.Component {
       return im.full.images?.fallback?.src
     })
     const thumbs = images.map((im) => im.thumb)
-    const prevIndex = (photoIndex + images.length - 1) % images.length
-    const nextIndex = (photoIndex + 1) % images.length
-    const mainSrc = imageUrls[photoIndex]
-    const nextSrc = imageUrls[nextIndex]
-    const prevSrc = imageUrls[prevIndex]
+    const prevIndex = (photoIndex + images.length - 1) % images.length;
+    const nextIndex = (photoIndex + 1) % images.length;
+    const mainSrc = imageUrls[photoIndex];
+    const nextSrc = imageUrls[nextIndex];
+    const prevSrc = imageUrls[prevIndex];
+
     return (
       <div className="componentPhotoGrid">
         {isOpen && (
@@ -94,7 +95,7 @@ export class PhotoGrid extends React.Component {
             onCloseRequest={() => this.setState({ isOpen: false })}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex: nextIndex,
+                photoIndex: prevIndex,
               })
             }
             onMoveNextRequest={() =>
