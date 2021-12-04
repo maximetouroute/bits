@@ -180,6 +180,7 @@ export default class Footer extends React.Component {
                 youtube,
                 github,
                 soundcloud,
+                linkedin
               },
             },
           },
@@ -192,6 +193,7 @@ export default class Footer extends React.Component {
             vimeo: vimeo === '' ? undefined : vimeo,
             soundcloud: soundcloud === '' ? undefined : soundcloud,
             youtube: youtube === '' ? undefined : youtube,
+            linkedin: linkedin === '' ? undefined : linkedin,
           }
 
           return (
@@ -269,6 +271,28 @@ export default class Footer extends React.Component {
                         @livedrawingproject
                       </a>
                     </p>
+                    <p>
+                      <strong>Linkedin </strong>
+                      <a
+                        href={links.linkedin}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        @TheLiveDrawingProject
+                      </a>
+                    </p>
+                    <p>
+                      <strong>Twitter </strong>
+                      <a
+                        href={links.twitter}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        @LiveDrawingTeam
+                      </a>
+                    </p>
+
+                    
                   </div>
                 </div>
               </div>
@@ -303,6 +327,8 @@ const query = graphql`
           youtube
           github
           soundcloud
+          twitter
+          linkedin
         }
       }
     }
