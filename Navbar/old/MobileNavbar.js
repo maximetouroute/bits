@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import './../Navbar.scss'
-import { makeStyles } from '@material-ui/core/styles'
-import BottomNavigation from '@material-ui/core/BottomNavigation'
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
-import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded'
-import RssFeedRoundedIcon from '@material-ui/icons/RssFeedRounded'
-import PersonRoundedIcon from '@material-ui/icons/PersonRounded'
+import makeStyles from '@mui/styles/makeStyles';
+import BottomNavigation from '@mui/material/BottomNavigation'
+import BottomNavigationAction from '@mui/material/BottomNavigationAction'
+import PaletteRoundedIcon from '@mui/icons-material/PaletteRounded'
+import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded'
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
 import { DEFAULT_MAIN_COLOR } from '../../styles/styles'
 const useStyles = makeStyles({
   root: {

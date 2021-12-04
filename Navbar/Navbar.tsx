@@ -2,14 +2,15 @@ import React from 'react'
 import { Link } from 'gatsby'
 import './Navbar.scss'
 import MobileNavbar from './old/MobileNavbar'
-import {
-  CSSObject,
-  Theme,
-  ThemeProvider,
-  Global,
-  useTheme,
-} from '@emotion/react'
+import { CSSObject, Theme, ThemeProvider, StyledEngineProvider, Global, useTheme } from '@emotion/react';
 import { breakpointKey } from '../styles/styles'
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 
 // Navbar.propTypes = {
 //   title: PropTypes.string,

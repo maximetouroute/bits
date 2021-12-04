@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import './Navbar.scss'
-import { makeStyles } from '@material-ui/core/styles'
-import BottomNavigation from '@material-ui/core/BottomNavigation'
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
-import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded'
-import RssFeedRoundedIcon from '@material-ui/icons/RssFeedRounded'
-import EventIcon from '@material-ui/icons/Event'
-import PhotoLibraryRoundedIcon from '@material-ui/icons/PhotoLibraryRounded'
-import HomeRoundedIcon from '@material-ui/icons/HomeRounded'
+import makeStyles from '@mui/styles/makeStyles';
+import BottomNavigation from '@mui/material/BottomNavigation'
+import BottomNavigationAction from '@mui/material/BottomNavigationAction'
+import PaletteRoundedIcon from '@mui/icons-material/PaletteRounded'
+import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded'
+import EventIcon from '@mui/icons-material/Event'
+import PhotoLibraryRoundedIcon from '@mui/icons-material/PhotoLibraryRounded'
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
 //$accentColor: #85b94f; //#aac989; //#4d9933;
 //$accentLight: #aac989;
 //$accentColorIdle: #2b6b15;

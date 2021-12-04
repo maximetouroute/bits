@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import './NativeMobileNavbar.scss'
 
-import PaletteRoundedIcon from '@material-ui/icons/PaletteRounded'
-import RssFeedRoundedIcon from '@material-ui/icons/RssFeedRounded'
-import PersonRoundedIcon from '@material-ui/icons/PersonRounded'
+import PaletteRoundedIcon from '@mui/icons-material/PaletteRounded'
+import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded'
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
 
 export default function MobileNavbar(props) {
   const { links } = props
