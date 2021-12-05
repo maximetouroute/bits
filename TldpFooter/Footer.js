@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import './Footer.scss'
 import { graphql, Link, StaticQuery } from 'gatsby'
 import { strings } from './strings'
+import MailForm from '../mailchimpForm/mailchimpFormPrivacyFriendly';
 
+// 
 const propTypes = {
   links: PropTypes.array,
   lang: PropTypes.string,
@@ -198,6 +200,16 @@ export default class Footer extends React.Component {
 
           return (
             <div className="Footer">
+
+            <div style={{display: 'flex', flexDirection: 'column', alignItems:'center', justifyContent: 'center'}}>
+              <h3 style={{color: 'dimgray'}}>{strings.subscribeToNewsletter[lang]}</h3>
+              <MailForm uniqueId={'footerForm'}
+               mailchimpURL= {'https://thelivedrawingproject.us5.list-manage.com/subscribe/post?u=5b0e34052f1872162c7edee23&amp;id=e801ed722a'}
+              uniqueAntiSpamId={'b_5b0e34052f1872162c7edee23_e801ed722a'}
+             />
+             
+              </div>
+
               <div className={'Inside'}>
                 <div className={'logo'}>
                   <div className={'tldpFooterLogo'}>
@@ -236,8 +248,8 @@ export default class Footer extends React.Component {
                     <p className={'Header'}>{strings.contact[lang]}</p>
                     <p>
                       <strong>EMAIL </strong>
-                      <a href="mailto:livedrawingproject@pm.me">
-                        livedrawingproject@pm.me
+                      <a href="mailto:contact@livedrawing.me">
+                        contact@livedrawing.me
                       </a>
                     </p>
                     <p>
@@ -296,6 +308,8 @@ export default class Footer extends React.Component {
                   </div>
                 </div>
               </div>
+
+       
 
               <div className={'Links'}>
                 {this.props.links.map((link) => {

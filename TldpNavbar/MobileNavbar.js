@@ -12,6 +12,9 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
 //$accentColor: #85b94f; //#aac989; //#4d9933;
 //$accentLight: #aac989;
 //$accentColorIdle: #2b6b15;
+// Workaround MUI v5 to use makeStyles
+import { StyledEngineProvider } from '@mui/material/styles';
+
 
 const useStyles = makeStyles({
   root: {
@@ -66,6 +69,7 @@ export default function MobileNavbar(props) {
   }
 
   return (
+    <StyledEngineProvider injectFirst>
     <BottomNavigation
       value={-1} // Trick material-ui its defaut value is incorrect. Active classname takes care of it
       showLabels
@@ -100,5 +104,6 @@ export default function MobileNavbar(props) {
         )
       })}
     </BottomNavigation>
+    </StyledEngineProvider>
   )
 }
