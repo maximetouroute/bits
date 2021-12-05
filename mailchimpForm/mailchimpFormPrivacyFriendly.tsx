@@ -30,7 +30,7 @@ export default function emailListForm({ uniqueId, mailchimpURL, uniqueAntiSpamId
       }}
 
     >
-      <TextField sx={{ width: '20rem'}} 
+      <TextField sx={{ width: '20rem', maxWidth:'70vw'}} 
       id={uniqueId} 
       label="Enter your email address" 
       variant="outlined" 
