@@ -9,6 +9,7 @@ import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded'
 import EventIcon from '@mui/icons-material/Event'
 import PhotoLibraryRoundedIcon from '@mui/icons-material/PhotoLibraryRounded'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 //$accentColor: #85b94f; //#aac989; //#4d9933;
 //$accentLight: #aac989;
 //$accentColorIdle: #2b6b15;
@@ -28,7 +29,7 @@ const useChildStyles = makeStyles({
   root: {
     color: '#8d918f', // '#84998d',//\'#6b6b6b', //dimgray',
     // borderRadius: '10px',
-    // margin: '0.2rem',
+    margin: '0.2rem',
     transform: 'scale(0.9)',
   },
 
@@ -43,26 +44,30 @@ const useChildStyles = makeStyles({
 })
 
 export default function MobileNavbar(props) {
-  const { links } = props
-  const classes = useStyles()
-  const childClasses = useChildStyles()
-  const [value, setValue] = React.useState(0)
+  const { links } = props;
+  const classes = useStyles();
+  const childClasses = useChildStyles();
+  const [value, setValue] = React.useState(0);
   // TODO: to make something truly factorised, user shall be able to override ths method by injecting it in the component
   const populateIconForName = (name) => {
     switch (name) {
       case 'WORK':
-        return <PaletteRoundedIcon />
+        return <PaletteRoundedIcon />;
       case 'NEWS':
-        return <RssFeedRoundedIcon />
+        return <RssFeedRoundedIcon />;
       case 'BOOKING':
       case 'RESERVER':
-        return <EventIcon />
+        return <EventIcon />;
+        // return <ShoppingCartIcon />;
       case 'HOME':
       case 'ACCUEIL':
-        return <HomeRoundedIcon />
+        return <HomeRoundedIcon />;
       case 'GALLERY':
       case 'GALERIE':
-        return <PhotoLibraryRoundedIcon />
+        return <PhotoLibraryRoundedIcon />;
+      case 'EVENTS':
+      case 'ÉVÉNEMENTS':
+        return <EventIcon />;
       default:
         return <></>
     }
@@ -72,6 +77,7 @@ export default function MobileNavbar(props) {
     <StyledEngineProvider injectFirst>
     <BottomNavigation
       value={-1} // Trick material-ui its defaut value is incorrect. Active classname takes care of it
+      // showLabels={false}
       showLabels
       className={classes.root}
     >
@@ -79,26 +85,30 @@ export default function MobileNavbar(props) {
         // --- Workaround to enable active CSS even if there is a trailing slash on the URL
         const otherLinkVersion = link.path.endsWith('/')
           ? link.path.slice(0, -1)
-          : `${link.path}/`
+          : `${link.path}/`;
         // Skip gatsby build, Browsers only
-        let otherLinkIsActive = false
+        let otherLinkIsActive = false;
+        let linkIsActive = false;
         if (typeof window !== 'undefined') {
-          otherLinkIsActive = window.location.pathname === otherLinkVersion
+          otherLinkIsActive = window.location.pathname === otherLinkVersion;
+          linkIsActive = window.location.pathname === link.path;
         }
         const standardClass = otherLinkIsActive
           ? [childClasses.root, childClasses.selected]
-          : childClasses.root
+          : childClasses.root;
 
         return (
           <BottomNavigationAction
+          // showLabels={false}
             key={link.path}
-            label={link.path}
+            // label={link.path}
             component={Link}
             className={standardClass}
             to={link.path}
-            label={link.name}
+            // label={link.name}
             activeClassName={childClasses.selected}
             label={link.name}
+            // showLabel={(linkIsActive || otherLinkIsActive)}
             icon={populateIconForName(link.name)}
           />
         )
