@@ -17,5 +17,5 @@ export const strings = {
   subscribeToNewsletter: {
     en: 'Subscribe to our newsletter',
     fr: 'Rejoignez notre newsletter',
-  }
-}
+  },
+};

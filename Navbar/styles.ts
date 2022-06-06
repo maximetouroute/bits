@@ -1,5 +1,5 @@
-import { CSSObject, Theme } from '@emotion/react'
-import { breakpointKey } from '../styles/styles'
+import { CSSObject, Theme } from '@emotion/react';
+import { breakpointKey } from '../styles/styles';
 
 export const linkStyle = (theme: Theme): CSSObject => {
   return {
@@ -32,5 +32,5 @@ export const linkStyle = (theme: Theme): CSSObject => {
     [breakpointKey('small')]: {
       textAlign: 'center',
     },
-  }
-}
+  };
+};

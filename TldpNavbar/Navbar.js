@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import './Navbar.scss'
-import PropTypes from 'prop-types'
-import MobileNavbar from './MobileNavbar'
-import { NavbarSlim } from './../NavbarSlim/NavbarSlim'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import './Navbar.scss';
+import PropTypes from 'prop-types';
+import MobileNavbar from './MobileNavbar';
+import { NavbarSlim } from './../NavbarSlim/NavbarSlim';
 
 export default class Navbar extends Component {
   mobileMenuItems() {
-    const links = this.props.links
-    return <MobileNavbar links={links}></MobileNavbar>
+    const links = this.props.links;
+    return <MobileNavbar links={links}></MobileNavbar>;
   }
   menuItems() {
-    const title = this.props.title
-    const links = this.props.links
+    const title = this.props.title;
+    const links = this.props.links;
     return (
       <>
         <Link activeClassName="" className="siteTitle" to="/">
@@ -24,7 +24,7 @@ export default class Navbar extends Component {
           </Link>
         ))}
       </>
-    )
+    );
   }
 
   render() {
@@ -35,14 +35,14 @@ export default class Navbar extends Component {
           <NavbarSlim links={this.props.links} />
         </div>
       </div>
-    )
+    );
   }
 }
 
 Navbar.propTypes = {
   title: PropTypes.string,
   links: PropTypes.array,
-}
+};
 
 Navbar.defaultProps = {
   title: 'SiteTitle',
@@ -51,4 +51,4 @@ Navbar.defaultProps = {
     { path: '/somePath', name: 'somePage' },
     { path: '/otherPath', name: 'otherPage' },
   ],
-}
+};

@@ -1,16 +1,21 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import './Navbar.scss'
-import MobileNavbar from './old/MobileNavbar'
-import { CSSObject, Theme, ThemeProvider, StyledEngineProvider, Global, useTheme } from '@emotion/react';
-import { breakpointKey } from '../styles/styles'
-
+import React from 'react';
+import { Link } from 'gatsby';
+import './Navbar.scss';
+import MobileNavbar from './old/MobileNavbar';
+import {
+  CSSObject,
+  Theme,
+  ThemeProvider,
+  StyledEngineProvider,
+  Global,
+  useTheme,
+} from '@emotion/react';
+import { breakpointKey } from '../styles/styles';
 
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
 }
-
 
 // Navbar.propTypes = {
 //   title: PropTypes.string,
@@ -30,7 +35,7 @@ const smallNavbarCSS: CSSObject = {
   [breakpointKey('normal')]: {
     display: 'none',
   },
-}
+};
 
 const bigNavbarCSS = (theme: Theme): CSSObject => {
   return {
@@ -38,20 +43,20 @@ const bigNavbarCSS = (theme: Theme): CSSObject => {
     [breakpointKey('small')]: {
       display: 'none',
     },
-  }
-}
+  };
+};
 
 interface NavbarLink {
-  path: string
-  name: string
+  path: string;
+  name: string;
 }
 interface OwnProps {
-  title: string
-  links: NavbarLink[]
+  title: string;
+  links: NavbarLink[];
 }
 
 export default function Navbar({ title, links }: OwnProps) {
-  const theme = useTheme()
+  const theme = useTheme();
 
   const menuItems = () => {
     return (
@@ -65,8 +70,8 @@ export default function Navbar({ title, links }: OwnProps) {
           </Link>
         ))}
       </>
-    )
-  }
+    );
+  };
 
   return (
     <div
@@ -85,5 +90,5 @@ export default function Navbar({ title, links }: OwnProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

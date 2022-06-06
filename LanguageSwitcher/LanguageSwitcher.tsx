@@ -1,23 +1,23 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { LangCode, supportedLangs } from '../../locales/locales'
-import { useTheme } from '@emotion/react'
-import { containerCSS } from './styles'
+import React from 'react';
+import { Link } from 'gatsby';
+import { LangCode, supportedLangs } from '../../locales/locales';
+import { useTheme } from '@emotion/react';
+import { containerCSS } from './styles';
 
 const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
   // console.log('update language to ', defaultLanguage)
-  window.localStorage.setItem('language', defaultLanguage)
-}
+  window.localStorage.setItem('language', defaultLanguage);
+};
 
 interface OwnProps {
-  currentLangCode: LangCode
-  currentUrl: string
+  currentLangCode: LangCode;
+  currentUrl: string;
 }
 export default function LanguageSwitcher({
   currentLangCode,
   currentUrl,
 }: OwnProps) {
-  const theme = useTheme()
+  const theme = useTheme();
   // Compute current language from URL directly
   return (
     <div css={containerCSS}>
@@ -25,19 +25,19 @@ export default function LanguageSwitcher({
         // alert(this.props.currentUrl);
         const baseUrl = currentUrl
           .replace(supportedLangs[currentLangCode].urlPrefix, '') // Remove language prefix
-          .replace('//', '/') // Avoid possible double slash
+          .replace('//', '/'); // Avoid possible double slash
         return (
           <Link
             key={index}
             to={baseUrl}
             onClick={() => {
-              updateDefaultLanguage(langCode as LangCode)
+              updateDefaultLanguage(langCode as LangCode);
             }}
           >
             {supportedLangs[langCode].humanName}
           </Link>
-        )
+        );
       })}
     </div>
-  )
+  );
 }

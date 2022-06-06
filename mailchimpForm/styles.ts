@@ -1,6 +1,4 @@
-
-
-import { CSSObject, Theme } from '@emotion/react'
+import { CSSObject, Theme } from '@emotion/react';
 
 const primary = '#57e9f2';
 const secondary = '#45d4fb';
@@ -8,20 +6,20 @@ const white = '#fff';
 const gray = 'dimgray';
 
 export const formCSS: CSSObject = {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '2rem',
-    marginBottom: '2rem',
-  };
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginTop: '2rem',
+  marginBottom: '2rem',
+};
 
-  export const buttonCSS = (theme: Theme): CSSObject => {
-    return {
-  backgroundColor: theme.palette.primary.main,
-  
+export const buttonCSS = (theme: Theme): CSSObject => {
+  return {
+    backgroundColor: theme.palette.primary.main,
+
     // backgroundImage:
-      // 'linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%)',
+    // 'linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%)',
     borderRadius: '100rem',
     border: 'none',
     fontWeight: 900,
@@ -32,7 +30,7 @@ export const formCSS: CSSObject = {
     // marginLeft: '2em',
     transition: 'all 150ms linear',
     filter: 'saturate(1)',
-  
+
     '&:hover': {
       // transform: 'scale(1.1)',
       cursor: 'pointer',
@@ -43,7 +41,6 @@ export const formCSS: CSSObject = {
   };
 };
 
-  
 export const form__groupCSS: CSSObject = {
   position: 'relative',
   padding: '15px 0 0',
@@ -54,46 +51,43 @@ export const form__groupCSS: CSSObject = {
   flexDirection: 'row',
 };
 
-  export const form__fieldCSS = (theme: Theme): CSSObject => {
-    return {
-
-  fontSamily: 'inherit',
-  width: '18rem',
-  border: 0,
-  borderBottom: `2px solid ${gray}`,
-  outline: 0,
-  fontSize: '1rem',
-  color: 'dimgray',
-  padding: '7px 0',
-  background: 'transparent',
-  transition: 'border-color 0.2s',
-
-  '&::placeholder': {
-    color: 'transparent',
-  },
-
-  '&:placeholder-shown + .formLabel': {
+export const form__fieldCSS = (theme: Theme): CSSObject => {
+  return {
+    fontSamily: 'inherit',
+    width: '18rem',
+    border: 0,
+    borderBottom: `2px solid ${gray}`,
+    outline: 0,
     fontSize: '1rem',
-    cursor: 'text',
-    top: '20px',
+    color: 'dimgray',
+    padding: '7px 0',
+    background: 'transparent',
+    transition: 'border-color 0.2s',
 
-},
+    '&::placeholder': {
+      color: 'transparent',
+    },
 
-  '&:required,&:invalid': {
-    boxShadow: 'none'
-  },
+    '&:placeholder-shown + .formLabel': {
+      fontSize: '1rem',
+      cursor: 'text',
+      top: '20px',
+    },
 
-  '&:focus': {
-    paddingBottom: '6px',
-    // fontWeight: 700,
-    borderWidth: '3px',
-    // borderImage: `linear-gradient(to right, ${primary}, ${secondary})`,
-    borderColor: theme.palette.primary.main,
-    borderImageSlice: 1,
-  },
-  
+    '&:required,&:invalid': {
+      boxShadow: 'none',
+    },
 
-  '&:focus + .formLabel': {
+    '&:focus': {
+      paddingBottom: '6px',
+      // fontWeight: 700,
+      borderWidth: '3px',
+      // borderImage: `linear-gradient(to right, ${primary}, ${secondary})`,
+      borderColor: theme.palette.primary.main,
+      borderImageSlice: 1,
+    },
+
+    '&:focus + .formLabel': {
       position: 'absolute',
       top: '-6px',
       display: 'block',
@@ -101,8 +95,8 @@ export const form__groupCSS: CSSObject = {
       fontSize: '1rem',
       color: theme.palette.primary.main,
       fontWeight: 700,
-  }
-    };
+    },
+  };
 };
 
 export const form__labelCSS: CSSObject = {
@@ -114,7 +108,7 @@ export const form__labelCSS: CSSObject = {
   color: gray,
 
   '&:focus-within': {
-      backgroundColor: 'red',
-      fontSize: '4rem',
+    backgroundColor: 'red',
+    fontSize: '4rem',
   },
-}
+};

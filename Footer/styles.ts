@@ -1,14 +1,14 @@
-import { CSSObject, Theme } from '@emotion/react'
-import { themedACSS } from '../styles/styles'
+import { CSSObject, Theme } from '@emotion/react';
+import { themedACSS } from '../styles/styles';
 
 export const containerCSS: CSSObject = {
   paddingTop: '3em',
   fontSize: '0.8em',
   lineHeight: '1.4em',
-}
+};
 
 export const separatorCSS = (theme: Theme): CSSObject => {
-  const color = 'dimgray'
+  const color = 'dimgray';
   return {
     backgroundColor: color,
     border: 'none',
@@ -20,8 +20,8 @@ export const separatorCSS = (theme: Theme): CSSObject => {
     margin: '0 auto',
     marginTop: '1rem',
     marginBottom: '1rem',
-  }
-}
+  };
+};
 
 export const socialLinksCSS: CSSObject = {
   paddingLeft: '1em',
@@ -29,14 +29,14 @@ export const socialLinksCSS: CSSObject = {
   display: 'flex',
   flexDirection: 'column',
   marginTop: '3em',
-}
+};
 
 export const socialLinksMediaListCSS: CSSObject = {
   display: 'flex',
   flexDirection: 'row',
   fontSize: '1em',
   justifyContent: 'center',
-}
+};
 
 export const socialIconCSS = (theme: Theme): CSSObject => {
   return {
@@ -62,8 +62,8 @@ export const socialIconCSS = (theme: Theme): CSSObject => {
         transition: 'all 0.1s ease-in',
       },
     },
-  }
-}
+  };
+};
 
 export const authorCSS = (theme: Theme): CSSObject => {
   return {
@@ -73,8 +73,8 @@ export const authorCSS = (theme: Theme): CSSObject => {
     a: {
       ...themedACSS(theme.palette.primary.main),
     },
-  }
-}
+  };
+};
 
 export const linksCSS = (theme: Theme): CSSObject => {
   return {
@@ -86,8 +86,8 @@ export const linksCSS = (theme: Theme): CSSObject => {
       ...themedACSS(theme.palette.primary.main),
       margin: '0.5em',
     },
-  }
-}
+  };
+};
 
 export const mailCSS = (theme: Theme): CSSObject => {
   return {
@@ -97,5 +97,5 @@ export const mailCSS = (theme: Theme): CSSObject => {
       ...themedACSS(theme.palette.primary.main),
       margin: '0.5em',
     },
-  }
-}
+  };
+};
