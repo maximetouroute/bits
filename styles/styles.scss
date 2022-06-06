@@ -73,6 +73,32 @@ $colorActive: $accentColor; //#ed9e38; // 50 50 50
   }
 }
 
+@mixin themedTagA() {
+  $underlineColor: rgba(#649de5, 0.3); //rgba(150,150,150, 0.5);
+  text-decoration: none;
+  border-bottom: 4px solid $underlineColor;
+  color: black;
+  line-height: 1.5;
+  @include basicTransition();
+  &:hover {
+    background-color: $underlineColor;
+    border-bottom: 4px solid transparent;
+    outline: 0;
+    @include basicTransition();
+  }
+
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+    -moz-outline-style: none;
+    outline-style: none;
+  }
+}
 
 html {
   font: 1em -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -96,3 +122,6 @@ body {
     sans-serif;
 }
 
+// Possibility to override through this file
+// @import '../../components/bitMixinOverride.scss';
+// @import '../../components/bitGlobalOverride.scss';

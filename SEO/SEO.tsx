@@ -2,6 +2,9 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
+const importGoogleFonts = true;
+
+
 interface OverrideDefaults {
   title?: string
   description?: string
@@ -106,7 +109,26 @@ const SEO = ({
 
             <meta http-equiv="cache-control" content="Private" />
             <meta http-equiv="Expires" content="0" />
-
+            {importGoogleFonts && <>
+              {/* <link
+              rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Ubuntu"
+            /> */}
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossOrigin
+            />
+            <link
+              href={
+                'https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap'
+              }
+              rel="stylesheet"
+            />
+            </>
+            }
+          
             <html lang={langCode} />
           </Helmet>
         </>
