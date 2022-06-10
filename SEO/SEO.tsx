@@ -2,9 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-
-
-
 interface OverrideDefaults {
   title?: string
   description?: string
@@ -110,7 +107,7 @@ const SEO = ({
             <meta http-equiv="cache-control" content="Private" />
             <meta http-equiv="Expires" content="0" />
 
-              <link
+            <link
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Ubuntu"
             />
@@ -127,8 +124,6 @@ const SEO = ({
               rel="stylesheet"
             />
 
-   
-          
             <html lang={langCode} />
           </Helmet>
         </>

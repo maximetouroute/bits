@@ -49,7 +49,7 @@ export default function emailListForm({
         autoComplete="email"
         name="EMAIL"
         onChange={(e) => {
-          new Cookies().set('subEmail', e.target.value, {sameSite: 'strict'});
+          new Cookies().set('subEmail', e.target.value, { sameSite: 'strict' });
           // console.log(new Cookies().get('subEmail')); // Prod test
         }}
       />

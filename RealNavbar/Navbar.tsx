@@ -63,14 +63,19 @@ export default function Navbar({ currentLangCode, currentUrl }: OwnProps) {
         <Logo />
       </Link>
       <div>
+        <Link
+          to={'/education'}
+          css={{
+            textTransform: 'uppercase',
+            color: '#34393A',
+            padding: '0.5em',
+            textDecoration: 'none',
+            marginRight: '3rem',
+          }}
+        >
+          EDUCATION
+        </Link>
 
-        <Link to={'/education'}  css={{
-                textTransform: 'uppercase',
-                color: '#34393A',
-                padding: '0.5em',
-                textDecoration: 'none', marginRight: '3rem'}}>EDUCATION</Link>
-
-       
         {Object.keys(supportedLangs).map((langCode: string, index: number) => {
           // alert(this.props.currentUrl);
           const baseUrl = currentUrl
