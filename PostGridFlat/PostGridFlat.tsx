@@ -20,7 +20,7 @@ const gridCSS: CSSObject = {
 const customTextColorOnHover = (color: string): CSSObject => {
   return {
     '&:hover': {
-      color: color,
+      color: `${color} !important`,
     },
   };
 };
