@@ -263,7 +263,7 @@ export default class Footer extends React.Component {
                       </a>
                     </p>
                     <p>
-                      <strong>Maxime TOUROUTE</strong>
+                      <strong>Maxime TOUROUTE </strong>
                       <a href="telto:+336 50 84 74 19">+336 50 84 74 19</a>
                     </p>
                     <Link to={'/contact'}>{strings.moreContacts[lang]}</Link>
