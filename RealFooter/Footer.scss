@@ -16,6 +16,8 @@ $color: #34393a;
 }
 
 .Footer {
+  margin-top: '2rem';
+  
   color: $color;
 
   @include breakpoint(normal) {

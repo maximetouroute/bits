@@ -13,4 +13,9 @@ export const strings = {
     en: 'Contact',
     fr: 'Nous contacter',
   },
+
+  joinNewsletter: {
+    en: 'Join our newsletter',
+    fr: 'Rejoignez notre newsletter',
+  }
 };

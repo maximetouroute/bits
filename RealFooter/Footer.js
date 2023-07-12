@@ -9,6 +9,10 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MusicNoteIcon from '@mui/icons-material/MusicNote';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import MailForm from '../../bits/mailchimpFormReveality/mailchimpFormPrivacyFriendly';
+
+const MAILCHIMP_URL =
+  'https://reveality.us5.list-manage.com/subscribe/post?u=8b4e477d425a1fcb90d90a287&amp;id=7331d8e0bb';
 
 const propTypes = {
   links: PropTypes.array,
@@ -28,6 +32,8 @@ export default class Footer extends React.Component {
   socialMediaLinks(links) {
     return (
       <div className="socialLinks">
+      
+
         <div className="social-media-list">
           {links.github && (
             <a
@@ -206,6 +212,19 @@ export default class Footer extends React.Component {
 
           return (
             <div className="Footer">
+
+<div css={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '2rem' }}>
+<p css={{ fontSize: '1.2em',
+
+      fontWeight: 600,
+      marginBottom: '1em'}}>{strings.joinNewsletter[lang]}</p>
+                        <MailForm
+            uniqueId={'footerForm'}
+            mailchimpURL={MAILCHIMP_URL}
+            uniqueAntiSpamId={'b_8b4e477d425a1fcb90d90a287_7331d8e0bb'}
+          />
+</div>
+
               <div className={'Inside'}>
                 {/* <div className={'logo'}>
                   <div className={'tldpFooterLogo'}>
@@ -214,8 +233,10 @@ export default class Footer extends React.Component {
                 </div> */}
 
                 <div className={'followUs'}>
+                  
                   <p className={'Header'}>{strings.followUs[lang]}</p>
                   <div className={'followUsStuff'}>
+                    
                     <a
                       href={links.tiktok}
                       target="_blank"
@@ -259,6 +280,7 @@ export default class Footer extends React.Component {
                 </div>
 
                 <div className={'contact'}>
+          
                   <div className={'contactInfos'}>
                     <p className={''}>{strings.contact[lang]}</p>
                     <p>
@@ -299,7 +321,7 @@ export default class Footer extends React.Component {
                     );
                   })}
                 </div>
-                Copyright 2022 Reveality
+                Copyright 2023 Reveality
               </div>
             </div>
           );
