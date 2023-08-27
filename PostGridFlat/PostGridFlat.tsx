@@ -1,8 +1,8 @@
 import { CSSObject } from '@emotion/react';
 import { Link } from 'gatsby';
-import './PostGridFlat.scss';
 import { BgImage } from 'gbimage-bridge';
 import { getImage } from 'gatsby-plugin-image';
+import { postCSS, postHeadCSS, postPictureCSS, postSubtitleCSS, postTitleCSS } from './styles';
 
 const gridCSS: CSSObject = {
   margin: 'auto',
@@ -42,18 +42,17 @@ export default function PostGridFlat({ posts }: OwnProps) {
             : {};
           return (
             <Link
-              className={'post'}
+              css={{...postCSS, ...customcolorCSS}}
               to={`${post.frontmatter.path}#content`}
               key={post.id}
-              css={customcolorCSS}
             >
-              <div className={'postHead'}>
-                <span className="postTitle">{post.frontmatter.title}</span>
-                <span className="postSubtitle">
+              <div css={postHeadCSS}>
+                <span css={postTitleCSS}>{post.frontmatter.title}</span>
+                <span css={postSubtitleCSS}>
                   {post.frontmatter.subtitle}{' '}
                 </span>
               </div>
-              <BgImage image={gatsbyImage} className={'postPicture'} />
+              <BgImage image={gatsbyImage} css={postPictureCSS} />
             </Link>
           );
         })}

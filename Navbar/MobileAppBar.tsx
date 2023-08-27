@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import { CSSObject, Theme } from '@emotion/react';
 import { breakpointKey } from '../styles/styles';
 import { linkStyle } from './styles';
-import './Navbar.scss';
 
 const siteTitleCSS: CSSObject = {
   color: 'white',
@@ -46,12 +45,10 @@ interface OwnProps {
 
 export default function MobileAppBar({ title }: OwnProps) {
   return (
-    <div className="Navbar">
       <div css={mobileAppBarCSS}>
         <Link activeClassName="" to="/" css={siteTitleCSS}>
           {title}
         </Link>
       </div>
-    </div>
   );
 }

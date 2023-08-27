@@ -30,9 +30,6 @@ export const pageContentCSS: CSSObject = {
     backgroundColor: $backgroundColorForText,
     paddingtop: '2rem',
     paddingBottom: '2rem',
-    a: {
-       // @include themedTagAObsoleteTldp();
-      }
 };
 
 export const pageContainerCSS: CSSObject = {

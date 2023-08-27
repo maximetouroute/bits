@@ -1,5 +1,14 @@
-import { CSSObject, Theme } from '@emotion/react';
+import { CSSObject } from '@emotion/react';
+import { Theme } from '@mui/material';
 import { breakpointKey } from '../styles/styles';
+
+
+export const navbarCSS = (theme:Theme):CSSObject => {
+  return {
+    backgroundColor: theme.palette.primary.main
+  };
+};
+
 
 export const linkStyle = (theme: Theme): CSSObject => {
   return {
@@ -34,3 +43,48 @@ export const linkStyle = (theme: Theme): CSSObject => {
     },
   };
 };
+
+
+export const headerLinksCSS = (theme: Theme):CSSObject => {
+  return {
+    a: {
+      ...linkStyle(theme),
+    },
+  
+    backgroundColor: theme.palette.primary.main,
+  [breakpointKey('small')]: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    textAlign: 'center'
+  },
+
+  [breakpointKey('normal')]: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+
+};
+};
+
+
+export const smallNavbarCSS: CSSObject = {
+  [breakpointKey('normal')]: {
+    display: 'none',
+  },
+};
+
+export const bigNavbarCSS = (theme: Theme): CSSObject => {
+  return {
+    backgroundColor: theme.palette.primary.main,
+    [breakpointKey('small')]: {
+      display: 'none',
+    }
+  };
+};
+
+export const activeLinkCSS = {
+        color: 'white',
+            fontWeight: 600,
+            boxShadow: '0px 2px 0px white'};

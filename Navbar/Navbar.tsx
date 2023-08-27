@@ -1,16 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import './Navbar.scss';
-import MobileNavbar from './old/MobileNavbar';
+import MobileNavbar from './MobileNavbar';
 import {
-  CSSObject,
   Theme,
-  ThemeProvider,
-  StyledEngineProvider,
-  Global,
   useTheme,
 } from '@emotion/react';
-import { breakpointKey } from '../styles/styles';
+import { headerLinksCSS, bigNavbarCSS, smallNavbarCSS, navbarCSS, activeLinkCSS } from './styles';
 
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -31,20 +26,7 @@ declare module '@mui/styles/defaultTheme' {
 //   ],
 // }
 
-const smallNavbarCSS: CSSObject = {
-  [breakpointKey('normal')]: {
-    display: 'none',
-  },
-};
 
-const bigNavbarCSS = (theme: Theme): CSSObject => {
-  return {
-    backgroundColor: theme.palette.primary.main,
-    [breakpointKey('small')]: {
-      display: 'none',
-    },
-  };
-};
 
 interface NavbarLink {
   path: string;
@@ -61,11 +43,11 @@ export default function Navbar({ title, links }: OwnProps) {
   const menuItems = () => {
     return (
       <>
-        <Link activeClassName="" className="siteTitle" to="/">
+        <Link activeClassName="" to="/">
           {title}
         </Link>
         {links.map((link) => (
-          <Link activeClassName="active" to={link.path} key={link.name}>
+          <Link activeStyle={activeLinkCSS} to={link.path} key={link.name}>
             {link.name}
           </Link>
         ))}
@@ -75,16 +57,14 @@ export default function Navbar({ title, links }: OwnProps) {
 
   return (
     <div
-      className="Navbar"
-      style={{ backgroundColor: theme.palette.primary.main }}
+      css={navbarCSS(theme)}
     >
       <div css={smallNavbarCSS}>
         <MobileNavbar links={links} />
       </div>
-      <div className="BigNavbar" css={bigNavbarCSS(theme)}>
+      <div css={bigNavbarCSS(theme)}>
         <div
-          className="headerLinks"
-          style={{ backgroundColor: theme.palette.primary.main }}
+          css={headerLinksCSS(theme)}
         >
           {menuItems()}
         </div>

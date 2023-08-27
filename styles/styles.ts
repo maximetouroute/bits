@@ -51,3 +51,27 @@ export const breakpointKey = (value: string): string => {
     return '';
   }
 };
+
+const backgroundColor = 'rgb(240,240,240)';
+
+export const globalCSS: CSSObject = {
+  body: {
+    margin: 0,
+    outline: 0,
+    padding: 0,
+    backgroundColor: backgroundColor,
+    font: `1em -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
+      sans-serif`
+  },
+  html: {
+    font: `1em -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
+    sans-serif`,
+  margin: 0,
+  padding: 0,
+  outline: 0,
+  width: '100%'
+  }
+  
+};
