@@ -1,20 +1,20 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import './Navbar.scss';
-import makeStyles from '@mui/styles/makeStyles';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import PaletteRoundedIcon from '@mui/icons-material/PaletteRounded';
-import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
-import EventIcon from '@mui/icons-material/Event';
-import PhotoLibraryRoundedIcon from '@mui/icons-material/PhotoLibraryRounded';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import React from 'react'
+import { Link } from 'gatsby'
+import './Navbar.scss'
+import makeStyles from '@mui/styles/makeStyles'
+import BottomNavigation from '@mui/material/BottomNavigation'
+import BottomNavigationAction from '@mui/material/BottomNavigationAction'
+import PaletteRoundedIcon from '@mui/icons-material/PaletteRounded'
+import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded'
+import EventIcon from '@mui/icons-material/Event'
+import PhotoLibraryRoundedIcon from '@mui/icons-material/PhotoLibraryRounded'
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 //$accentColor: #85b94f; //#aac989; //#4d9933;
 //$accentLight: #aac989;
 //$accentColorIdle: #2b6b15;
 // Workaround MUI v5 to use makeStyles
-import { StyledEngineProvider } from '@mui/material/styles';
+import { StyledEngineProvider } from '@mui/material/styles'
 
 const useStyles = makeStyles({
   root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     borderTop: ' solid 1px rgba(99,99,99,.3)',
     backgroundColor: '#fbfaf9', //'white'//'#f2ede9',
   },
-});
+})
 
 const useChildStyles = makeStyles({
   root: {
@@ -40,37 +40,37 @@ const useChildStyles = makeStyles({
     transform: 'scale(1)',
     // boxShadow: '1px 1px 9px 0px rgb(0 0 0 / 23%)',
   },
-});
+})
 
 export default function MobileNavbar(props) {
-  const { links } = props;
-  const classes = useStyles();
-  const childClasses = useChildStyles();
-  const [value, setValue] = React.useState(0);
+  const { links } = props
+  const classes = useStyles()
+  const childClasses = useChildStyles()
+  const [value, setValue] = React.useState(0)
   // TODO: to make something truly factorised, user shall be able to override ths method by injecting it in the component
   const populateIconForName = (name) => {
     switch (name) {
       case 'WORK':
-        return <PaletteRoundedIcon />;
+        return <PaletteRoundedIcon />
       case 'NEWS':
-        return <RssFeedRoundedIcon />;
+        return <RssFeedRoundedIcon />
       case 'BOOKING':
       case 'RESERVER':
-        return <EventIcon />;
+        return <EventIcon />
       // return <ShoppingCartIcon />;
       case 'HOME':
       case 'ACCUEIL':
-        return <HomeRoundedIcon />;
+        return <HomeRoundedIcon />
       case 'GALLERY':
       case 'GALERIE':
-        return <PhotoLibraryRoundedIcon />;
+        return <PhotoLibraryRoundedIcon />
       case 'EVENTS':
       case 'ÉVÉNEMENTS':
-        return <EventIcon />;
+        return <EventIcon />
       default:
-        return <></>;
+        return <></>
     }
-  };
+  }
 
   return (
     <StyledEngineProvider injectFirst>
@@ -84,17 +84,17 @@ export default function MobileNavbar(props) {
           // --- Workaround to enable active CSS even if there is a trailing slash on the URL
           const otherLinkVersion = link.path.endsWith('/')
             ? link.path.slice(0, -1)
-            : `${link.path}/`;
+            : `${link.path}/`
           // Skip gatsby build, Browsers only
-          let otherLinkIsActive = false;
-          let linkIsActive = false;
+          let otherLinkIsActive = false
+          let linkIsActive = false
           if (typeof window !== 'undefined') {
-            otherLinkIsActive = window.location.pathname === otherLinkVersion;
-            linkIsActive = window.location.pathname === link.path;
+            otherLinkIsActive = window.location.pathname === otherLinkVersion
+            linkIsActive = window.location.pathname === link.path
           }
           const standardClass = otherLinkIsActive
             ? [childClasses.root, childClasses.selected]
-            : childClasses.root;
+            : childClasses.root
 
           return (
             <BottomNavigationAction
@@ -110,9 +110,9 @@ export default function MobileNavbar(props) {
               // showLabel={(linkIsActive || otherLinkIsActive)}
               icon={populateIconForName(link.name)}
             />
-          );
+          )
         })}
       </BottomNavigation>
     </StyledEngineProvider>
-  );
+  )
 }

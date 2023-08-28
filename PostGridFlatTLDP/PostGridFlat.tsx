@@ -1,8 +1,8 @@
-import { CSSObject, keyframes } from '@emotion/react';
-import { Link } from 'gatsby';
-import './PostGridFlat.scss';
-import { BgImage } from 'gbimage-bridge';
-import { getImage } from 'gatsby-plugin-image';
+import { CSSObject, keyframes } from '@emotion/react'
+import { Link } from 'gatsby'
+import './PostGridFlat.scss'
+import { BgImage } from 'gbimage-bridge'
+import { getImage } from 'gatsby-plugin-image'
 
 const gridCSS: CSSObject = {
   margin: 'auto',
@@ -15,7 +15,7 @@ const gridCSS: CSSObject = {
   width: '100%',
 
   padding: 0,
-};
+}
 const pulse = keyframes`
 0%{
   box-shadow: 0px 0px 5px 0px rgba(87, 186, 106, .3);
@@ -26,10 +26,10 @@ const pulse = keyframes`
 90%{
   box-shadow: 0px 0px 5px 8px rgba(87, 186, 106, 0);
 }
-`;
+`
 
 interface OwnProps {
-  posts: any;
+  posts: any
 }
 export default function PostGridFlat({ posts }: OwnProps) {
   return (
@@ -37,25 +37,25 @@ export default function PostGridFlat({ posts }: OwnProps) {
       {posts
         .filter((post) => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
-          const image = post.frontmatter.image.childImageSharp;
-          const gatsbyImage = getImage(image);
-          const postDate = new Date(post.frontmatter.date);
+          const image = post.frontmatter.image.childImageSharp
+          const gatsbyImage = getImage(image)
+          const postDate = new Date(post.frontmatter.date)
 
-          const tomorrow = new Date();
+          const tomorrow = new Date()
           // Make keep current day as an upcoming day
-          postDate.setDate(postDate.getDate() + 1);
-          const isUpcoming = tomorrow < postDate;
+          postDate.setDate(postDate.getDate() + 1)
+          const isUpcoming = tomorrow < postDate
 
           const options = {
             weekday: isUpcoming ? 'short' : void 0,
             year: isUpcoming ? void 0 : 'numeric',
             month: 'short',
             day: isUpcoming ? 'numeric' : void 0,
-          };
+          }
           // @ts-ignore
           const displayDate = new Date(
             post.frontmatter.date
-          ).toLocaleDateString(post.frontmatter.language, options);
+          ).toLocaleDateString(post.frontmatter.language, options)
 
           return (
             <Link
@@ -108,8 +108,8 @@ export default function PostGridFlat({ posts }: OwnProps) {
               </div>
               <BgImage image={gatsbyImage} className={'postPicture'} />
             </Link>
-          );
+          )
         })}
     </div>
-  );
+  )
 }

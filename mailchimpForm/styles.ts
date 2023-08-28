@@ -1,9 +1,9 @@
-import { CSSObject, Theme } from '@emotion/react';
+import { CSSObject, Theme } from '@emotion/react'
 
-const primary = '#57e9f2';
-const secondary = '#45d4fb';
-const white = '#fff';
-const gray = 'dimgray';
+const primary = '#57e9f2'
+const secondary = '#45d4fb'
+const white = '#fff'
+const gray = 'dimgray'
 
 export const formCSS: CSSObject = {
   display: 'flex',
@@ -12,7 +12,7 @@ export const formCSS: CSSObject = {
   justifyContent: 'center',
   marginTop: '2rem',
   marginBottom: '2rem',
-};
+}
 
 export const buttonCSS = (theme: Theme): CSSObject => {
   return {
@@ -38,8 +38,8 @@ export const buttonCSS = (theme: Theme): CSSObject => {
       backgroundColor: theme.palette.secondary.main,
       // filter: 'saturate(1.3)',
     },
-  };
-};
+  }
+}
 
 export const form__groupCSS: CSSObject = {
   position: 'relative',
@@ -49,7 +49,7 @@ export const form__groupCSS: CSSObject = {
   margin: '0.5em',
   display: 'flex',
   flexDirection: 'row',
-};
+}
 
 export const form__fieldCSS = (theme: Theme): CSSObject => {
   return {
@@ -96,8 +96,8 @@ export const form__fieldCSS = (theme: Theme): CSSObject => {
       color: theme.palette.primary.main,
       fontWeight: 700,
     },
-  };
-};
+  }
+}
 
 export const form__labelCSS: CSSObject = {
   position: 'absolute',
@@ -111,4 +111,4 @@ export const form__labelCSS: CSSObject = {
     backgroundColor: 'red',
     fontSize: '4rem',
   },
-};
+}

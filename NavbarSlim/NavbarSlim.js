@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Link } from 'gatsby';
-import './NavbarSlim.scss';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import { Link } from 'gatsby'
+import './NavbarSlim.scss'
+import PropTypes from 'prop-types'
 
 export class NavbarSlim extends Component {
   menuItems() {
@@ -12,10 +12,10 @@ export class NavbarSlim extends Component {
             <Link key={link.name} activeClassName="active" to={link.path}>
               {link.name}
             </Link>
-          );
+          )
         })}
       </>
-    );
+    )
   }
 
   render() {
@@ -23,10 +23,10 @@ export class NavbarSlim extends Component {
       <div className="NavbarSlim">
         <div className={'Links'}>{this.menuItems()}</div>
       </div>
-    );
+    )
   }
 }
 
 NavbarSlim.propTypes = {
   links: PropTypes.array.isRequired,
-};
+}

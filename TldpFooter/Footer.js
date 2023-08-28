@@ -1,24 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Footer.scss';
-import { graphql, Link, StaticQuery } from 'gatsby';
-import { strings } from './strings';
-import MailForm from '../mailchimpForm/mailchimpFormPrivacyFriendly';
+import React from 'react'
+import PropTypes from 'prop-types'
+import './Footer.scss'
+import { graphql, Link, StaticQuery } from 'gatsby'
+import { strings } from './strings'
+import MailForm from '../mailchimpForm/mailchimpFormPrivacyFriendly'
 
 //
 const propTypes = {
   links: PropTypes.array,
   lang: PropTypes.string,
-};
+}
 
 const defaultProps = {
   links: [],
   lang: 'en',
-};
+}
 
 export default class Footer extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   socialMediaLinks(links) {
@@ -157,14 +157,14 @@ export default class Footer extends React.Component {
           )}
         </div>
       </div>
-    );
+    )
   }
 
   render() {
-    let lang = this.props.lang;
+    let lang = this.props.lang
     // Dirty default language switcher
     if (lang !== 'en' && lang !== 'fr') {
-      lang = 'en';
+      lang = 'en'
     }
 
     return (
@@ -196,7 +196,7 @@ export default class Footer extends React.Component {
             soundcloud: soundcloud === '' ? undefined : soundcloud,
             youtube: youtube === '' ? undefined : youtube,
             linkedin: linkedin === '' ? undefined : linkedin,
-          };
+          }
 
           return (
             <div className="Footer">
@@ -323,14 +323,14 @@ export default class Footer extends React.Component {
                     <Link key={link.name} to={link.path}>
                       {link.name}
                     </Link>
-                  );
+                  )
                 })}
               </div>
             </div>
-          );
+          )
         }}
       />
-    );
+    )
   }
 }
 
@@ -353,4 +353,4 @@ const query = graphql`
       }
     }
   }
-`;
+`

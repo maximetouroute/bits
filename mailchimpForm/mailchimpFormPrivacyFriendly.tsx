@@ -1,22 +1,22 @@
-import React from 'react';
+import React from 'react'
 import {
   buttonCSS,
   form__groupCSS,
   form__fieldCSS,
   form__labelCSS,
   formCSS,
-} from './styles';
-import { useTheme } from '@emotion/react';
-import SendIcon from '@mui/icons-material/Send';
-import { InputAdornment } from '@mui/material';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
+} from './styles'
+import { useTheme } from '@emotion/react'
+import SendIcon from '@mui/icons-material/Send'
+import { InputAdornment } from '@mui/material'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
+import IconButton from '@mui/material/IconButton'
 
 interface OwnProps {
-  uniqueId: string;
-  mailchimpURL: string;
-  uniqueAntiSpamId: string;
+  uniqueId: string
+  mailchimpURL: string
+  uniqueAntiSpamId: string
 }
 
 export default function emailListForm({
@@ -24,7 +24,7 @@ export default function emailListForm({
   mailchimpURL,
   uniqueAntiSpamId,
 }: OwnProps) {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <Box
       component="form"
@@ -70,5 +70,5 @@ export default function emailListForm({
         <SendIcon />
       </IconButton>
     </Box>
-  );
+  )
 }

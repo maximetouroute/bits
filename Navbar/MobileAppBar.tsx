@@ -1,15 +1,15 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { CSSObject, Theme } from '@emotion/react';
-import { breakpointKey } from '../styles/styles';
-import { linkStyle } from './styles';
+import React from 'react'
+import { Link } from 'gatsby'
+import { CSSObject, Theme } from '@emotion/react'
+import { breakpointKey } from '../styles/styles'
+import { linkStyle } from './styles'
 
 const siteTitleCSS: CSSObject = {
   color: 'white',
   '&:hover': {
     color: 'white',
   },
-};
+}
 
 const mobileAppBarCSS = (theme: Theme): CSSObject => {
   return {
@@ -36,19 +36,19 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
     [breakpointKey('normal')]: {
       display: 'none',
     },
-  };
-};
+  }
+}
 
 interface OwnProps {
-  title: string;
+  title: string
 }
 
 export default function MobileAppBar({ title }: OwnProps) {
   return (
-      <div css={mobileAppBarCSS}>
-        <Link activeClassName="" to="/" css={siteTitleCSS}>
-          {title}
-        </Link>
-      </div>
-  );
+    <div css={mobileAppBarCSS}>
+      <Link activeClassName="" to="/" css={siteTitleCSS}>
+        {title}
+      </Link>
+    </div>
+  )
 }

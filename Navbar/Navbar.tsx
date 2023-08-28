@@ -1,11 +1,14 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import MobileNavbar from './MobileNavbar';
+import React from 'react'
+import { Link } from 'gatsby'
+import MobileNavbar from './MobileNavbar'
+import { Theme, useTheme } from '@emotion/react'
 import {
-  Theme,
-  useTheme,
-} from '@emotion/react';
-import { headerLinksCSS, bigNavbarCSS, smallNavbarCSS, navbarCSS, activeLinkCSS } from './styles';
+  headerLinksCSS,
+  bigNavbarCSS,
+  smallNavbarCSS,
+  navbarCSS,
+  activeLinkCSS,
+} from './styles'
 
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -26,19 +29,17 @@ declare module '@mui/styles/defaultTheme' {
 //   ],
 // }
 
-
-
 interface NavbarLink {
-  path: string;
-  name: string;
+  path: string
+  name: string
 }
 interface OwnProps {
-  title: string;
-  links: NavbarLink[];
+  title: string
+  links: NavbarLink[]
 }
 
 export default function Navbar({ title, links }: OwnProps) {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const menuItems = () => {
     return (
@@ -52,23 +53,17 @@ export default function Navbar({ title, links }: OwnProps) {
           </Link>
         ))}
       </>
-    );
-  };
+    )
+  }
 
   return (
-    <div
-      css={navbarCSS(theme)}
-    >
+    <div css={navbarCSS(theme)}>
       <div css={smallNavbarCSS}>
         <MobileNavbar links={links} />
       </div>
       <div css={bigNavbarCSS(theme)}>
-        <div
-          css={headerLinksCSS(theme)}
-        >
-          {menuItems()}
-        </div>
+        <div css={headerLinksCSS(theme)}>{menuItems()}</div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import { CSSObject, Theme } from '@emotion/react';
-import { themedACSS } from '../styles/styles';
+import { CSSObject, Theme } from '@emotion/react'
+import { themedACSS } from '../styles/styles'
 
 export const containerCSS = (theme: Theme): CSSObject => {
   return {
@@ -12,5 +12,5 @@ export const containerCSS = (theme: Theme): CSSObject => {
       padding: '0.2em',
       ...themedACSS(theme.palette.primary.main),
     },
-  };
-};
+  }
+}

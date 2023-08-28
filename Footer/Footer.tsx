@@ -1,5 +1,5 @@
-import React from 'react';
-import { graphql, StaticQuery, Link } from 'gatsby';
+import React from 'react'
+import { graphql, StaticQuery, Link } from 'gatsby'
 import {
   separatorCSS,
   containerCSS,
@@ -9,11 +9,11 @@ import {
   authorCSS,
   linksCSS,
   mailCSS,
-} from './styles';
-import { useTheme } from '@emotion/react';
+} from './styles'
+import { useTheme } from '@emotion/react'
 
 export default function Footer() {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <StaticQuery
       query={query}
@@ -42,7 +42,7 @@ export default function Footer() {
           vimeo: vimeo === '' ? undefined : vimeo,
           soundcloud: soundcloud === '' ? undefined : soundcloud,
           youtube: youtube === '' ? undefined : youtube,
-        };
+        }
 
         const authorBlockPersonal = () => {
           return (
@@ -54,8 +54,8 @@ export default function Footer() {
               <br />
               <br />
             </>
-          );
-        };
+          )
+        }
 
         return (
           <div className={'Footer'} css={containerCSS}>
@@ -198,10 +198,10 @@ export default function Footer() {
 
             {author && authorBlockPersonal()}
           </div>
-        );
+        )
       }}
     />
-  );
+  )
 }
 
 const query = graphql`
@@ -222,4 +222,4 @@ const query = graphql`
       }
     }
   }
-`;
+`

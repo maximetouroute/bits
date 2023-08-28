@@ -18,4 +18,4 @@ export const strings = {
     en: 'Subscribe to our newsletter',
     fr: 'Rejoignez notre newsletter',
   },
-};
+}
