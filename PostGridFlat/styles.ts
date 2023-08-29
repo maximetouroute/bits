@@ -1,10 +1,6 @@
-import { CSSObject } from '@emotion/react'
-
-import { breakpointKey } from '../styles/styles'
-import { Theme } from '@mui/material'
-
-const blackLink = '#4c4c4c'
-
+import { CSSObject } from '@emotion/react';
+import { breakpointKey } from '../styles/styles';
+import { Theme } from '@mui/material';
 
 export const gridCSS = (theme: Theme): CSSObject => {
   return {
@@ -47,16 +43,16 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
 
   [breakpointKey('small')]: {
     width: '90vw',
-    height: '70vw',
+    height: '60vw',
     marginTop: '1em',
     marginCottom: '1em',
     },
 
   [breakpointKey('normal')]: {
     margin: '1em',
-    width: '60vw',
+    width: '28vw',
     height: '30vw',
-    maxWidth: '30em',
+    maxWidth: '28em',
     maxHeight: '20em',
   },
 

@@ -196,7 +196,7 @@ export default function Footer({ customLinks }: OwnProps) {
             </div>
 
             <div css={linksCSS(theme)}>
-              {customLinks.map(link => <Link to={link.path}>{link.name}</Link>)}
+              {customLinks.map(link => <Link key={link.path} to={link.path}>{link.name}</Link>)}
             </div>
 
             {author && authorBlockPersonal()}

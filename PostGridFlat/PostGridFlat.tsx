@@ -1,7 +1,6 @@
-import { CSSObject } from '@emotion/react'
 import { Link } from 'gatsby'
-import { BgImage } from 'gbimage-bridge'
-import { getImage } from 'gatsby-plugin-image'
+import { BgImage } from 'gbimage-bridge';
+import { getImage } from 'gatsby-plugin-image';
 import {
   postCSS,
   postHeadCSS,
@@ -9,17 +8,16 @@ import {
   postSubtitleCSS,
   postTitleCSS,
   gridCSS
-} from './styles'
-import { useTheme } from '@mui/material'
-
-
+} from './styles';
+import { useTheme } from '@mui/material';
 
 
 interface OwnProps {
-  posts: any
+  posts: any;
 }
 export default function PostGridFlat({ posts }: OwnProps) {
   const theme = useTheme();
+
   return (
     <div css={gridCSS(theme)}>
       {posts
@@ -30,7 +28,7 @@ export default function PostGridFlat({ posts }: OwnProps) {
           const customColor = post.frontmatter.image.colors !== void 0
           return (
             <Link
-              css={{ ...postCSS(theme, customColor ? post.frontmatter.image.colors.vibrant : 'black') }}
+              css={{ ...postCSS(theme, customColor ? post.frontmatter.image.colors.vibrant : theme.palette.primary.main) }}
               to={`${post.frontmatter.path}#content`}
               key={post.id}
             >

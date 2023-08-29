@@ -39,6 +39,7 @@ export const linkStyle = (theme: Theme): CSSObject => {
 
 export const headerLinksCSS = (theme: Theme): CSSObject => {
   return {
+    userSelect: 'none',
     a: {
       ...linkStyle(theme),
     },
