@@ -43,7 +43,7 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
 
   [breakpointKey('small')]: {
     width: '90vw',
-    height: '60vw',
+    height: '40vh',
     marginTop: '1em',
     marginCottom: '1em',
     },

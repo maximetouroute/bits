@@ -94,12 +94,12 @@ export default function PostFilterer({ posts, langCode, onFilteredPosts }: OwnPr
 
   return (
   <div css={containerCSS}>
-     <Stack direction="row" spacing={1} sx={{margin: 'auto'}}>
-      <Chip label="Mappings" icon={<FlareIcon/>} onClick={handleClickMapping} color={'info'} variant={showMappings ? '': 'outlined'}></Chip>
-      <Chip label="XR" icon={<ViewInArIcon/>} onClick={handleClickXr} color={'info'} variant={showXr ? '': 'outlined'}></Chip>
-      <Chip label={strings.software[langCode]} icon={<CodeIcon/>} onClick={handleClickSoftware} color={'info'} variant={showSoftware ? '': 'outlined'}></Chip>
-      <Chip label={strings.other[langCode]} icon={<MoreHorizIcon/>} onClick={handleClickOthers} color={'info'} variant={showOthers ? '': 'outlined'}></Chip>
-      <Chip label={strings.all[langCode]} icon={<FullscreenIcon/>} onClick={handleClickAll} color={'info'} variant={(showAll) ? '': 'outlined'}></Chip>
+     <Stack direction="row" spacing={2} flexWrap="wrap" justifyContent={"center"} alignItems={"center"}>
+      <Chip style={{margin: '1em'}} label="Mappings" icon={<FlareIcon/>} onClick={handleClickMapping} color={'info'} variant={showMappings ? '': 'outlined'}></Chip>
+      <Chip  style={{margin: '1em'}} label="XR" icon={<ViewInArIcon/>} onClick={handleClickXr} color={'info'} variant={showXr ? '': 'outlined'}></Chip>
+      <Chip  style={{margin: '1em'}} label={strings.software[langCode]} icon={<CodeIcon/>} onClick={handleClickSoftware} color={'info'} variant={showSoftware ? '': 'outlined'}></Chip>
+      <Chip  style={{margin: '1em'}} label={strings.other[langCode]} icon={<MoreHorizIcon/>} onClick={handleClickOthers} color={'info'} variant={showOthers ? '': 'outlined'}></Chip>
+      <Chip  style={{margin: '1em'}} label={strings.all[langCode]} icon={<FullscreenIcon/>} onClick={handleClickAll} color={'info'} variant={(showAll) ? '': 'outlined'}></Chip>
     </Stack>
     </div>
   )
