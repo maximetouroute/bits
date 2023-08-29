@@ -6,7 +6,6 @@ import {
   headerLinksCSS,
   bigNavbarCSS,
   smallNavbarCSS,
-  navbarCSS,
   activeLinkCSS,
 } from './styles'
 
@@ -48,7 +47,7 @@ export default function Navbar({ title, links }: OwnProps) {
           {title}
         </Link>
         {links.map((link) => (
-          <Link activeStyle={activeLinkCSS} to={link.path} key={link.name}>
+          <Link activeStyle={activeLinkCSS(theme)} to={link.path} key={link.name}>
             {link.name}
           </Link>
         ))}
@@ -57,13 +56,13 @@ export default function Navbar({ title, links }: OwnProps) {
   }
 
   return (
-    <div css={navbarCSS(theme)}>
+    <>
       <div css={smallNavbarCSS}>
         <MobileNavbar links={links} />
       </div>
       <div css={bigNavbarCSS(theme)}>
         <div css={headerLinksCSS(theme)}>{menuItems()}</div>
       </div>
-    </div>
+    </>
   )
 }

@@ -8,47 +8,29 @@ import {
   postPictureCSS,
   postSubtitleCSS,
   postTitleCSS,
+  gridCSS
 } from './styles'
+import { useTheme } from '@mui/material'
 
-const gridCSS: CSSObject = {
-  margin: 'auto',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  flexWrap: 'wrap',
-  maxWidth: '90rem',
-  // height: 30em;
-  width: '100%',
 
-  padding: 0,
-}
 
-const customTextColorOnHover = (color: string): CSSObject => {
-  return {
-    '&:hover': {
-      color: `${color} !important`,
-    },
-  }
-}
 
 interface OwnProps {
   posts: any
 }
 export default function PostGridFlat({ posts }: OwnProps) {
+  const theme = useTheme();
   return (
-    <div css={gridCSS}>
+    <div css={gridCSS(theme)}>
       {posts
         .filter((post) => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           const image = post.frontmatter.image.childImageSharp
           const gatsbyImage = getImage(image)
           const customColor = post.frontmatter.image.colors !== void 0
-          const customcolorCSS: CSSObject = customColor
-            ? customTextColorOnHover(post.frontmatter.image.colors.vibrant)
-            : {}
           return (
             <Link
-              css={{ ...postCSS, ...customcolorCSS }}
+              css={{ ...postCSS(theme, customColor ? post.frontmatter.image.colors.vibrant : 'black') }}
               to={`${post.frontmatter.path}#content`}
               key={post.id}
             >

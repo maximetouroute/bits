@@ -11,9 +11,13 @@ import {
   mailCSS,
 } from './styles'
 import { useTheme } from '@emotion/react'
+import { NamedLink } from '../types'
 
-export default function Footer() {
-  const theme = useTheme()
+interface OwnProps {
+  customLinks: Array<NamedLink>;
+}
+export default function Footer({ customLinks }: OwnProps) {
+  const theme = useTheme();
   return (
     <StaticQuery
       query={query}
@@ -192,8 +196,7 @@ export default function Footer() {
             </div>
 
             <div css={linksCSS(theme)}>
-              <Link to={'/'}>WORK</Link>
-              <Link to={'/about'}>ABOUT</Link>
+              {customLinks.map(link => <Link to={link.path}>{link.name}</Link>)}
             </div>
 
             {author && authorBlockPersonal()}

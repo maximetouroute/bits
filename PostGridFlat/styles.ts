@@ -1,20 +1,37 @@
 import { CSSObject } from '@emotion/react'
 
 import { breakpointKey } from '../styles/styles'
+import { Theme } from '@mui/material'
 
 const blackLink = '#4c4c4c'
 
-export const postCSS: CSSObject = {
+
+export const gridCSS = (theme: Theme): CSSObject => {
+  return {
+  margin: 'auto',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+  maxWidth: '90rem',
+  width: '100%',
+  padding: 0,
+  color: theme.palette.secondary.contrastText
+
+};
+}
+
+export const postCSS = (theme: Theme, color: string): CSSObject => {
+  return {
   display: 'flex',
   flexDirection: 'column',
-
+  color: theme.palette.secondary.contrastText,
   // border-radius: 5px;
-  backgroundColor: 'transparent',
+  // backgroundColor: 'transparent',
   // border: solid 2px $black
-  transform: 'scale(0.98)',
+  transform: 'scale(0.97)',
   fontSize: '1rem',
 
-  color: blackLink,
   opacity: 0.9,
 
   // transition: `-webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -26,24 +43,14 @@ export const postCSS: CSSObject = {
     filter 250ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)`,
   textDecoration: 'none', // Post is a link element
-  // &:hover {
-  //   transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  //   transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  //   filter 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  //   opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  // }
+  
 
   [breakpointKey('small')]: {
     width: '90vw',
     height: '70vw',
     marginTop: '1em',
     marginCottom: '1em',
-    opacity: 1,
-    '&:hover': {
-      transform: 'none',
-      cursor: 'pointer',
     },
-  },
 
   [breakpointKey('normal')]: {
     margin: '1em',
@@ -51,18 +58,17 @@ export const postCSS: CSSObject = {
     height: '30vw',
     maxWidth: '30em',
     maxHeight: '20em',
-    opacity: 1,
   },
 
   '&:hover': {
     border: 'none',
-    // transition: border 0.5s ease-out;
     cursor: 'pointer',
-    transform: 'scale(1)',
-    color: 'white',
+    transform: 'none',
     opacity: 1,
+    color: `${color} !important`
   },
-}
+};
+};
 
 export const postHeadCSS: CSSObject = {
   display: 'flex',
@@ -70,24 +76,16 @@ export const postHeadCSS: CSSObject = {
 }
 
 export const postTitleCSS: CSSObject = {
-  // padding: 2em;
-  // border-radius: 5px;
   fontSize: '1.5em',
-  // color: $blackLink;
   fontWeight: 600,
   padding: '0.5rem',
   paddingBottom: 0,
   paddingLeft: 0,
-  // background-color: $backgroundColorForText;
-  // box-decoration-break: clone;
   marginBottom: 0,
 }
 
 export const postSubtitleCSS: CSSObject = {
-  // border-radius: 5px;
   fontSize: '1em',
-  // color: $blackLink;
-  // background-color: $backgroundText;
   boxDecorationBreak: 'clone',
   padding: '0.5rem',
   paddingLeft: 0,
@@ -98,4 +96,5 @@ export const postPictureCSS: CSSObject = {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center top',
+  borderRadius: '10px'
 }

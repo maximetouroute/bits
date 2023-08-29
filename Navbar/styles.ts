@@ -2,11 +2,6 @@ import { CSSObject } from '@emotion/react'
 import { Theme } from '@mui/material'
 import { breakpointKey } from '../styles/styles'
 
-export const navbarCSS = (theme: Theme): CSSObject => {
-  return {
-    backgroundColor: theme.palette.primary.main,
-  }
-}
 
 export const linkStyle = (theme: Theme): CSSObject => {
   return {
@@ -15,7 +10,7 @@ export const linkStyle = (theme: Theme): CSSObject => {
     margin: 0,
     marginRight: '2em',
     marginLeft: '2em',
-    color: 'white',
+    color: theme.palette.secondary.contrastText,
     fontSize: '1.2em',
     border: 'solid 2px transparent',
     textDecoration: 'none',
@@ -25,7 +20,7 @@ export const linkStyle = (theme: Theme): CSSObject => {
       cursor: 'pointer',
       textDecoration: 'none',
       transition: 'all 0.1s ease-in-out 0s',
-      boxShadow: '0px 2px 0px white',
+      boxShadow: `0px 2px 0px ${theme.palette.secondary.contrastText}`,
     },
 
     '&:active, &:focus': {
@@ -47,8 +42,6 @@ export const headerLinksCSS = (theme: Theme): CSSObject => {
     a: {
       ...linkStyle(theme),
     },
-
-    backgroundColor: theme.palette.primary.main,
     [breakpointKey('small')]: {
       display: 'flex',
       flexDirection: 'column',
@@ -72,15 +65,16 @@ export const smallNavbarCSS: CSSObject = {
 
 export const bigNavbarCSS = (theme: Theme): CSSObject => {
   return {
-    backgroundColor: theme.palette.primary.main,
     [breakpointKey('small')]: {
       display: 'none',
     },
   }
 }
 
-export const activeLinkCSS = {
-  color: 'white',
+export const activeLinkCSS = (theme: Theme): CSSObject => {
+  return {
+  color: theme.palette.primary.main,
   fontWeight: 600,
-  boxShadow: '0px 2px 0px white',
-}
+  boxShadow: `0px 2px 0px ${theme.palette.secondary.contrastText}`,
+  };
+};

@@ -10,7 +10,7 @@ $colorIdle: #919191;
 $colorUnselected: rgb(200, 200, 200);
 
 // Possibility to override through this file
-@import '../../components/bitStyleOverride.scss';
+// @import '../../components/bitStyleOverride.scss';
 
 $colorHover: $accentColorIdle;
 $colorActive: $accentColor; //#ed9e38; // 50 50 50
@@ -96,7 +96,3 @@ body {
     sans-serif;
 }
 
-
-
-// Possibility to override through this file
-@import '../../components/bitMixinOverride.scss';

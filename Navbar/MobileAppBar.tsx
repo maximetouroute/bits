@@ -4,12 +4,6 @@ import { CSSObject, Theme } from '@emotion/react'
 import { breakpointKey } from '../styles/styles'
 import { linkStyle } from './styles'
 
-const siteTitleCSS: CSSObject = {
-  color: 'white',
-  '&:hover': {
-    color: 'white',
-  },
-}
 
 const mobileAppBarCSS = (theme: Theme): CSSObject => {
   return {
@@ -19,18 +13,17 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: theme.palette.primary.main,
-
+    
     a: {
       ...linkStyle(theme),
       fontSize: '1.1em',
       fontWeight: 600,
       padding: '1em',
-      color: 'white',
+      color: theme.palette.secondary.contrastText,
       '&:hover': {
-        color: 'white',
+        color: theme.palette.secondary.contrastText,
       },
-      boxShadow: 'inset 0 -2px 0 0 white',
+      boxShadow: `inset 0 -2px 0 0 ${theme.palette.secondary.contrastText}`,
     },
     // Final
     [breakpointKey('normal')]: {
@@ -40,13 +33,13 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
 }
 
 interface OwnProps {
-  title: string
+  title: string;
 }
 
 export default function MobileAppBar({ title }: OwnProps) {
   return (
     <div css={mobileAppBarCSS}>
-      <Link activeClassName="" to="/" css={siteTitleCSS}>
+      <Link activeClassName="" to="/">
         {title}
       </Link>
     </div>
