@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Footer from '../bits/RealFooter/Footer';
 import './MainLayout.scss';
-import LanguageSwitcher from '../bits/LanguageSwitcher/LanguageSwitcher';
-import { defaultLang, supportedLangs } from '../locales/locales';
+import { defaultLang, } from '../locales/locales';
 import { languageAutoRedirect } from '../locales/localeUtils';
 import { NavbarData, FooterLinks } from './Data';
 import { indexPageStrings } from '../locales/strings';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import HoloNavbar from '../bits/RealNavbar/Navbar';
-import { createTheme, adaptV4Theme } from '@mui/material/styles';
+import HoloNavbar from '../../RealNavbar/Navbar';
+import { createTheme } from '@mui/material/styles';
 import { ThemeProvider as MaterialThemeProvider } from '@mui/material/styles';
-import RevealityFooter from './../bits/RealFooter/Footer';
+import RevealityFooter from './../../RealFooter/Footer';
 // // TODO: store a cookie to enable/disable splash screen
 // const theme = createMuiTheme({
 //   palette: {

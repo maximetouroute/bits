@@ -9,24 +9,20 @@ import SEO from '../bits/SEO/SEO';
 import { SHORTCODES } from './MdxBits';
 
 export const pageQuery = graphql`
-  query MdxPageByPath($path: String!) {
-    mdx(frontmatter: { path: { eq: $path } }) {
-      body
+  query MdxPageByPath($markdownPath: String, $langCode: String!) {
+    mdx(frontmatter: { path: { eq: $markdownPath } language: { eq: $langCode } }) {
       frontmatter {
         path
         title
         language
         description
-        embeddedImagesRemote {
-          ...modernGatImage
-        }
         embeddedImagesLocal {
           ...modernGatImage
         }
       }
     }
   }
-`;
+`
 
 export default function Template({ data: { mdx }, location, pageContext }) {
   const { langCode } = pageContext;
