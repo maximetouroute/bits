@@ -107,7 +107,7 @@ const SEO = ({
             <meta http-equiv="cache-control" content="Private" />
             <meta http-equiv="Expires" content="0" />
 
-            <link
+            {/* <link
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Ubuntu"
             />
@@ -122,7 +122,7 @@ const SEO = ({
                 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap'
               }
               rel="stylesheet"
-            />
+            /> */}
 
             <html lang={langCode} />
           </Helmet>
