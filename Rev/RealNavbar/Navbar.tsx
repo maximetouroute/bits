@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { LangCode, supportedLangs } from '../../locales/locales';
+import { supportedLangs } from '../../../locales/locales';
+import { LangCode } from '../../types';
 import Logo from './../RevealityLogo/RevealityLogo';
 import { containerCSS, logoCSS, linkCSS, langLinkCSS} from './styles'
 

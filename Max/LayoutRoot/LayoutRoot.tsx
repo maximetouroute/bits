@@ -9,9 +9,8 @@ import {
 import { ThemeProvider, Global } from '@emotion/react';
 import LanguageSwitcher from '../../Common/LanguageSwitcher/LanguageSwitcher';
 import { defaultLang } from '../../../locales/locales';
-import { languageAutoRedirect } from '../../../locales/localeUtils';
+import { languageAutoRedirect } from '../../Common/locales/localeUtils';
 import { navbarConfig, footerConfig } from '../../../globalConfig';
-import { DEFAULT_MAIN_COLOR } from '../../styles/styles';
 import {
   appBarCSS,
   customColorCSS,

@@ -1,6 +1,7 @@
 import browserLang from 'browser-lang';
 import { navigate } from 'gatsby-link';
-import { defaultLang, supportedLangs, LangCode } from '../../../locales/locales';
+import { defaultLang, supportedLangs } from '../../../locales/locales';
+import { LangCode } from '../../types';
 
 export const localLink = (langCode: LangCode, bareboneLink: string): string => {
   return supportedLangs[langCode].urlPrefix + bareboneLink;
