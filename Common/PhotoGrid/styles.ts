@@ -1,7 +1,7 @@
 import { CSSObject } from '@emotion/react'
 
-import { breakpointKey } from '../styles/styles'
-import { basicTransitionCSS } from '../styles/styles'
+import { breakpointKey } from '../../styles/styles'
+import { basicTransitionCSS } from '../../styles/styles'
 // Thumbnail size is controled by percentage.
 // flexbox space-between permits to have an even space between pictures but none on the sides (best for mobiles)
 // We compute the same gap between each row based on this percentage.

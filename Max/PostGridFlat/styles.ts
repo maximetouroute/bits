@@ -1,5 +1,5 @@
 import { CSSObject } from '@emotion/react';
-import { breakpointKey } from '../styles/styles';
+import { breakpointKey } from '../../styles/styles';
 import { Theme } from '@mui/material';
 
 export const gridCSS = (theme: Theme): CSSObject => {

@@ -1,8 +1,9 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { CSSObject, Theme } from '@emotion/react'
-import { breakpointKey } from '../styles/styles'
-import { linkStyle } from './styles'
+import React from 'react';
+import { Link } from 'gatsby';
+import { CSSObject } from '@emotion/react';
+import { Theme } from '@mui/material';
+import { breakpointKey } from '../../styles/styles';
+import { linkStyle } from './styles';
 
 
 const mobileAppBarCSS = (theme: Theme): CSSObject => {
@@ -30,7 +31,7 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
       display: 'none',
     },
   }
-}
+};
 
 interface OwnProps {
   title: string;

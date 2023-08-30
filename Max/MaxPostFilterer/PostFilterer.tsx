@@ -7,7 +7,7 @@ import FlareIcon from '@mui/icons-material/Flare';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { LangCode } from '../types';
+import { LangCode } from '../../types';
 import { containerCSS } from './styles';
 
 // type Tags = 'mapping' | 'software' | 'xr' | 'other';

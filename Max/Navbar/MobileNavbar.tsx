@@ -5,7 +5,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import PaletteRoundedIcon from '@mui/icons-material/PaletteRounded'
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded'
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
-import { NamedLink } from '../types';
+import { NamedLink } from '../../types';
 import { ThemeProvider, useTheme } from '@mui/material'
 
 // TODO: disabled for Gatsby V5

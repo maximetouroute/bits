@@ -1,5 +1,5 @@
 import { CSSObject, Theme } from '@emotion/react'
-import { themedACSS } from '../styles/styles'
+import { themedACSS } from '../../styles/styles'
 
 export const containerCSS = (theme: Theme): CSSObject => {
   return {

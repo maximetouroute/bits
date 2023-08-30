@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { LangCode, supportedLangs } from '../../locales/locales'
+import { LangCode, supportedLangs } from '../../../locales/locales'
 import { useTheme } from '@emotion/react'
 import { containerCSS } from './styles'
 
