@@ -1,5 +1,5 @@
 import { CSSObject } from '@emotion/react';
-import { breakpointKey } from '../../components/styles';
+import { breakpointKey } from '../../styles/styles';
 
 export const containerCSS: CSSObject = {
     // paddingTop: '2em',

@@ -1,4 +1,6 @@
-export const strings = {
+import { LangCode } from "../../types";
+
+export const strings: Record<string, Record<LangCode, string>> = {
   followUs: {
     en: 'Stay in touch',
     fr: 'Nous suivre',
