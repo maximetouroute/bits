@@ -1,49 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { CSSObject } from '@emotion/react';
-import './Navbar.scss';
 import { LangCode, supportedLangs } from '../../locales/locales';
-import { breakpointKey } from '../../components/styles';
 import Logo from './../RevealityLogo/RevealityLogo';
-export const containerCSS: CSSObject = {
-  // paddingTop: '2em',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  paddingLeft: '2em',
-  paddingRight: '2em',
-
-  color: '#34393A',
-  [breakpointKey('small')]: {
-    paddingLeft: '1em',
-    paddingRight: '1em',
-  },
-};
-
-export const logoCSS: CSSObject = {
-  fontWeight: 900,
-  fontStyle: 'italic',
-  // backgroundImage: 'linear-gradient(-225deg, #FFC796 0%,  #FFC796 48%, #45D4FB 100%)',
-  // backgroundClip: 'text',
-  // textFillColor: 'transparent',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '2rem',
-  height: `${2 * 1.5}rem`,
-  // marginBottom: 0,
-  opacity: 0.9,
-  paddingTop: '1rem',
-  paddingBottom: '1rem',
-  transition: 'transform 200ms linear',
-  '&:hover': {
-    transform: 'scale(1.05)',
-  },
-};
-
-export const langCSS: CSSObject = {};
+import { containerCSS, logoCSS, linkCSS, langLinkCSS} from './styles'
 
 const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
   // console.log('update language to ', defaultLanguage)
@@ -65,13 +24,7 @@ export default function Navbar({ currentLangCode, currentUrl }: OwnProps) {
       <div>
         <Link
           to={'/education'}
-          css={{
-            textTransform: 'uppercase',
-            color: '#34393A',
-            padding: '0.5em',
-            textDecoration: 'none',
-            marginRight: '3rem',
-          }}
+          css={linkCSS}
         >
           EDUCATION
         </Link>
@@ -88,13 +41,7 @@ export default function Navbar({ currentLangCode, currentUrl }: OwnProps) {
               onClick={() => {
                 updateDefaultLanguage(langCode as LangCode);
               }}
-              css={{
-                textTransform: 'uppercase',
-                color: '#34393A',
-                padding: '0.5em',
-                textDecoration: 'none',
-                fontWeight: currentLangCode === langCode ? 900 : 300,
-              }}
+              css={langLinkCSS(currentLangCode === langCode)}
             >
               {langCode}
             </Link>
