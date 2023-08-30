@@ -25,17 +25,16 @@ export const gridNavBarCSS = {
   justifySelf: 'stretch',
   gridArea: 'nav',
   textAlign: 'right',
-  paddingTop: '2rem',
-  paddingBottom: '2rem',
+  position: 'sticky',
+  top: 0,
+  zIndex: 1,
+  width: '100vw',
+
   // bottom nav menu
   [breakpointKey('small')]: {
-    gridArea: 'navBottom',
     padding: 0,
     //position: sticky; TODO: use this and remove width when firefox mobile doesnt jump on scroll anymore (May 2020)
     position: 'fixed',
-    width: '100vw',
-    bottom: 0,
-    zIndex: 1,
   },
 }
 

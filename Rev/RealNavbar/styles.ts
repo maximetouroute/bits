@@ -9,8 +9,10 @@ export const containerCSS: CSSObject = {
   alignItems: 'center',
   paddingLeft: '2em',
   paddingRight: '2em',
-
   color: '#34393A',
+  backgroundColor: '#fcf9e8',
+
+  
   [breakpointKey('small')]: {
     paddingLeft: '1em',
     paddingRight: '1em',
