@@ -7,8 +7,8 @@ export const containerCSS: CSSObject = {
         // justifyContent: 'center',
         // flexDirection: 'row',
         margin: '1rem',
-        marginBottom: '4rem',
-        marginTop: '2rem',
+        marginBottom: '3rem',
+
         // flewWrap: 'wrap'
 
         ':child': {
