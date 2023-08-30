@@ -50,8 +50,8 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
         main: '#2771cc', // Sky Blue Hover
       },
       background: {
-        default: '#282c34',
-        paper: '#19191d',
+        default: '#fcf9e8',
+        paper: '#fcf9e8',
       },
       action: {
         hover: 'rgba(0,0,0,0.56)',
