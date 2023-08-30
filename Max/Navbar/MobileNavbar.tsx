@@ -5,7 +5,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import PaletteRoundedIcon from '@mui/icons-material/PaletteRounded'
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded'
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
-import { NamedLink } from '../../types';
+import { NamedLink } from '../../types'
 import { ThemeProvider, useTheme } from '@mui/material'
 
 // TODO: disabled for Gatsby V5
@@ -28,10 +28,10 @@ import { ThemeProvider, useTheme } from '@mui/material'
 // })
 
 interface OwnProps {
-  links: Array<NamedLink>;
+  links: Array<NamedLink>
 }
 export default function MobileNavbar({ links }: OwnProps) {
-  const theme = useTheme();
+  const theme = useTheme()
   // TODO: disabled for V5
   // const classes = useStyles()
   // const childClasses = useChildStyles()
@@ -54,32 +54,28 @@ export default function MobileNavbar({ links }: OwnProps) {
   }
 
   return (
-    <ThemeProvider theme={{
-      
-    }}>
-
-
-    <BottomNavigation
-      value={-1} // Trick material-ui its defaut value is incorrect. Active classname takes care of it
-      showLabels 
-      sx={{
-        boxShadow: '0 -2px 2px 0 rgb(99 99 99 / 10%)',
-        borderTop: 'solid 1px #ebebeb',
-        backgroundColor: theme.palette.background.paper
-      }}
-    >
-      {links.map((link) => {
-        return (
-          <BottomNavigationAction
-            key={link.path}
-            component={Link}
-            to={link.path}
-            label={link.name}
-            icon={populateIconForName(link.name)}
-          />
-        )
-      })}
-    </BottomNavigation>
+    <ThemeProvider theme={{}}>
+      <BottomNavigation
+        value={-1} // Trick material-ui its defaut value is incorrect. Active classname takes care of it
+        showLabels
+        sx={{
+          boxShadow: '0 -2px 2px 0 rgb(99 99 99 / 10%)',
+          borderTop: 'solid 1px #ebebeb',
+          backgroundColor: theme.palette.background.paper,
+        }}
+      >
+        {links.map((link) => {
+          return (
+            <BottomNavigationAction
+              key={link.path}
+              component={Link}
+              to={link.path}
+              label={link.name}
+              icon={populateIconForName(link.name)}
+            />
+          )
+        })}
+      </BottomNavigation>
     </ThemeProvider>
   )
 }

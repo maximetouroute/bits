@@ -1,16 +1,16 @@
-import browserLang from 'browser-lang';
-import { navigate } from 'gatsby-link';
-import { defaultLang, supportedLangs } from '../../../locales/locales';
-import { LangCode } from '../../types';
+import browserLang from 'browser-lang'
+import { navigate } from 'gatsby-link'
+import { defaultLang, supportedLangs } from '../../../locales/locales'
+import { LangCode } from '../../types'
 
 export const localLink = (langCode: LangCode, bareboneLink: string): string => {
-  return supportedLangs[langCode].urlPrefix + bareboneLink;
-};
+  return supportedLangs[langCode].urlPrefix + bareboneLink
+}
 
 export const languageAutoRedirect = (language, pathname: string) => {
   const supportedLangCodes: LangCode[] = Object.keys(
     supportedLangs
-  ) as LangCode[];
+  ) as LangCode[]
 
   // Skip build, Browsers only
   if (typeof window !== 'undefined') {
@@ -21,13 +21,13 @@ export const languageAutoRedirect = (language, pathname: string) => {
         browserLang({
           languages: supportedLangCodes,
           fallback: defaultLang,
-        });
+        })
 
       if (userPreferedLanguage !== defaultLang) {
-        const newUrl = `/${userPreferedLanguage.toLocaleLowerCase()}${pathname}`;
-        window.localStorage.setItem('language', userPreferedLanguage);
-        navigate(newUrl, { replace: true });
+        const newUrl = `/${userPreferedLanguage.toLocaleLowerCase()}${pathname}`
+        window.localStorage.setItem('language', userPreferedLanguage)
+        navigate(newUrl, { replace: true })
       }
     }
   }
-};
+}

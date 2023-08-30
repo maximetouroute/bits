@@ -1,15 +1,15 @@
-import React from 'react';
-import MainLayout from './MainLayout';
-import './BasicPage.scss';
-import 'moment';
-import { MDXProvider } from '@mdx-js/react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import SEO from '../../SEO/SEO';
-import { graphql, Link } from 'gatsby';
-import { SHORTCODES } from './MdxBits';
+import React from 'react'
+import MainLayout from './MainLayout'
+import './BasicPage.scss'
+import 'moment'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import SEO from '../../SEO/SEO'
+import { graphql, Link } from 'gatsby'
+import { SHORTCODES } from './MdxBits'
 
 export default function Template({ data: { mdx }, location, pageContext }) {
-  const { previousPost, nextPost, langCode } = pageContext;
+  const { previousPost, nextPost, langCode } = pageContext
 
   // content is at false is no previous or next
   const previousPostHtml = previousPost ? (
@@ -18,14 +18,14 @@ export default function Template({ data: { mdx }, location, pageContext }) {
     </Link>
   ) : (
     <div></div>
-  );
+  )
   const nextPostHtml = nextPost ? (
     nextPost && (
       <Link to={nextPost.frontmatter.path}>{nextPost.frontmatter.title} →</Link>
     )
   ) : (
     <div></div>
-  );
+  )
 
   return (
     <MainLayout language={mdx.frontmatter.language} location={{ ...location }}>
@@ -80,34 +80,35 @@ export default function Template({ data: { mdx }, location, pageContext }) {
         </article>
       </div>
     </MainLayout>
-  );
+  )
 }
 
 //  <div className="content" itemProp="articleBody" dangerouslySetInnerHTML={{ __html: post.html }}/>
 
 export const pageQuery = graphql`
-query MdxArticleByPath($markdownPath: String!, $langCode: String!) {
-  mdx(frontmatter: { path: { eq: $markdownPath } language: { eq: $langCode } }) {
-    frontmatter {
-      date(formatString: "MMMM DD, YYYY")
-      path
-      title
-      subtitle
-      language
-      description
-      embeddedImagesLocal {
-        ...modernGatImage
-      }
-      image {
-        colors {
-          ...GatsbyImageColors
+  query MdxArticleByPath($markdownPath: String!, $langCode: String!) {
+    mdx(
+      frontmatter: { path: { eq: $markdownPath }, language: { eq: $langCode } }
+    ) {
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        title
+        subtitle
+        language
+        description
+        embeddedImagesLocal {
+          ...modernGatImage
         }
-        childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 700)
+        image {
+          colors {
+            ...GatsbyImageColors
+          }
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 700)
+          }
         }
       }
     }
   }
-}
 `
-

@@ -1,7 +1,6 @@
-import { CSSObject } from '@emotion/react';
-import { Theme } from '@mui/material';
-import { breakpointKey } from '../../styles/styles';
-
+import { CSSObject } from '@emotion/react'
+import { Theme } from '@mui/material'
+import { breakpointKey } from '../../styles/styles'
 
 export const linkStyle = (theme: Theme): CSSObject => {
   return {
@@ -35,7 +34,7 @@ export const linkStyle = (theme: Theme): CSSObject => {
       textAlign: 'center',
     },
   }
-};
+}
 
 export const headerLinksCSS = (theme: Theme): CSSObject => {
   return {
@@ -56,13 +55,13 @@ export const headerLinksCSS = (theme: Theme): CSSObject => {
       justifyContent: 'center',
     },
   }
-};
+}
 
 export const smallNavbarCSS: CSSObject = {
   [breakpointKey('normal')]: {
     display: 'none',
   },
-};
+}
 
 export const bigNavbarCSS = (theme: Theme): CSSObject => {
   return {
@@ -70,12 +69,12 @@ export const bigNavbarCSS = (theme: Theme): CSSObject => {
       display: 'none',
     },
   }
-};
+}
 
 export const activeLinkCSS = (theme: Theme): CSSObject => {
   return {
-  color: theme.palette.primary.main,
-  fontWeight: 600,
-  boxShadow: `0px 2px 0px ${theme.palette.secondary.contrastText}`,
-  };
-};
+    color: theme.palette.primary.main,
+    fontWeight: 600,
+    boxShadow: `0px 2px 0px ${theme.palette.secondary.contrastText}`,
+  }
+}

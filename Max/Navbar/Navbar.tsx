@@ -47,7 +47,11 @@ export default function Navbar({ title, links }: OwnProps) {
           {title}
         </Link>
         {links.map((link) => (
-          <Link activeStyle={activeLinkCSS(theme)} to={link.path} key={link.name}>
+          <Link
+            activeStyle={activeLinkCSS(theme)}
+            to={link.path}
+            key={link.name}
+          >
             {link.name}
           </Link>
         ))}

@@ -1,4 +1,4 @@
-import { LangCode } from "../../types";
+import { LangCode } from '../../types'
 
 export const strings: Record<string, Record<LangCode, string>> = {
   followUs: {
@@ -19,5 +19,5 @@ export const strings: Record<string, Record<LangCode, string>> = {
   joinNewsletter: {
     en: 'Join our newsletter',
     fr: 'Rejoignez notre newsletter',
-  }
-};
+  },
+}

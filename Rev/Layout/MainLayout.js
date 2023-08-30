@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './MainLayout.scss';
-import { defaultLang, } from '../locales/locales';
-import { languageAutoRedirect } from '../locales/localeUtils';
-import { NavbarData, FooterLinks } from './Data';
-import { indexPageStrings } from '../locales/strings';
-import HoloNavbar from '../../RealNavbar/Navbar';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider as MaterialThemeProvider } from '@mui/material/styles';
-import RevealityFooter from './../../RealFooter/Footer';
+import React from 'react'
+import PropTypes from 'prop-types'
+import './MainLayout.scss'
+import { defaultLang } from '../locales/locales'
+import { languageAutoRedirect } from '../locales/localeUtils'
+import { NavbarData, FooterLinks } from './Data'
+import { indexPageStrings } from '../locales/strings'
+import HoloNavbar from '../../RealNavbar/Navbar'
+import { createTheme } from '@mui/material/styles'
+import { ThemeProvider as MaterialThemeProvider } from '@mui/material/styles'
+import RevealityFooter from './../../RealFooter/Footer'
 // // TODO: store a cookie to enable/disable splash screen
 // const theme = createMuiTheme({
 //   palette: {
@@ -68,14 +68,14 @@ const theme = createTheme(
       tonalOffset: 0.2,
     },
   })
-);
+)
 
 export default function MainLayout({ children, language, location }) {
-  let showPerformanceOverlay = false;
+  let showPerformanceOverlay = false
   const isItRootUrl =
     location.pathname === '/' ||
     location.pathname === '/fr' ||
-    location.pathname === '/fr/';
+    location.pathname === '/fr/'
   // homepage: single slash
 
   // Bad because language dependant...
@@ -84,13 +84,13 @@ export default function MainLayout({ children, language, location }) {
   // }
 
   if (language !== 'fr' && language !== 'en') {
-    language = defaultLang;
+    language = defaultLang
   }
 
-  const LOCAL = indexPageStrings[language];
+  const LOCAL = indexPageStrings[language]
   // Skip build, Browsers only
   if (typeof window !== 'undefined') {
-    languageAutoRedirect(language, location.pathname);
+    languageAutoRedirect(language, location.pathname)
   }
 
   return (
@@ -125,11 +125,11 @@ export default function MainLayout({ children, language, location }) {
         </div>
       </div>
     </MaterialThemeProvider>
-  );
+  )
 }
 
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
   language: PropTypes.string,
   location: PropTypes.object,
-};
+}

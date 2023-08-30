@@ -1,32 +1,31 @@
-import React from 'react';
-import Footer from '../../Footer/Footer';
-import Navbar from '../Navbar/Navbar';
-import MobileAppBar from '../Navbar/MobileAppBar';
+import React from 'react'
+import Footer from '../../Footer/Footer'
+import Navbar from '../Navbar/Navbar'
+import MobileAppBar from '../Navbar/MobileAppBar'
 import {
   ThemeProvider as MaterialThemeProvider,
   createTheme,
-} from '@mui/material/styles';
-import { ThemeProvider, Global } from '@emotion/react';
-import LanguageSwitcher from '../../Common/LanguageSwitcher/LanguageSwitcher';
-import { defaultLang } from '../../../locales/locales';
-import { languageAutoRedirect } from '../../Common/locales/localeUtils';
-import { navbarConfig, footerConfig } from '../../../globalConfig';
+} from '@mui/material/styles'
+import { ThemeProvider, Global } from '@emotion/react'
+import LanguageSwitcher from '../../Common/LanguageSwitcher/LanguageSwitcher'
+import { defaultLang } from '../../../locales/locales'
+import { languageAutoRedirect } from '../../Common/locales/localeUtils'
+import { navbarConfig, footerConfig } from '../../../globalConfig'
 import {
   appBarCSS,
   customColorCSS,
   gridContentCSS,
   gridFooterCSS,
   gridNavBarCSS,
-  gridNavContentFooterCSS
-} from './styles';
-import { bodyCSS } from '../../../globalStyles';
-
+  gridNavContentFooterCSS,
+} from './styles'
+import { bodyCSS } from '../../../globalStyles'
 
 interface OwnProps {
-  children: any;
-  language: any;
-  location: any;
-  accentColor?: string;
+  children: any
+  language: any
+  location: any
+  accentColor?: string
 }
 export default function LayoutRoot({
   children,
@@ -54,16 +53,16 @@ export default function LayoutRoot({
         main: accentColor ? accentColor : '#0C132C',
       },
       secondary: {
-        main: accentColor ? accentColor :'#E4E4E4',
-        contrastText: accentColor ? '#F7F7F7': '#0C132C'
+        main: accentColor ? accentColor : '#E4E4E4',
+        contrastText: accentColor ? '#F7F7F7' : '#0C132C',
       },
       background: {
         default: '#E4E4E4',
-        paper:'#fafafa',
+        paper: '#fafafa',
       },
 
       info: {
-        main: "#588CF6"
+        main: '#588CF6',
       },
 
       action: {
@@ -91,13 +90,14 @@ export default function LayoutRoot({
           }}
         />
         <div css={gridNavContentFooterCSS}>
-          <div css={{...appBarCSS, ...customColorCSS(theme)}}>
+          <div css={{ ...appBarCSS, ...customColorCSS(theme) }}>
             <MobileAppBar title={navbarConfig.name} />
           </div>
-          <nav
-            css={{...gridNavBarCSS, ...customColorCSS(theme)}}
-          >
-            <Navbar title={navbarConfig.name} links={navbarConfig.links[language].links} />
+          <nav css={{ ...gridNavBarCSS, ...customColorCSS(theme) }}>
+            <Navbar
+              title={navbarConfig.name}
+              links={navbarConfig.links[language].links}
+            />
           </nav>
           <div css={gridContentCSS}>{children}</div>
           <div css={gridFooterCSS}>

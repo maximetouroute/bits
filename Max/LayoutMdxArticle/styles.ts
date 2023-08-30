@@ -1,11 +1,9 @@
-import { CSSObject } from '@emotion/react';
-import { Theme } from '@mui/material';
-import { breakpointKey } from '../../styles/styles';
-import { themedACSS } from '../../styles/styles';
+import { CSSObject } from '@emotion/react'
+import { Theme } from '@mui/material'
+import { breakpointKey } from '../../styles/styles'
+import { themedACSS } from '../../styles/styles'
 
-
-const blackLinkColor = '#4c4c4c';
-
+const blackLinkColor = '#4c4c4c'
 
 export const colorCSS = (color: string): CSSObject => {
   return {
@@ -13,31 +11,31 @@ export const colorCSS = (color: string): CSSObject => {
     height: '1em',
     backgroundColor: color,
   }
-};
+}
 
 export const nextPrevLinkInsideCoverCSS = (theme: Theme): CSSObject => {
   return {
-  marginLeft: '2rem',
-  marginRight: '2rem',
-  marginTop: '4rem',
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'space-around',
-  [breakpointKey('small')]: {
-    // better style in case it takes two lines
+    marginLeft: '2rem',
+    marginRight: '2rem',
+    marginTop: '4rem',
+    display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'space-around',
-    marginTop: '2em',
-  },
+    [breakpointKey('small')]: {
+      // better style in case it takes two lines
+      justifyContent: 'space-around',
+      marginTop: '2em',
+    },
 
-  a: {
-    ...themedACSS('#ffffff'),
-    color: 'white',
-    padding: '0.75em',
-    textOverflow: 'ellipsis',
-    marginBottom: '1em',
+    a: {
+      ...themedACSS('#ffffff'),
+      color: 'white',
+      padding: '0.75em',
+      textOverflow: 'ellipsis',
+      marginBottom: '1em',
+    },
   }
-};
-};
+}
 
 export const nextPrevLinkCSS = (theme: Theme): CSSObject => {
   return {
@@ -64,9 +62,7 @@ export const nextPrevLinkCSS = (theme: Theme): CSSObject => {
       },
     },
   }
-};
-
-
+}
 
 export const articleCSS: CSSObject = {
   padding: '2em',
@@ -140,8 +136,7 @@ export const articleCSS: CSSObject = {
     alignSelf: 'center',
     flexDirection: 'column',
   },
-};
-
+}
 
 export const coverBandCSS = (theme: Theme): CSSObject => {
   return {
@@ -154,9 +149,8 @@ export const coverBandCSS = (theme: Theme): CSSObject => {
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundColor: theme.palette.secondary.main,
-
   }
-};
+}
 
 export const coverBandOverlayCSS = {
   // background-color: $accentColor;
@@ -178,7 +172,7 @@ export const coverBandOverlaySmallerCSS = {
   [breakpointKey('small')]: {
     padding: '1rem',
   },
-};
+}
 
 export const cardCSS: CSSObject = {
   [breakpointKey('normal')]: {
@@ -187,7 +181,7 @@ export const cardCSS: CSSObject = {
   [breakpointKey('small')]: {
     minWidth: '90vw',
   },
-};
+}
 
 export const pageCSS = (theme: Theme): CSSObject => {
   return {
@@ -205,7 +199,7 @@ export const pageCSS = (theme: Theme): CSSObject => {
       textAlign: 'justify',
     },
   }
-};
+}
 
 export const subtextCSS: CSSObject = {
   display: 'flex',
@@ -220,8 +214,7 @@ export const subtextCSS: CSSObject = {
   fontWeight: 400,
   lineHeight: '1.8em',
   textAlign: 'center',
-};
-
+}
 
 export const punchlineCSS: CSSObject = {
   animation: 'fadein 1s',
@@ -231,4 +224,4 @@ export const punchlineCSS: CSSObject = {
   [breakpointKey('small')]: {
     fontSize: '1.5em',
   },
-};
+}

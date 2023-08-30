@@ -1,13 +1,13 @@
-import React from 'react';
-import { CSSObject } from '@emotion/react';
-import { Link, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
-import MainLayout from '../layout/MainLayout';
-import SEO from '../bits/SEO/SEO';
-import { subscribedPageStrings } from '../locales/strings';
-import { useState } from 'react';
-import { breakpointKey } from '../components/styles';
-import Cookies from 'universal-cookie';
+import React from 'react'
+import { CSSObject } from '@emotion/react'
+import { Link, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
+import MainLayout from '../layout/MainLayout'
+import SEO from '../bits/SEO/SEO'
+import { subscribedPageStrings } from '../locales/strings'
+import { useState } from 'react'
+import { breakpointKey } from '../components/styles'
+import Cookies from 'universal-cookie'
 
 const buttonCSS: CSSObject = {
   backgroundColor: '#649DE5',
@@ -29,7 +29,7 @@ const buttonCSS: CSSObject = {
     filter: 'saturate(1.3)',
     textDecoration: 'none',
   },
-};
+}
 
 const containerCSS: CSSObject = {
   display: 'flex',
@@ -37,24 +37,24 @@ const containerCSS: CSSObject = {
   justifyContent: 'center',
   alignItems: 'center',
   minHeight: '80vh',
-};
+}
 const titleCSS: CSSObject = {
   fontSize: '2em',
   color: '#34393A',
-};
+}
 const subtitleCSS: CSSObject = {
   color: '#34393A',
   fontSize: '1em',
-};
+}
 
 export default function SubscriptionConfirmed({
   data,
   pageContext: { langCode },
   location,
 }) {
-  const LOCAL = subscribedPageStrings[langCode];
-  const subEmail = new Cookies().get('subEmail');
-  console.log('subMail', subEmail);
+  const LOCAL = subscribedPageStrings[langCode]
+  const subEmail = new Cookies().get('subEmail')
+  console.log('subMail', subEmail)
   return (
     <MainLayout language={langCode} location={{ ...location }}>
       <SEO title={LOCAL['seoTitle']} langCode={langCode} />
@@ -90,5 +90,5 @@ export default function SubscriptionConfirmed({
         </Link> */}
       </div>
     </MainLayout>
-  );
+  )
 }

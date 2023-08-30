@@ -1,11 +1,10 @@
-import { CSSObject } from '@emotion/react';
-import { breakpointKey } from '../../styles/styles';
+import { CSSObject } from '@emotion/react'
+import { breakpointKey } from '../../styles/styles'
 
 export const heroCSS: CSSObject = {
-
   maxWidth: '50vw',
   [breakpointKey('small')]: {
-    maxWidth: '90vw'
+    maxWidth: '90vw',
   },
   margin: 'auto',
   display: 'flex',
@@ -15,8 +14,8 @@ export const heroCSS: CSSObject = {
   minHeight: '50vh',
   textAlign: 'center',
   color: 'black',
-  userSelect: 'none'
-};
+  userSelect: 'none',
+}
 
 export const grettingCSS: CSSObject = {
   justifyContent: 'center',
@@ -25,7 +24,7 @@ export const grettingCSS: CSSObject = {
   fontSize: '3.25rem',
   marginBottom: '2rem',
   fontWeight: 600,
-};
+}
 
 export const punchlineCSS: CSSObject = {
   fontSize: '1.4rem',
@@ -33,8 +32,7 @@ export const punchlineCSS: CSSObject = {
   fontWeight: 400,
   fontStyle: 'italic',
   marginBottom: 0,
-
-};
+}
 
 export const lastLineCSS: CSSObject = {
   marginTop: '2rem',
@@ -43,5 +41,4 @@ export const lastLineCSS: CSSObject = {
   fontWeight: 400,
   fontStyle: 'italic',
   marginBottom: 0,
-
-};
+}

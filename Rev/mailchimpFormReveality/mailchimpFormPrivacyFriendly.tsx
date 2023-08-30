@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import {
   buttonCSS,
   form__groupCSS,
   form__fieldCSS,
   form__labelCSS,
   formCSS,
-} from './styles';
-import { useTheme } from '@emotion/react';
-import SendIcon from '@mui/icons-material/Send';
-import { InputAdornment } from '@mui/material';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
-import Cookies from 'universal-cookie';
+} from './styles'
+import { useTheme } from '@emotion/react'
+import SendIcon from '@mui/icons-material/Send'
+import { InputAdornment } from '@mui/material'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
+import IconButton from '@mui/material/IconButton'
+import Cookies from 'universal-cookie'
 
 interface OwnProps {
-  uniqueId: string;
-  mailchimpURL: string;
-  uniqueAntiSpamId: string;
+  uniqueId: string
+  mailchimpURL: string
+  uniqueAntiSpamId: string
 }
 
 export default function emailListForm({
@@ -26,7 +26,7 @@ export default function emailListForm({
   mailchimpURL,
   uniqueAntiSpamId,
 }: OwnProps) {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <Box
       component="form"
@@ -49,7 +49,7 @@ export default function emailListForm({
         autoComplete="email"
         name="EMAIL"
         onChange={(e) => {
-          new Cookies().set('subEmail', e.target.value, { sameSite: 'strict' });
+          new Cookies().set('subEmail', e.target.value, { sameSite: 'strict' })
           // console.log(new Cookies().get('subEmail')); // Prod test
         }}
       />
@@ -77,5 +77,5 @@ export default function emailListForm({
         <SendIcon />
       </IconButton>
     </Box>
-  );
+  )
 }

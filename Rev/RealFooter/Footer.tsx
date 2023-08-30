@@ -1,43 +1,54 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql, Link, StaticQuery } from 'gatsby';
-import { strings } from './strings';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import MailForm from '../mailchimpFormReveality/mailchimpFormPrivacyFriendly';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql, Link, StaticQuery } from 'gatsby'
+import { strings } from './strings'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import MusicNoteIcon from '@mui/icons-material/MusicNote'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import MailForm from '../mailchimpFormReveality/mailchimpFormPrivacyFriendly'
 
 const MAILCHIMP_URL =
-  'https://reveality.us5.list-manage.com/subscribe/post?u=8b4e477d425a1fcb90d90a287&amp;id=7331d8e0bb';
+  'https://reveality.us5.list-manage.com/subscribe/post?u=8b4e477d425a1fcb90d90a287&amp;id=7331d8e0bb'
 
 const propTypes = {
   links: PropTypes.array,
   lang: PropTypes.string,
-};
+}
 
 const defaultProps = {
   links: [],
   lang: 'en',
-};
-import { useTheme } from '@emotion/react';
-import { NamedLink } from '../../types';
-import { LangCode } from '../../types';
-import { socialIconCSS, footerCSS, linksCSS, headerCSS, socialLinksCSS, socialMediaListCSS, svgIconCSS, contactCSS, contactInfosCSS, insideCSS, followUsCSS, followUsStuffCSS } from './styles';
+}
+import { useTheme } from '@emotion/react'
+import { NamedLink } from '../../types'
+import { LangCode } from '../../types'
+import {
+  socialIconCSS,
+  footerCSS,
+  linksCSS,
+  headerCSS,
+  socialLinksCSS,
+  socialMediaListCSS,
+  svgIconCSS,
+  contactCSS,
+  contactInfosCSS,
+  insideCSS,
+  followUsCSS,
+  followUsStuffCSS,
+} from './styles'
 
 interface OwnProps {
-  customLinks: Array<NamedLink>;
+  customLinks: Array<NamedLink>
   lang: LangCode
 }
 export default function Footer({ customLinks, lang }: OwnProps) {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const socialMediaLinks = (links) => {
     return (
       <div css={socialLinksCSS}>
-      
-
         <div css={socialMediaListCSS}>
           {links.github && (
             <a
@@ -171,124 +182,133 @@ export default function Footer({ customLinks, lang }: OwnProps) {
           )}
         </div>
       </div>
-    );
+    )
   }
 
+  // Dirty default language switcher
+  if (lang !== 'en' && lang !== 'fr') {
+    lang = 'en'
+  }
 
-    // Dirty default language switcher
-    if (lang !== 'en' && lang !== 'fr') {
-      lang = 'en';
-    }
-
-    return (
-      <StaticQuery
-        query={query}
-        render={({
-          site: {
-            siteMetadata: {
-              author,
-              socialLinks: {
-                twitter,
-                facebook,
-                linkedin,
-                instagram,
-                vimeo,
-                youtube,
-                github,
-                soundcloud,
-                tiktok,
-              },
+  return (
+    <StaticQuery
+      query={query}
+      render={({
+        site: {
+          siteMetadata: {
+            author,
+            socialLinks: {
+              twitter,
+              facebook,
+              linkedin,
+              instagram,
+              vimeo,
+              youtube,
+              github,
+              soundcloud,
+              tiktok,
             },
           },
-        }) => {
-          const links = {
-            twitter: twitter === '' ? undefined : twitter,
-            tiktok: tiktok === '' ? undefined : tiktok,
-            github: github === '' ? undefined : github,
-            instagram: instagram === '' ? undefined : instagram,
-            facebook: facebook === '' ? undefined : facebook,
-            vimeo: vimeo === '' ? undefined : vimeo,
-            soundcloud: soundcloud === '' ? undefined : soundcloud,
-            youtube: youtube === '' ? undefined : youtube,
-            linkedin: linkedin === '' ? undefined : linkedin,
-          };
+        },
+      }) => {
+        const links = {
+          twitter: twitter === '' ? undefined : twitter,
+          tiktok: tiktok === '' ? undefined : tiktok,
+          github: github === '' ? undefined : github,
+          instagram: instagram === '' ? undefined : instagram,
+          facebook: facebook === '' ? undefined : facebook,
+          vimeo: vimeo === '' ? undefined : vimeo,
+          soundcloud: soundcloud === '' ? undefined : soundcloud,
+          youtube: youtube === '' ? undefined : youtube,
+          linkedin: linkedin === '' ? undefined : linkedin,
+        }
 
-          return (
-            <div css={footerCSS}>
+        return (
+          <div css={footerCSS}>
+            <div
+              css={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: '2rem',
+              }}
+            >
+              <p
+                css={{
+                  fontSize: '1.2em',
 
-<div css={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '2rem' }}>
-<p css={{ fontSize: '1.2em',
+                  fontWeight: 600,
+                  marginBottom: '1em',
+                }}
+              >
+                {strings.joinNewsletter[lang]}
+              </p>
+              <MailForm
+                uniqueId={'footerForm'}
+                mailchimpURL={MAILCHIMP_URL}
+                uniqueAntiSpamId={'b_8b4e477d425a1fcb90d90a287_7331d8e0bb'}
+              />
+            </div>
 
-      fontWeight: 600,
-      marginBottom: '1em'}}>{strings.joinNewsletter[lang]}</p>
-                        <MailForm
-            uniqueId={'footerForm'}
-            mailchimpURL={MAILCHIMP_URL}
-            uniqueAntiSpamId={'b_8b4e477d425a1fcb90d90a287_7331d8e0bb'}
-          />
-</div>
+            <div css={insideCSS}>
+              <div css={followUsCSS}>
+                <p css={headerCSS} css={headerCSS}>
+                  {strings.followUs[lang]}
+                </p>
+                <div css={followUsStuffCSS}>
+                  <a
+                    href={links.tiktok}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <MusicNoteIcon />
+                  </a>
 
-              <div css={insideCSS}>
-   
+                  <a
+                    href={links.instagram}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <InstagramIcon />
+                  </a>
 
-                <div css={followUsCSS}>
-                  
-                  <p css={headerCSS} css={headerCSS}>{strings.followUs[lang]}</p>
-                  <div css={followUsStuffCSS}>
-                    
-                    <a
-                      href={links.tiktok}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <MusicNoteIcon />
-                    </a>
+                  <a
+                    href={links.twitter}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <TwitterIcon />
+                  </a>
 
-                    <a
-                      href={links.instagram}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <InstagramIcon />
-                    </a>
+                  <a
+                    href={links.linkedin}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <LinkedInIcon />
+                  </a>
 
-                    <a
-                      href={links.twitter}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <TwitterIcon />
-                    </a>
-
-                    <a
-                      href={links.linkedin}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <LinkedInIcon />
-                    </a>
-
-                    <a
-                      href={links.facebook}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <FacebookIcon />
-                    </a>
-                  </div>
+                  <a
+                    href={links.facebook}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <FacebookIcon />
+                  </a>
                 </div>
+              </div>
 
-                <div css={contactCSS}>
-          
-                  <div css={contactInfosCSS} className={'contactInfos'}>
-                    <p>{strings.contact[lang]}</p>
-                    <p>
-                      {/* <strong>EMAIL</strong><br/> */}
-                      <a href="mailto:contact@reveality.io">
-                        contact@reveality.io
-                      </a>
-                    </p>
-                    {/* <p>
+              <div css={contactCSS}>
+                <div css={contactInfosCSS} className={'contactInfos'}>
+                  <p>{strings.contact[lang]}</p>
+                  <p>
+                    {/* <strong>EMAIL</strong><br/> */}
+                    <a href="mailto:contact@reveality.io">
+                      contact@reveality.io
+                    </a>
+                  </p>
+                  {/* <p>
                       <strong>Maxime TOUROUTE, CEO</strong><br/>
                       <a href="telto:+33650847419"> +33 6 50 84 74 19</a>
                     </p>
@@ -296,40 +316,38 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                       <strong>Tom VENIAT, CTO</strong><br/>
                       <a href="telto:+33649760286"> +33 6 49 76 02 86</a>
                     </p> */}
-                    {/* <Link to={'/contact'}>{strings.moreContacts[lang]}</Link> */}
-                  </div>
+                  {/* <Link to={'/contact'}>{strings.moreContacts[lang]}</Link> */}
                 </div>
-              </div>
-
-              <div
-                css={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  color: '#34393A',
-                  ...insideCSS
-                }}
-               
-              >
-                <div css={linksCSS}>
-                  {customLinks.map((link) => {
-                    return (
-                      <Link key={link.name} to={link.path}>
-                        {link.name}
-                      </Link>
-                    );
-                  })}
-                </div>
-                <p>Copyright 2023 Reveality</p>
               </div>
             </div>
-          );
-        }}
-      />
-    );
-  }
 
+            <div
+              css={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textAlign: 'center',
+                color: '#34393A',
+                ...insideCSS,
+              }}
+            >
+              <div css={linksCSS}>
+                {customLinks.map((link) => {
+                  return (
+                    <Link key={link.name} to={link.path}>
+                      {link.name}
+                    </Link>
+                  )
+                })}
+              </div>
+              <p>Copyright 2023 Reveality</p>
+            </div>
+          </div>
+        )
+      }}
+    />
+  )
+}
 
 const query = graphql`
   query RealFooter {
@@ -350,4 +368,4 @@ const query = graphql`
       }
     }
   }
-`;
+`

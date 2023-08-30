@@ -1,10 +1,10 @@
-import React from 'react';
-import LayoutRoot from '../LayoutRoot/LayoutRoot';
-import 'moment';
-import { MDXProvider } from '@mdx-js/react';
-import SEO from '../../SEO/SEO';
-import { graphql, Link } from 'gatsby';
-import { SHORTCODES } from '../../mdx-components/shortcodes';
+import React from 'react'
+import LayoutRoot from '../LayoutRoot/LayoutRoot'
+import 'moment'
+import { MDXProvider } from '@mdx-js/react'
+import SEO from '../../SEO/SEO'
+import { graphql, Link } from 'gatsby'
+import { SHORTCODES } from '../../mdx-components/shortcodes'
 import {
   nextPrevLinkInsideCoverCSS,
   nextPrevLinkCSS,
@@ -15,10 +15,14 @@ import {
   subtextCSS,
   pageCSS,
   cardCSS,
-} from './styles';
+} from './styles'
 
-export default function Template({ data: {mdx}, children, location, pageContext: {previousPost, nextPost, langCode} }) {
-
+export default function Template({
+  data: { mdx },
+  children,
+  location,
+  pageContext: { previousPost, nextPost, langCode },
+}) {
   // content is at false is no previous or next
   const previousPostHtml = previousPost ? (
     <Link to={`${previousPost.frontmatter.path}#content`}>
@@ -46,7 +50,10 @@ export default function Template({ data: {mdx}, children, location, pageContext:
       <SEO
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description || mdx.frontmatter.subtitle}
-        image={mdx.frontmatter.image.childImageSharp.gatsbyImageData.images.sources[0]}
+        image={
+          mdx.frontmatter.image.childImageSharp.gatsbyImageData.images
+            .sources[0]
+        }
         pathname={mdx.frontmatter.path}
         article={true}
         langCode={langCode}
@@ -84,9 +91,7 @@ export default function Template({ data: {mdx}, children, location, pageContext:
             <div css={colorCSS(mdx.frontmatter.image.colors.darkMuted)}></div>
             <div css={colorCSS(mdx.frontmatter.image.colors.lightMuted)}></div> */}
             {/* {JSON.stringify(mdx.frontmatter.image.colors)}*/}
-            <MDXProvider components={SHORTCODES}>
-              {children}
-            </MDXProvider>
+            <MDXProvider components={SHORTCODES}>{children}</MDXProvider>
             <div css={(theme) => nextPrevLinkCSS(theme)}>
               {previousPostHtml}
               {nextPostHtml}
@@ -100,7 +105,9 @@ export default function Template({ data: {mdx}, children, location, pageContext:
 
 export const articlePageQuery = graphql`
   query MdxArticleByPath($markdownPath: String!, $langCode: String!) {
-    mdx(frontmatter: { path: { eq: $markdownPath } language: { eq: $langCode } }) {
+    mdx(
+      frontmatter: { path: { eq: $markdownPath }, language: { eq: $langCode } }
+    ) {
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

@@ -1,16 +1,18 @@
-import React from 'react';
-import { MDXProvider } from '@mdx-js/react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { graphql } from 'gatsby';
-import MainLayout from './MainLayout';
-import './BasicPage.scss';
-import 'moment';
-import SEO from '../bits/SEO/SEO';
-import { SHORTCODES } from './MdxBits';
+import React from 'react'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { graphql } from 'gatsby'
+import MainLayout from './MainLayout'
+import './BasicPage.scss'
+import 'moment'
+import SEO from '../bits/SEO/SEO'
+import { SHORTCODES } from './MdxBits'
 
 export const pageQuery = graphql`
   query MdxPageByPath($markdownPath: String, $langCode: String!) {
-    mdx(frontmatter: { path: { eq: $markdownPath } language: { eq: $langCode } }) {
+    mdx(
+      frontmatter: { path: { eq: $markdownPath }, language: { eq: $langCode } }
+    ) {
       frontmatter {
         path
         title
@@ -25,7 +27,7 @@ export const pageQuery = graphql`
 `
 
 export default function Template({ data: { mdx }, location, pageContext }) {
-  const { langCode } = pageContext;
+  const { langCode } = pageContext
   return (
     <MainLayout language={mdx.frontmatter.language} location={{ ...location }}>
       <SEO
@@ -56,5 +58,5 @@ export default function Template({ data: { mdx }, location, pageContext }) {
         </article>
       </div>
     </MainLayout>
-  );
+  )
 }

@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { CSSObject } from '@emotion/react';
-import { Theme } from '@mui/material';
-import { breakpointKey } from '../../styles/styles';
-import { linkStyle } from './styles';
-
+import React from 'react'
+import { Link } from 'gatsby'
+import { CSSObject } from '@emotion/react'
+import { Theme } from '@mui/material'
+import { breakpointKey } from '../../styles/styles'
+import { linkStyle } from './styles'
 
 const mobileAppBarCSS = (theme: Theme): CSSObject => {
   return {
@@ -14,7 +13,7 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    
+
     a: {
       ...linkStyle(theme),
       fontSize: '1.1em',
@@ -31,10 +30,10 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
       display: 'none',
     },
   }
-};
+}
 
 interface OwnProps {
-  title: string;
+  title: string
 }
 
 export default function MobileAppBar({ title }: OwnProps) {

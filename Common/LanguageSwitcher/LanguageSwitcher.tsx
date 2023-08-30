@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { supportedLangs } from '../../../locales/locales';
-import { LangCode } from '../../types';
-import { useTheme } from '@emotion/react';
-import { containerCSS } from './styles';
+import React from 'react'
+import { Link } from 'gatsby'
+import { supportedLangs } from '../../../locales/locales'
+import { LangCode } from '../../types'
+import { useTheme } from '@emotion/react'
+import { containerCSS } from './styles'
 
 const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
   // console.log('update language to ', defaultLanguage)

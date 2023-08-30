@@ -1,37 +1,32 @@
-import React from 'react';
-import Footer from '../../Footer/Footer';
-import HoloNavbar from './../RealNavbar/Navbar';
-import RevealityFooter from './../RealFooter/Footer';
+import React from 'react'
+import Footer from '../../Footer/Footer'
+import HoloNavbar from './../RealNavbar/Navbar'
+import RevealityFooter from './../RealFooter/Footer'
 import {
   ThemeProvider as MaterialThemeProvider,
   createTheme,
-} from '@mui/material/styles';
-import { ThemeProvider, Global } from '@emotion/react';
-import LanguageSwitcher from '../../Common/LanguageSwitcher/LanguageSwitcher';
-import { defaultLang } from '../../../locales/locales';
-import { languageAutoRedirect } from '../../Common/locales/localeUtils';
-import { navbarConfig, footerConfig } from '../../../globalConfig';
+} from '@mui/material/styles'
+import { ThemeProvider, Global } from '@emotion/react'
+import LanguageSwitcher from '../../Common/LanguageSwitcher/LanguageSwitcher'
+import { defaultLang } from '../../../locales/locales'
+import { languageAutoRedirect } from '../../Common/locales/localeUtils'
+import { navbarConfig, footerConfig } from '../../../globalConfig'
 import {
   appBarCSS,
   customColorCSS,
   gridContentCSS,
   gridFooterCSS,
   gridNavBarCSS,
-  gridNavContentFooterCSS
-} from './styles';
-import { bodyCSS } from '../../../globalStyles';
-
+  gridNavContentFooterCSS,
+} from './styles'
+import { bodyCSS } from '../../../globalStyles'
 
 interface OwnProps {
-  children: any;
-  language: any;
-  location: any;
+  children: any
+  language: any
+  location: any
 }
-export default function LayoutRoot({
-  children,
-  language,
-  location
-}: OwnProps) {
+export default function LayoutRoot({ children, language, location }: OwnProps) {
   // const isItRootUrl =
   //   location.pathname === '/' ||
   //   location.pathname === '/fr' ||
@@ -83,16 +78,14 @@ export default function LayoutRoot({
           }}
         />
         <div css={gridNavContentFooterCSS}>
-          <div css={{...appBarCSS, ...customColorCSS(theme)}}>
+          <div css={{ ...appBarCSS, ...customColorCSS(theme) }}>
             {/* <MobileAppBar title={navbarConfig.name} /> */}
           </div>
-          <nav
-            css={{...gridNavBarCSS, ...customColorCSS(theme)}}
-          >
-             <HoloNavbar
-            currentLangCode={language}
-            currentUrl={location.pathname}
-          />
+          <nav css={{ ...gridNavBarCSS, ...customColorCSS(theme) }}>
+            <HoloNavbar
+              currentLangCode={language}
+              currentUrl={location.pathname}
+            />
             {/* <Navbar title={navbarConfig.name} links={navbarConfig.links[language].links} /> */}
           </nav>
           <div css={gridContentCSS}>{children}</div>
@@ -105,9 +98,9 @@ export default function LayoutRoot({
               />
             )} */}
             <RevealityFooter
-            lang={language}
-            customLinks={footerConfig[language].links}
-          />
+              lang={language}
+              customLinks={footerConfig[language].links}
+            />
           </div>
         </div>
       </ThemeProvider>

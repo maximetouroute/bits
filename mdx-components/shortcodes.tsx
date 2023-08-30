@@ -1,10 +1,10 @@
-import { Link } from 'gatsby';
-import { PhotoGrid } from '../Common/PhotoGrid/PhotoGrid';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { ImageGrid } from './ImageGrid';
-import { ImageCompare } from './ImageCompare';
-import { ResponsiveIframe } from './ResponsiveIframe';
-import { MdxImage } from './MdxImage';
+import { Link } from 'gatsby'
+import { PhotoGrid } from '../Common/PhotoGrid/PhotoGrid'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { ImageGrid } from './ImageGrid'
+import { ImageCompare } from './ImageCompare'
+import { ResponsiveIframe } from './ResponsiveIframe'
+import { MdxImage } from './MdxImage'
 
 // Provide common components here
 export const SHORTCODES = {
@@ -14,5 +14,5 @@ export const SHORTCODES = {
   GatsbyImage,
   PhotoGrid,
   ImageCompare,
-  ResponsiveIframe
+  ResponsiveIframe,
 }

@@ -1,17 +1,17 @@
-import { CSSObject } from "@emotion/styled";
+import { CSSObject } from '@emotion/styled'
 
 export const containerCSS: CSSObject = {
-        // display: 'flex',
+  // display: 'flex',
 
-        // alignItems: 'center',
-        // justifyContent: 'center',
-        // flexDirection: 'row',
-        margin: '1rem',
-        marginBottom: '3rem',
+  // alignItems: 'center',
+  // justifyContent: 'center',
+  // flexDirection: 'row',
+  margin: '1rem',
+  marginBottom: '3rem',
 
-        // flewWrap: 'wrap'
+  // flewWrap: 'wrap'
 
-        ':child': {
-                margin: '1rem'
-        }
-};
+  ':child': {
+    margin: '1rem',
+  },
+}

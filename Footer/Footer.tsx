@@ -14,10 +14,10 @@ import { useTheme } from '@emotion/react'
 import { NamedLink } from '../types'
 
 interface OwnProps {
-  customLinks: Array<NamedLink>;
+  customLinks: Array<NamedLink>
 }
 export default function Footer({ customLinks }: OwnProps) {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <StaticQuery
       query={query}
@@ -196,7 +196,11 @@ export default function Footer({ customLinks }: OwnProps) {
             </div>
 
             <div css={linksCSS(theme)}>
-              {customLinks.map(link => <Link key={link.path} to={link.path}>{link.name}</Link>)}
+              {customLinks.map((link) => (
+                <Link key={link.path} to={link.path}>
+                  {link.name}
+                </Link>
+              ))}
             </div>
 
             {author && authorBlockPersonal()}

@@ -1,6 +1,6 @@
-import { CSSObject } from '@emotion/react';
-import { breakpointKey } from '../../styles/styles';
-import { Theme } from '@mui/material';
+import { CSSObject } from '@emotion/react'
+import { breakpointKey } from '../../styles/styles'
+import { Theme } from '@mui/material'
 
 export const gridNavContentFooterCSS: CSSObject = {
   width: '100%',
@@ -10,7 +10,7 @@ export const gridNavContentFooterCSS: CSSObject = {
   gridGap: 0,
   gridTemplateAreas: `'nav nav' 'content content' 'content content' 'footer footer' 'navBottom navBottom'`,
   justifyItems: 'stretch',
-};
+}
 
 export const appBarCSS = {
   justifySelf: 'stretch',
@@ -19,7 +19,7 @@ export const appBarCSS = {
   [breakpointKey('normal')]: {
     display: 'none',
   },
-};
+}
 
 export const gridNavBarCSS = {
   justifySelf: 'stretch',
@@ -37,13 +37,13 @@ export const gridNavBarCSS = {
     bottom: 0,
     zIndex: 1,
   },
-};
+}
 
-export const customColorCSS = (theme: Theme):CSSObject => {
+export const customColorCSS = (theme: Theme): CSSObject => {
   return {
     backgroundColor: theme.palette.secondary.main,
   }
-};
+}
 
 export const gridContentCSS = {
   gridArea: 'content',
@@ -54,7 +54,7 @@ export const gridContentCSS = {
     paddingRight: 0,
     border: 'none',
   },
-};
+}
 
 export const gridFooterCSS = {
   gridArea: 'footer',
@@ -63,5 +63,4 @@ export const gridFooterCSS = {
   alignItems: 'center',
   justifyContent: 'center',
   marginBottom: '4rem',
-};
-
+}
