@@ -13,6 +13,7 @@ export const gridCSS = (theme: Theme): CSSObject => {
     width: '100%',
     padding: 0,
     color: theme.palette.secondary.contrastText,
+    textAlign: 'center'
   }
 }
 
@@ -48,7 +49,7 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
 
     [breakpointKey('normal')]: {
       margin: '1em',
-      width: '20vw',
+      width: '40vw',
       height: '40vw',
       maxWidth: '30em',
       maxHeight: '30em',
