@@ -20,6 +20,7 @@ export interface LangSettings {
   urlPrefix: string
   humanName: string
   default?: boolean
+  shortName: string
 }
 
 export type SupportedLangs = Record<LangCode, LangSettings>;

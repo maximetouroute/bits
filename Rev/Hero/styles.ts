@@ -98,7 +98,6 @@ export const badgeContainerCSS: CSSObject = {
     },
     fontWeight: 900,
     textAlign: 'center',
-    color: '#34393A',
   };
   
 
@@ -113,8 +112,7 @@ export const punchlineParagraphCSS: CSSObject = {
     return {
     textAlign: 'center',
     fontSize: '1em',
-    fontWeight: 400,
-    color: theme.palette.secondary.contrastText
+    fontWeight: 600,
     };
   };
 
@@ -129,7 +127,6 @@ export const contactInfosCSS = (theme: Theme): CSSObject => {
   marginTop: '2em',
   fontSize: '1.1em',
   textAlign: 'center',
-  color: theme.palette.text.primary,
   lineHeight: 1,
   a: {
     ...themedACSS(theme.palette.secondary.main),

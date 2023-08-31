@@ -117,7 +117,6 @@ export const punchlineParagraphCSS: CSSObject = {
   export const subjectSublineCSS= (theme: Theme): CSSObject => {
     return {
     textAlign: 'center',
-    color: theme.palette.secondary.contrastText,
     fontWeight: 400
     };
   };

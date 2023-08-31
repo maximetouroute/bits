@@ -14,7 +14,6 @@ export const punchlineCSS: CSSObject = {
         },
         fontWeight: 900,
         textAlign: 'center',
-        color: '#34393A',   
 };
 
 export const responsiveContainerInsideCSS: CSSObject = {

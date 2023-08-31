@@ -9,7 +9,7 @@ export const strings: StringList = {
 
   },
   subline: {
-    ['en']: <>A gateway to discover and beging creating.<br/> Free, maintained, and compatible with most smartphones.</>,
+    ['en']: <>A gateway to discover and begin creating.<br/> Free, maintained, and compatible with most smartphones.</>,
     ['fr']: <>Une porte d'entrée pour découvrir et commencer à créer. <br/>Gratuite, maintenue, et compatible avec la majorité des smartphones.</>
   },
 

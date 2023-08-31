@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { supportedLangs } from '../../../locales/locales'
 import { LangCode } from '../../types'
 import Logo from './../RevealityLogo/RevealityLogo'
 import { containerCSS, logoCSS, linkCSS, langLinkCSS } from './styles'
+import { supportedLangs } from '../../../locales/locales';
 
 const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
   // console.log('update language to ', defaultLanguage)
@@ -11,7 +11,7 @@ const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
 }
 
 interface OwnProps {
-  currentLangCode: LangCode
+  currentLangCode: LangCode;
   currentUrl: string
 }
 export default function Navbar({ currentLangCode, currentUrl }: OwnProps) {
@@ -41,7 +41,7 @@ export default function Navbar({ currentLangCode, currentUrl }: OwnProps) {
               }}
               css={langLinkCSS(currentLangCode === langCode)}
             >
-              {langCode}
+              {supportedLangs[langCode].shortName}
             </Link>
           )
         })}

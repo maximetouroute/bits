@@ -54,11 +54,13 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
       },
       background: {
         default: '#fcf9e8',
-        paper: '#fcf9e8',
+        paper: 'transparent',
       },
       action: {
         hover: 'rgba(0,0,0,0.56)',
       },
+
+            // FOR TEXT ? #34393A
       // action: {
       //   hover: 'rgba(0,0,0,0.56)',
       // },
@@ -81,10 +83,10 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
           }}
         />
         <div css={gridNavContentFooterCSS}>
-          <div css={{ ...appBarCSS, ...customColorCSS(theme) }}>
+          {/* <div css={{ ...appBarCSS, ...customColorCSS(theme) }}> */}
             {/* <MobileAppBar title={navbarConfig.name} /> */}
-          </div>
-          <nav css={{ ...gridNavBarCSS, ...customColorCSS(theme) }}>
+          {/* </div> */}
+          <nav css={gridNavBarCSS}>
             <HoloNavbar
               currentLangCode={language}
               currentUrl={location.pathname}
@@ -93,13 +95,6 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
           </nav>
           <div css={gridContentCSS}>{children}</div>
           <div css={gridFooterCSS}>
-            {/* <Footer customLinks={footerConfig[language].links} />
-            {location && (
-              <LanguageSwitcher
-                currentLangCode={language}
-                currentUrl={location.pathname}
-              />
-            )} */}
             <RevealityFooter
               lang={language}
               customLinks={footerConfig[language].links}
