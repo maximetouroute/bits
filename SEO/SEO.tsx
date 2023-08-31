@@ -3,14 +3,14 @@ import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 interface OverrideDefaults {
-  title?: string;
-  description?: string;
-  image?: string;
-  pathname?: string;
-  article?: boolean;
-  author?: string;
-  langCode: string;
-  useRobotoFont?: boolean;
+  title?: string
+  description?: string
+  image?: string
+  pathname?: string
+  article?: boolean
+  author?: string
+  langCode: string
+  useRobotoFont?: boolean
 }
 const SEO = ({
   title,
@@ -20,7 +20,7 @@ const SEO = ({
   author,
   article,
   langCode,
-  useRobotoFont = false
+  useRobotoFont = false,
 }: OverrideDefaults) => (
   <StaticQuery
     query={query}
@@ -109,12 +109,20 @@ const SEO = ({
             <meta http-equiv="cache-control" content="Private" />
             <meta http-equiv="Expires" content="0" />
 
-            { useRobotoFont ?? <>
-              <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-</>
-}
+            {useRobotoFont ?? (
+              <>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link
+                  rel="preconnect"
+                  href="https://fonts.gstatic.com"
+                  crossOrigin
+                />
+                <link
+                  href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+                  rel="stylesheet"
+                />
+              </>
+            )}
             {/* <link
               rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Ubuntu"

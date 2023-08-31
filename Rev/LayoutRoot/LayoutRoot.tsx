@@ -50,7 +50,7 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
         main: '#649DE5', // Sky Blue Hover
       },
       info: {
-        main: '#2A6DBF'
+        main: '#2A6DBF',
       },
       background: {
         default: '#fcf9e8',
@@ -60,7 +60,7 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
         hover: 'rgba(0,0,0,0.56)',
       },
 
-            // FOR TEXT ? #34393A
+      // FOR TEXT ? #34393A
       // action: {
       //   hover: 'rgba(0,0,0,0.56)',
       // },
@@ -84,7 +84,7 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
         />
         <div css={gridNavContentFooterCSS}>
           {/* <div css={{ ...appBarCSS, ...customColorCSS(theme) }}> */}
-            {/* <MobileAppBar title={navbarConfig.name} /> */}
+          {/* <MobileAppBar title={navbarConfig.name} /> */}
           {/* </div> */}
           <nav css={gridNavBarCSS}>
             <HoloNavbar

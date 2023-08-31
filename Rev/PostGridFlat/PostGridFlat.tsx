@@ -22,14 +22,12 @@ export default function PostGridFlat({ posts }: OwnProps) {
       {posts
         .filter((post) => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
-          const image = post.frontmatter.image.childImageSharp;
-          const gatsbyImage = getImage(image);
+          const image = post.frontmatter.image.childImageSharp
+          const gatsbyImage = getImage(image)
           return (
             <Link
               css={{
-                ...postCSS(
-                  theme, theme.palette.primary.main
-                ),
+                ...postCSS(theme, theme.palette.primary.main),
               }}
               to={`${post.frontmatter.path}#content`}
               key={post.id}
@@ -39,9 +37,11 @@ export default function PostGridFlat({ posts }: OwnProps) {
                 <span css={postSubtitleCSS}>{post.frontmatter.subtitle} </span>
               </div>
               <div css={postPictureCSS}>
-              <BgImage image={gatsbyImage} css={{width:'100%', height:'100%'}} />
+                <BgImage
+                  image={gatsbyImage}
+                  css={{ width: '100%', height: '100%' }}
+                />
               </div>
-             
             </Link>
           )
         })}

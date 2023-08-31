@@ -13,7 +13,7 @@ export const containerCSS: CSSObject = {
   backgroundColor: 'transparent',
   // backgroundColor: '#e5f9ff',
   // background: `linear-gradient(0deg, #e5f9ff 0%, transparent 100%)`,
-  
+
   [breakpointKey('small')]: {
     paddingLeft: '1em',
     paddingRight: '1em',
@@ -56,6 +56,6 @@ export const langLinkCSS = (active: boolean): CSSObject => {
     color: '#34393A',
     padding: '0.5em',
     textDecoration: 'none',
-    fontWeight: active ? 900 : 400
+    fontWeight: active ? 900 : 400,
   }
-};
+}

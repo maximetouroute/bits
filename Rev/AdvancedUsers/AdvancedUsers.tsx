@@ -1,23 +1,31 @@
-import React from 'react';
-import {  contactInfosCSS, mainViewCSS, punchlineCSS, punchlineParagraphCSS, clientLogoCSS, clientsLogoGridCSS, imageBackgroundCSS, responsiveContainerInsideCSS } from './styles';
-import { strings } from './strings';
-import { LangCode } from '../../types';
-import { ADVANCED_LOGOS } from '../../../logos';
-import { useTheme } from '@mui/material';
-
+import React from 'react'
+import {
+  contactInfosCSS,
+  mainViewCSS,
+  punchlineCSS,
+  punchlineParagraphCSS,
+  clientLogoCSS,
+  clientsLogoGridCSS,
+  imageBackgroundCSS,
+  responsiveContainerInsideCSS,
+} from './styles'
+import { strings } from './strings'
+import { LangCode } from '../../types'
+import { ADVANCED_LOGOS } from '../../../logos'
+import { useTheme } from '@mui/material'
 
 interface OwnProps {
-  langCode: LangCode;
+  langCode: LangCode
 }
 export default function AdvancedUsers({ langCode }: OwnProps) {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <div css={mainViewCSS}>
       <div css={responsiveContainerInsideCSS}>
-      <h2 css={punchlineCSS}>{strings['punchline'][langCode]}</h2>
-      <p css={punchlineParagraphCSS}>{strings['subline'][langCode]}</p>
+        <h2 css={punchlineCSS}>{strings['punchline'][langCode]}</h2>
+        <p css={punchlineParagraphCSS}>{strings['subline'][langCode]}</p>
 
-      <div css={clientsLogoGridCSS}>
+        <div css={clientsLogoGridCSS}>
           {ADVANCED_LOGOS.map((logo) => {
             return (
               <a
@@ -31,19 +39,20 @@ export default function AdvancedUsers({ langCode }: OwnProps) {
                 rel="noreferrer noopener"
                 href={logo.siteUrl}
               />
-            );
+            )
           })}
         </div>
 
         <p css={punchlineParagraphCSS}>{strings['features'][langCode]}</p>
 
         <div css={contactInfosCSS}>
-          <p css={punchlineParagraphCSS}><a href="mailto:contact@reveality.io">
-                {strings['contactUs'][langCode]}
-              </a></p>
-   
-          </div>
+          <p css={punchlineParagraphCSS}>
+            <a href="mailto:contact@reveality.io">
+              {strings['contactUs'][langCode]}
+            </a>
+          </p>
         </div>
+      </div>
     </div>
   )
 }

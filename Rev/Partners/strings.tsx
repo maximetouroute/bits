@@ -1,13 +1,13 @@
-import React from 'react';
-import { StringList } from '../../types';
+import React from 'react'
+import { StringList } from '../../types'
 
 export const strings: StringList = {
-    clients: {
-        ['en']: 'They trust us',
-        ['fr']: 'Ils nous font confiance'
-    },
-    coachs: {
-        ['en']: 'They accompany us',
-        ['fr']: 'Ils nous accompagnent'
-    }
-};
+  clients: {
+    ['en']: 'They trust us',
+    ['fr']: 'Ils nous font confiance',
+  },
+  coachs: {
+    ['en']: 'They accompany us',
+    ['fr']: 'Ils nous accompagnent',
+  },
+}

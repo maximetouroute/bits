@@ -42,10 +42,7 @@ export default function Template({
   )
 
   return (
-    <LayoutRoot
-      language={mdx.frontmatter.language}
-      location={{ ...location }}
-    >
+    <LayoutRoot language={mdx.frontmatter.language} location={{ ...location }}>
       <SEO
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description || mdx.frontmatter.subtitle}

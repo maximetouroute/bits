@@ -23,6 +23,6 @@ export interface LangSettings {
   shortName: string
 }
 
-export type SupportedLangs = Record<LangCode, LangSettings>;
-export type ReactString = string | JSX.Element;
-export type StringList = Record<string, Record<LangCode, ReactString>>;
+export type SupportedLangs = Record<LangCode, LangSettings>
+export type ReactString = string | JSX.Element
+export type StringList = Record<string, Record<LangCode, ReactString>>

@@ -30,7 +30,7 @@ export default function AppStoreBadges() {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        opacity: 0.9
+        opacity: 0.9,
       }}
     >
       <Link

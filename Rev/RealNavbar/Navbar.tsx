@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import { LangCode } from '../../types'
 import Logo from './../RevealityLogo/RevealityLogo'
 import { containerCSS, logoCSS, linkCSS, langLinkCSS } from './styles'
-import { supportedLangs } from '../../../locales/locales';
+import { supportedLangs } from '../../../locales/locales'
 
 const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
   // console.log('update language to ', defaultLanguage)
@@ -11,7 +11,7 @@ const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
 }
 
 interface OwnProps {
-  currentLangCode: LangCode;
+  currentLangCode: LangCode
   currentUrl: string
 }
 export default function Navbar({ currentLangCode, currentUrl }: OwnProps) {
