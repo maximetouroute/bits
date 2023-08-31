@@ -22,17 +22,13 @@ export default function PostGridFlat({ posts }: OwnProps) {
       {posts
         .filter((post) => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
-          const image = post.frontmatter.image.childImageSharp
-          const gatsbyImage = getImage(image)
-          const customColor = post.frontmatter.image.colors !== void 0
+          const image = post.frontmatter.image.childImageSharp;
+          const gatsbyImage = getImage(image);
           return (
             <Link
               css={{
                 ...postCSS(
-                  theme,
-                  customColor
-                    ? post.frontmatter.image.colors.vibrant
-                    : theme.palette.primary.main
+                  theme, theme.palette.primary.main
                 ),
               }}
               to={`${post.frontmatter.path}#content`}
