@@ -18,7 +18,7 @@ export const strings: StringList = {
     ['fr']: `Expérimentez`
   },
   experimentDetails: {
-    ['en']: `Create your first content in minutes`,
+    ['en']: `Film your first content in minutes`,
     ['fr']: `Créez en quelques minutes`
   },
   create: {

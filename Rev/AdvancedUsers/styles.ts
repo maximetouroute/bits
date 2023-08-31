@@ -51,11 +51,9 @@ export const mainViewCSS: CSSObject = {
   
 
 export const punchlineParagraphCSS: CSSObject = {
-    paddingLeft: '5rem',
-    paddingRight: '5rem',
-    fontSize: '1.1em',
-    textAlign: 'center',
-  };
+  fontSize: '1.1em',
+  textAlign: 'center',
+ };
 
 
     // CLIENTS LOGOSexport const

@@ -124,9 +124,10 @@ export const punchlineParagraphCSS: CSSObject = {
   export const subjectVideoCSS: CSSObject = {
     borderRadius: '16px',
     height: '50vh',
-    margin: '2em',
+    margin: '4em',
     [breakpointKey('small')]: {
-      height: '60vh',
+      margin: '2rem',
+      height: '70vh',
       borderRadius: '18px',
     },
   };

@@ -3,12 +3,12 @@ import {  punchlineCSS, mainViewCSS, howDoesItWorkCSS, howDoesItWorkPartCSS, sub
 import { strings } from './strings';
 import { LangCode } from '../../types';
 
-import subjectRaw from './../../../pages/subjectRAW.webm';
-import subjectAlpha from './../../../pages/subjectALPHA.webm';
-import subjectMix from './../../../pages/subjectMIX.webm';
-import subjectRawSafariIos from './../../../pages/subjectRAWSafari.mp4';
-import subjectAlphaSafariIos from './../../../pages/subjectALPHASafari.mp4';
-import subjectMixSafariIos from './../../../pages/subjectMIXSafari.mp4';
+import subjectRaw from './../../../pages/app_shoot.webm';
+import subjectAlpha from './../../../pages/app_create.webm';
+import subjectMix from './../../../pages/app_share.webm';
+import subjectRawSafariIos from './../../../pages/app_shoot.mp4';
+import subjectAlphaSafariIos from './../../../pages/app_create.mp4';
+import subjectMixSafariIos from './../../../pages/app_share.mp4';
 import { useTheme } from '@mui/material';
 
 

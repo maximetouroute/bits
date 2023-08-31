@@ -52,8 +52,8 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
       margin: '1em',
       width: '30vw',
       height: '30vw',
-      maxWidth: '30em',
-      maxHeight: '30em',
+      maxWidth: '25em',
+      maxHeight: '25em',
     },
 
     '&:hover': {

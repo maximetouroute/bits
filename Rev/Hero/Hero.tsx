@@ -4,8 +4,8 @@ import { strings } from './strings';
 import { LangCode } from '../../types';
 import RevealityLogo from '../RevealityLogo/RevealityLogo';
 import AppStoreBadges from '../AppStoreBadges/AppStoreBadges';
-import demoVideo from './../../../pages/mixVitrine.webm';
-import demoVideoSafari from './../../../pages/mixVitrineSafari.mp4';
+import demoVideo from './../../../pages/home.webm';
+import demoVideoSafari from './../../../pages/home.mp4';
 import { useTheme } from '@mui/material';
 // const punchline = {
 //   en: (
