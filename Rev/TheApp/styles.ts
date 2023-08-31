@@ -1,5 +1,6 @@
 import { CSSObject } from "@emotion/react";
 import { breakpointKey } from "../../styles/styles";
+import { Theme } from "@mui/material";
 
 export const responsiveContainerCSS: CSSObject = {
     display: 'flex',
@@ -85,22 +86,40 @@ export const punchlineParagraphCSS: CSSObject = {
     },
     display: 'flex',
     justifyContent: 'center',
+
   };
 
+  export const sublineCSS: CSSObject = {
+
+    fontSize: '1.1em',
+    textAlign: 'center',
+  }
   export const howDoesItWorkPartCSS: CSSObject = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    marginTop: '2rem'
   };
 
-  export const subjectTitleCSS: CSSObject = {
-    padding: '2rem',
-    paddingTop: '1rem',
-    paddingBottom: '1rem',
+  export const subjectTitleCSS = (theme: Theme): CSSObject => {
+    return {
+    // padding: '2rem',
+    // paddingTop: '1rem',
+    paddingBottom: '0rem',
     borderRadius: '0.4rem',
-    color: '#fbf9e8',
-    backgroundColor: '#649de4',
+    fontSize: '1.75rem',
+    color: theme.palette.primary.main,
+    // backgroundColor: '#649de4',
     userSelect: 'none',
+    };
+  };
+
+  export const subjectSublineCSS= (theme: Theme): CSSObject => {
+    return {
+    textAlign: 'center',
+    color: theme.palette.secondary.contrastText,
+    fontWeight: 400
+    };
   };
 
   export const subjectVideoCSS: CSSObject = {

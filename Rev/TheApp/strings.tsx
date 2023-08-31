@@ -1,3 +1,4 @@
+import React from 'react';
 import { StringList } from '../../types';
 
 
@@ -8,34 +9,33 @@ export const strings: StringList = {
 
   },
   subline: {
-    ['en']: `Free, maintained, and compatible with most smartphones.`,
-    ['fr']: `Gratuite, maintenue, et compatible avec la majorité des smartphones.`
-
+    ['en']: <>A gateway to discover and beging creating.<br/> Free, maintained, and compatible with most smartphones.</>,
+    ['fr']: <>Une porte d'entrée pour découvrir et commencer à créer. <br/>Gratuite, maintenue, et compatible avec la majorité des smartphones.</>
   },
 
   experiment: {
     ['en']: `Experiment`,
-    ['fr']: `Experimenter`
+    ['fr']: `Expérimentez`
   },
   experimentDetails: {
     ['en']: `Create your first content in minutes`,
-    ['fr']: `Créez vos premiers contenus en quelques minutes`
+    ['fr']: `Créez en quelques minutes`
   },
   create: {
     ['en']: `Create`,
-    ['fr']: `Produire`
+    ['fr']: `Créez`
   },
   createDetails: {
-    ['en']: `Try and iterate directly in the app`,
-    ['fr']: `Testez et itérez directement dans l'appli`
+    ['en']: `Test and iterate in-app`,
+    ['fr']: `Testez et itérez dans l'appli`
   },
   publish: {
     ['en']: `Publish`,
-    ['fr']: `Diffuser`
+    ['fr']: `Diffusez`
   },
   publishDetails: {
-    ['en']: `Share your work and look at other's creations`,
-    ['fr']: `Partagez vos créations. Visionnez les créations de la communauté.`
+    ['en']: `Share and discover creations`,
+    ['fr']: `Partagez, découvrez des créations`
   }
 
 };
