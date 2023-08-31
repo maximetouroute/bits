@@ -24,9 +24,10 @@ export const mainViewCSS: CSSObject = {
     ...responsiveContainerCSS,
     justifyContent: 'center',
     alignItems: 'center',
-    minHeight: '90vh',
     display: 'flex',
     flexDirection: 'column',
+    marginTop: '8rem',
+    marginBottom: '8rem'
   };
   
   export const mainViewInsideCSS: CSSObject = {
