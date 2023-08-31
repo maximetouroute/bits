@@ -56,6 +56,7 @@ export default function Template({
         pathname={mdx.frontmatter.path}
         article={true}
         langCode={langCode}
+        useRobotoFont={true}
       />
       <div css={(theme) => coverBandCSS(theme)} id="content">
         <div css={coverBandOverlayCSS}>

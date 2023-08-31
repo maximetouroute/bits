@@ -22,4 +22,6 @@ export interface LangSettings {
   default?: boolean
 }
 
-export type SupportedLangs = Record<LangCode, LangSettings>
+export type SupportedLangs = Record<LangCode, LangSettings>;
+export type ReactString = string | JSX.Element;
+export type StringList = Record<string, Record<LangCode, ReactString>>;

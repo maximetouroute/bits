@@ -44,10 +44,13 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
     palette: {
       mode: 'light',
       primary: {
-        main: '#649DE5', // Sky blue
+        main: '#2771cc', // Sky blue
       },
       secondary: {
-        main: '#2771cc', // Sky Blue Hover
+        main: '#649DE5', // Sky Blue Hover
+      },
+      info: {
+        main: '#2A6DBF'
       },
       background: {
         default: '#fcf9e8',

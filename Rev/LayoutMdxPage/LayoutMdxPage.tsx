@@ -25,6 +25,7 @@ export default function Template({
         pathname={mdx.frontmatter.path}
         article={true}
         langCode={langCode}
+        useRobotoFont={true}
       />
       <div css={(theme) => pageCSS(theme)}>
         <article css={{ ...cardCSS, ...contentCSS }} id="content">
