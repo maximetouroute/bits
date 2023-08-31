@@ -41,7 +41,7 @@ export const strings: StringList = {
         La boite à outils Reveality simplifie la production et décuple les
         possibilités créatives.
         <br />
-        Les Fonctionnalités de Réalité Augmentée sont prêtes à l'emploi et
+        Les fonctionnalités de Réalité Augmentée sont prêtes à l'emploi et
         mutualisées entre artistes.
         <br />
         Compatible avec vos projets Unity.
