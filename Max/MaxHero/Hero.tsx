@@ -1,9 +1,9 @@
 import React from 'react'
 import { grettingCSS, heroCSS, punchlineCSS, lastLineCSS } from './styles'
 import { strings } from './strings'
-import { LangCode } from '../../types'
+import { LangCode, LangReactElement } from '../../types'
 
-const punchline = {
+const punchline: LangReactElement = {
   en: (
     <div css={punchlineCSS}>
       I'm
@@ -20,6 +20,15 @@ const punchline = {
       <b css={{ color: '#ad206d' }}>logiciels</b> pour les artistes et
       institutions culturelles.
     </div>
+  ),
+  es: (
+    <div css={punchlineCSS}>
+    Soy
+    <b> Maxime.</b> Creo experiencias{' '}
+    <b css={{ color: '#588CF6' }}> de arte digital</b> y desarrollo{' '}
+    <b css={{ color: '#ad206d' }}>software</b> para artistas e
+    instituciones culturales.
+  </div>
   ),
 }
 interface OwnProps {

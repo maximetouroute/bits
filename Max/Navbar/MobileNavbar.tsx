@@ -40,12 +40,14 @@ export default function MobileNavbar({ links }: OwnProps) {
   const populateIconForName = (name) => {
     switch (name) {
       case 'WORK':
+      case 'TRABAJO':
       case 'PROJETS':
       case 'PROJECTS':
         return <PaletteRoundedIcon />
       case 'NEWS':
         return <RssFeedRoundedIcon />
-      case 'ABOUT':
+      case 'SOBRE MÌ':
+      case 'A PROPOS':
       case 'A PROPOS':
         return <PersonRoundedIcon />
       default:

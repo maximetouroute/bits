@@ -16,13 +16,16 @@ const strings: Record<string, Record<LangCode, string>> = {
   all: {
     en: 'All',
     fr: 'Tout',
+    es: 'Todo'
   },
   software: {
     en: 'Software',
+    es: 'Software',
     fr: 'Logiciel',
   },
   other: {
     en: 'Others',
+    es: 'Otros',
     fr: 'Divers',
   },
 }
