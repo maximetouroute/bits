@@ -25,8 +25,9 @@ interface OwnProps {
   children: any
   language: any
   location: any
+  skipLanguageAutoRedirect: boolean
 }
-export default function LayoutRoot({ children, language, location }: OwnProps) {
+export default function LayoutRoot({ children, language, location, skipLanguageAutoRedirect=false }: OwnProps) {
   // const isItRootUrl =
   //   location.pathname === '/' ||
   //   location.pathname === '/fr' ||
@@ -37,7 +38,7 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
     language = defaultLang
   }
   // Skip build, Browsers only
-  if (typeof window !== 'undefined') {
+  if (typeof window !== 'undefined' && !skipLanguageAutoRedirect) {
     languageAutoRedirect(language, location.pathname)
   }
   const theme = createTheme({
