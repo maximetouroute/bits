@@ -8,6 +8,7 @@ import {
   subjectVideoCSS,
   subjectSublineCSS,
   sublineCSS,
+  glassContainerCSS
 } from './styles'
 import { strings } from './strings'
 import { LangCode } from '../../types'
@@ -40,20 +41,26 @@ export default function TheApp({ langCode }: OwnProps) {
             {strings['experimentDetails'][langCode]}
           </p>
 
-          <video autoPlay muted loop playsInline css={subjectVideoCSS}>
+      <div css={glassContainerCSS}>
+      <video autoPlay muted loop playsInline css={subjectVideoCSS}>
             <source src={subjectRaw} type="video/webm" />
             <source src={subjectRawSafariIos} type="video/mp4" />
           </video>
+      </div>
+         
         </div>
         <div css={howDoesItWorkPartCSS}>
           <h3 css={subjectTitleCSS(theme)}>{strings['create'][langCode]}</h3>
           <p css={subjectSublineCSS(theme)}>
             {strings['createDetails'][langCode]}
           </p>
+          <div css={glassContainerCSS}>
           <video autoPlay muted loop playsInline css={subjectVideoCSS}>
             <source src={subjectAlpha} type="video/webm" />
             <source src={subjectAlphaSafariIos} type="video/mp4" />
           </video>
+          </div>
+         
         </div>
 
         <div css={howDoesItWorkPartCSS}>
@@ -61,10 +68,13 @@ export default function TheApp({ langCode }: OwnProps) {
           <p css={subjectSublineCSS(theme)}>
             {strings['publishDetails'][langCode]}
           </p>
+          <div css={glassContainerCSS}>
           <video autoPlay muted loop playsInline css={subjectVideoCSS}>
             <source src={subjectMix} type="video/webm" />
             <source src={subjectMixSafariIos} type="video/mp4" />
           </video>
+          </div>
+        
         </div>
       </div>
     </div>

@@ -32,15 +32,20 @@ export default function PostGridFlat({ posts }: OwnProps) {
               to={`${post.frontmatter.path}#content`}
               key={post.id}
             >
+              <BgImage
+                  image={gatsbyImage}
+                  css={{ width: '100%', height: '100%', display: 'flex',  alignItems: 'flex-end', justifyContent: 'stretch'}}
+                >
+
               <div css={postHeadCSS}>
                 <span css={postTitleCSS}>{post.frontmatter.title}</span>
+                <br/>
                 <span css={postSubtitleCSS}>{post.frontmatter.subtitle} </span>
               </div>
+                </BgImage>
+              
               <div css={postPictureCSS}>
-                <BgImage
-                  image={gatsbyImage}
-                  css={{ width: '100%', height: '100%' }}
-                />
+                
               </div>
             </Link>
           )

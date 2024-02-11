@@ -65,14 +65,14 @@ export default function Hero({ langCode }: OwnProps) {
             <AppStoreBadges />
           </div>
 
-          <div css={contactInfosCSS}>
+          {/* <div css={contactInfosCSS}>
             <p css={punchlineParagraphCSS}>
               {strings['aProject'][langCode]}{' '}
               <a href="mailto:contact@reveality.io">
                 {strings['reachUs'][langCode]}
               </a>
             </p>
-          </div>
+          </div> */}
         </div>
 
         <div></div>

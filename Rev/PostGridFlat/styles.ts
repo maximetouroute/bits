@@ -1,7 +1,7 @@
 import { CSSObject } from '@emotion/react'
 import { breakpointKey } from '../../styles/styles'
 import { Theme } from '@mui/material'
-
+import { glassCSS } from '../../../globalStyles'
 export const gridCSS = (theme: Theme): CSSObject => {
   return {
     margin: 0,
@@ -21,6 +21,7 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
   return {
     display: 'flex',
     flexDirection: 'column',
+
     color: theme.palette.secondary.contrastText,
 
     // backgroundColor: 'transparent',
@@ -28,7 +29,7 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
     transform: 'scale(0.97)',
     fontSize: '1rem',
 
-    opacity: 0.9,
+    // opacity: 0.9,
 
     // transition: `-webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     //   transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -63,12 +64,20 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
       opacity: 1,
       color: `${color} !important`,
     },
+
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+
+
+    borderRadius: glassCSS.borderRadius
   }
 }
 
 export const postHeadCSS: CSSObject = {
-  display: 'flex',
-  flexDirection: 'column',
+  flexGrow: 1,
+  padding: '1em',
+  ...glassCSS,
+  borderRadius: 0
 }
 
 export const postTitleCSS: CSSObject = {
@@ -88,9 +97,9 @@ export const postSubtitleCSS: CSSObject = {
 }
 
 export const postPictureCSS: CSSObject = {
-  flexGrow: 1,
+  flexGrow: 0.9,
   // backgroundRepeat: 'no-repeat',
   // backgroundSize: 'cover',
   // backgroundPosition: 'center top',
-  borderRadius: '1000px',
+  // borderRadius: '1000px',
 }

@@ -1,6 +1,8 @@
 import { CSSObject } from '@emotion/react'
 import { breakpointKey } from '../../styles/styles'
 import { Theme } from '@mui/material'
+import { glassCSS } from '../../../globalStyles'
+
 
 export const responsiveContainerCSS: CSSObject = {
   display: 'flex',
@@ -115,13 +117,20 @@ export const subjectSublineCSS = (theme: Theme): CSSObject => {
   }
 }
 
-export const subjectVideoCSS: CSSObject = {
-  borderRadius: '16px',
-  height: '50vh',
-  margin: '4em',
+export const glassContainerCSS: CSSObject = {
+  height: '60vh',
+  margin: '4rem',
+  padding: '0.5em',
+
   [breakpointKey('small')]: {
     margin: '2rem',
     height: '70vh',
-    borderRadius: '18px',
   },
+  ...glassCSS,
+ 
+}
+
+export const subjectVideoCSS: CSSObject = {
+  height: '100%',
+  borderRadius: glassCSS.borderRadius,
 }
