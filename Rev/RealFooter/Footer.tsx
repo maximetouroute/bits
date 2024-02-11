@@ -340,7 +340,7 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                   )
                 })}
               </div>
-              <p>Copyright 2023 Reveality</p>
+              <p>Copyright 2024 Reveality</p>
             </div>
           </div>
         )
