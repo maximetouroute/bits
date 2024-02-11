@@ -2,7 +2,7 @@ import { CSSObject } from '@emotion/react'
 import { breakpointKey } from '../../styles/styles'
 import { Theme } from '@mui/material'
 import { themedACSS } from '../../styles/styles'
-
+import { glassCSS } from '../../../globalStyles'
 export const responsiveContainerCSS: CSSObject = {
   display: 'flex',
   justifyContent: 'center',
@@ -110,8 +110,9 @@ export const joinBetaCallCSS = (theme: Theme): CSSObject => {
 }
 
 export const mainVideoCSS: CSSObject = {
-  borderRadius: '20px',
+  borderRadius: glassCSS.borderRadius,
   height: '70vh',
+
 }
 
 export const contactInfosCSS = (theme: Theme): CSSObject => {

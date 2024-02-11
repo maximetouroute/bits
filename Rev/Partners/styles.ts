@@ -1,5 +1,6 @@
 import { CSSObject } from '@emotion/react'
 import { breakpointKey, basicTransitionCSS } from '../../styles/styles'
+import { glassCSS } from '../../../globalStyles'
 
 export const responsiveContainerCSS: CSSObject = {
   display: 'flex',
@@ -46,10 +47,26 @@ export const clientLogoCSS: CSSObject = {
     minHeight: '8em',
     margin: '2em',
   },
+
+  padding: '2em',
+  ...glassCSS,
+
+  display : 'flex',
+  alignItems: 'stretch',
+  justifyContent: 'stretch',
+
+  ...basicTransitionCSS,
+  '&:hover': {
+    ...basicTransitionCSS,
+    cursor: 'pointer',
+    transform: 'scale(1.05)',
+  },
 }
 
 export const imageBackgroundCSS = (url: string): CSSObject => {
   return {
+    width: '100%',
+    height: '100%',
     background: `url(${url})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -58,12 +75,12 @@ export const imageBackgroundCSS = (url: string): CSSObject => {
     // filter: 'grayscale(30%)',
     ...basicTransitionCSS,
 
-    '&:hover': {
+    '&:active': {
       ...basicTransitionCSS,
-      cursor: 'pointer',
       filter: 'none',
       opacity: 1,
-      transform: 'scale(1.05)',
     },
+
+    
   }
 }

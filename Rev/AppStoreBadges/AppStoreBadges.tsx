@@ -2,11 +2,27 @@ import { CSSObject } from '@emotion/react'
 import { Link } from 'gatsby'
 import appleBadge from './appleBadge.svg'
 import googleBadge from './googleBadge.svg'
+import { glassCSS } from '../../../globalStyles'
+import { basicTransitionCSS } from '../../styles/styles'
 
-export const googleBadgeCSS: CSSObject = {
+
+export const containerCSS: CSSObject = {
   width: '10rem',
   height: '3rem',
   margin: '1rem',
+  ...glassCSS,
+
+  ...basicTransitionCSS,
+  '&:hover': {
+    ...basicTransitionCSS,
+    cursor: 'pointer',
+    transform: 'scale(1.05)',
+  },
+}
+export const googleBadgeCSS: CSSObject = {
+  display: 'block',
+  width: '100%',
+  height: '100%',
   background: `url(${googleBadge})`,
   backgroundPosition: 'center',
   backgroundSize: 'contain',
@@ -14,14 +30,15 @@ export const googleBadgeCSS: CSSObject = {
 }
 
 const appleBadgeCSS: CSSObject = {
-  width: '10rem',
-  height: '3rem',
-  margin: '1rem',
+  display: 'block',
+  width: '100%',
+  height: '100%',
   background: `url(${appleBadge})`,
   backgroundPosition: 'center',
   backgroundSize: 'contain',
   backgroundRepeat: 'no-repeat',
 }
+
 export default function AppStoreBadges() {
   return (
     <div
@@ -30,21 +47,25 @@ export default function AppStoreBadges() {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        opacity: 0.9,
       }}
     >
-      <Link
+      <div css={containerCSS}>
+     <Link
         css={appleBadgeCSS}
         to={'https://apps.apple.com/app/reveality/id1619973575'}
         target="_blank"
         rel="noopener"
       ></Link>
+      </div>
+     
+      <div css={containerCSS}>
       <Link
         css={googleBadgeCSS}
         to={'https://play.google.com/store/apps/details?id=io.reveality.app'}
         target="_blank"
         rel="noopener"
       ></Link>
+    </div>
     </div>
   )
 }

@@ -9,6 +9,7 @@ export const containerCSS: CSSObject = {
   alignItems: 'center',
   paddingLeft: '2em',
   paddingRight: '2em',
+  margin: '1rem',
   color: '#34393A',
   backgroundColor: 'transparent',
   // backgroundColor: '#e5f9ff',
@@ -18,6 +19,15 @@ export const containerCSS: CSSObject = {
     paddingLeft: '1em',
     paddingRight: '1em',
   },
+
+  /* From https://css.glass */
+background: 'rgba(255, 255, 255, 0.12)',
+borderRadius: '16px',
+boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+backdropFilter: 'blur(40px)',
+webkitBackdropFilter: 'blur(40px)',
+border: '1px solid rgba(255, 255, 255, 0.04)'
+
 }
 
 export const logoCSS: CSSObject = {

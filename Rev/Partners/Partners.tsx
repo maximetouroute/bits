@@ -18,53 +18,47 @@ interface OwnProps {
 }
 export default function Partners({ langCode }: OwnProps) {
   const theme = useTheme()
+
+
+  const grid = (logos) => {
+    return (
+      <div css={responsiveContainerCSS}>
+      <div css={responsiveContainerInsideCSS}>
+        <div css={clientsLogoGridCSS}>
+          {logos.map((logo) => {
+            return (
+              <a
+                key={logo.siteUrl}
+                css={{
+                  ...clientLogoCSS,
+                }}
+                target="_blank"
+                rel="noreferrer noopener"
+                href={logo.siteUrl}
+                
+              >
+                <div css={{
+                ...imageBackgroundCSS(logo.imageUrl),
+              }}>
+              </div>
+              
+              </a>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+
+    )
+  }
   return (
     <>
       <h3 css={punchlineCSS}>{strings['clients'][langCode]}</h3>
-      <div css={responsiveContainerCSS}>
-        <div css={responsiveContainerInsideCSS}>
-          <div css={clientsLogoGridCSS}>
-            {CLIENTS_LOGOS.map((logo) => {
-              return (
-                <a
-                  key={logo.siteUrl}
-                  css={{
-                    ...clientLogoCSS,
-                    ...imageBackgroundCSS(logo.imageUrl),
-                    transform: `scale(${logo.scale ? logo.scale : 1})`,
-                  }}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href={logo.siteUrl}
-                />
-              )
-            })}
-          </div>
-        </div>
-      </div>
-
+      {grid(CLIENTS_LOGOS)}
+     
       <h3 css={punchlineCSS}>{strings['coachs'][langCode]}</h3>
-      <div css={responsiveContainerCSS}>
-        <div css={responsiveContainerInsideCSS}>
-          <div css={clientsLogoGridCSS}>
-            {PARTNERS_LOGOS.map((logo) => {
-              return (
-                <a
-                  key={logo.siteUrl}
-                  css={{
-                    ...clientLogoCSS,
-                    ...imageBackgroundCSS(logo.imageUrl),
-                    transform: `scale(${logo.scale ? logo.scale : 1})`,
-                  }}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href={logo.siteUrl}
-                />
-              )
-            })}
-          </div>
-        </div>
-      </div>
+      {grid(PARTNERS_LOGOS)}
+
     </>
   )
 }

@@ -21,6 +21,7 @@ import AppStoreBadges from '../AppStoreBadges/AppStoreBadges'
 import demoVideo from './../../../pages/home.webm'
 import demoVideoSafari from './../../../pages/home.mp4'
 import { useTheme } from '@mui/material'
+import { glassCSS } from '../../../globalStyles'
 // const punchline = {
 //   en: (
 //     <div css={}>
@@ -77,10 +78,13 @@ export default function Hero({ langCode }: OwnProps) {
         <div></div>
 
         <div css={mainVideoContainerCSS}>
+          <div css={{...glassCSS, padding: '1em'}}>
           <video autoPlay muted loop playsInline css={mainVideoCSS}>
             <source src={demoVideo} type="video/webm" />
             <source src={demoVideoSafari} type="video/mp4" />
           </video>
+          </div>
+         
         </div>
       </div>
     </div>
