@@ -68,8 +68,7 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
 
-
-    borderRadius: glassCSS.borderRadius
+    borderRadius: glassCSS.borderRadius,
   }
 }
 
@@ -77,7 +76,7 @@ export const postHeadCSS: CSSObject = {
   flexGrow: 1,
   padding: '1em',
   ...glassCSS,
-  borderRadius: 0
+  borderRadius: 0,
 }
 
 export const postTitleCSS: CSSObject = {

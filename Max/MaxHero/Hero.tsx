@@ -23,12 +23,12 @@ const punchline: LangReactElement = {
   ),
   es: (
     <div css={punchlineCSS}>
-    Soy
-    <b> Maxime.</b> Creo experiencias{' '}
-    <b css={{ color: '#588CF6' }}> de arte digital</b> y desarrollo{' '}
-    <b css={{ color: '#ad206d' }}>software</b> para artistas e
-    instituciones culturales.
-  </div>
+      Soy
+      <b> Maxime.</b> Creo experiencias{' '}
+      <b css={{ color: '#588CF6' }}> de arte digital</b> y desarrollo{' '}
+      <b css={{ color: '#ad206d' }}>software</b> para artistas e instituciones
+      culturales.
+    </div>
   ),
 }
 interface OwnProps {

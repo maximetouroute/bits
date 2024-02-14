@@ -39,8 +39,8 @@ export default function LayoutRoot({
   //   location.pathname === '/fr' ||
   //   location.pathname === '/fr/'
   // homepage: single slash
-  if(supportedLangs[language] === void 0) {
-    language = defaultLang;
+  if (supportedLangs[language] === void 0) {
+    language = defaultLang
   }
   // Skip build, Browsers only
   if (typeof window !== 'undefined') {

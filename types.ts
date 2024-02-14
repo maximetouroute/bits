@@ -16,10 +16,10 @@ export interface FooterConfig {
 
 // Modern Lang types
 export type LangCode = 'en' | 'fr' | 'es'
-export type LangString =  Record<LangCode, string>;
-export type LangReactElement = Record<LangCode, ReactString>;
-export type LangRecord = Record<string, LangString>;
-export type LangReactRecord = Record<string, LangReactElement>;
+export type LangString = Record<LangCode, string>
+export type LangReactElement = Record<LangCode, ReactString>
+export type LangRecord = Record<string, LangString>
+export type LangReactRecord = Record<string, LangReactElement>
 
 export interface LangSettings {
   urlPrefix: string

@@ -3,7 +3,6 @@ import { breakpointKey } from '../../styles/styles'
 import { Theme } from '@mui/material'
 import { glassCSS } from '../../../globalStyles'
 
-
 export const responsiveContainerCSS: CSSObject = {
   display: 'flex',
   justifyContent: 'center',
@@ -127,7 +126,6 @@ export const glassContainerCSS: CSSObject = {
     height: '70vh',
   },
   ...glassCSS,
- 
 }
 
 export const subjectVideoCSS: CSSObject = {

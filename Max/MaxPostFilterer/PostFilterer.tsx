@@ -16,7 +16,7 @@ const strings: Record<string, Record<LangCode, string>> = {
   all: {
     en: 'All',
     fr: 'Tout',
-    es: 'Todo'
+    es: 'Todo',
   },
   software: {
     en: 'Software',

@@ -3,17 +3,16 @@ import { breakpointKey } from '../../styles/styles'
 import { glassCSS } from '../../../globalStyles'
 import { basicTransitionCSS } from '../../styles/styles'
 
-
 export const mobileNavbarCSS: CSSObject = {
   display: 'none',
   [breakpointKey('small')]: {
-    display: 'inherit'
+    display: 'inherit',
   },
-};
+}
 
 export const desktopNavbarCSS: CSSObject = {
   [breakpointKey('small')]: {
-    display: 'none'
+    display: 'none',
   },
 }
 
@@ -38,18 +37,18 @@ export const containerCSS: CSSObject = {
 }
 
 export const mobileContainerCSS: CSSObject = {
-    paddingLeft: '2em',
-    paddingRight: '2em',
-    margin: '1rem',
-    color: '#34393A',
+  paddingLeft: '2em',
+  paddingRight: '2em',
+  margin: '1rem',
+  color: '#34393A',
 
-    ...glassCSS,
-    borderRadius:`${2 * 1.5}rem`,
-    // For children (links)
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  ...glassCSS,
+  borderRadius: `${2 * 1.5}rem`,
+  // For children (links)
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
 }
 
 export const logoCSS: CSSObject = {
@@ -64,7 +63,7 @@ export const logoCSS: CSSObject = {
   alignItems: 'center',
   width: '2rem',
   height: `${2 * 1.5}rem`,
-  
+
   // marginBottom: 0,
   opacity: 0.9,
   paddingTop: '1rem',
@@ -80,15 +79,15 @@ export const centralBarCSS: CSSObject = {
   justifySelf: 'stretch',
   paddingLeft: '0.5em',
   paddingRight: '0.5em',
-    /* From https://css.glass */
+  /* From https://css.glass */
   ...glassCSS,
-  borderRadius:`${2 * 1.5}rem`,
+  borderRadius: `${2 * 1.5}rem`,
   // For children (links)
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'stretch',
-};
+}
 
 export const linkCSS: CSSObject = {
   // textTransform: 'uppercase',
@@ -98,11 +97,11 @@ export const linkCSS: CSSObject = {
   marginTop: '0.5em',
   marginBottom: '0.5em',
   textDecoration: 'none',
-  borderRadius:`${2 * 1.5}rem`,
+  borderRadius: `${2 * 1.5}rem`,
 
   '&:hover': {
     ...basicTransitionCSS,
-    backgroundColor: 'rgba(250,250,250,0.5)'
+    backgroundColor: 'rgba(250,250,250,0.5)',
   },
   // Vertical align text
   display: 'flex',

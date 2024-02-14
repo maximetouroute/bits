@@ -51,7 +51,7 @@ export const clientLogoCSS: CSSObject = {
   padding: '2em',
   ...glassCSS,
 
-  display : 'flex',
+  display: 'flex',
   alignItems: 'stretch',
   justifyContent: 'stretch',
 
@@ -65,19 +65,18 @@ export const clientLogoCSS: CSSObject = {
 
 export const markeeContainerCSS: CSSObject = {
   width: '99vw',
-};
+}
 
-export const marqueChildCSS = (size: number): CSSObject =>
-{ 
-  return  { 
-  width: `${size}px`,
-height: `${size}px`,
-padding: `${size/4}px`,
-display: 'flex', 
-alignItems: 'center', 
-justifyContent: 'center'
-};
-};
+export const marqueChildCSS = (size: number): CSSObject => {
+  return {
+    width: `${size}px`,
+    height: `${size}px`,
+    padding: `${size / 4}px`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+}
 
 export const imageBackgroundForMarqueeCSS = (url: string): CSSObject => {
   return {
@@ -87,6 +86,6 @@ export const imageBackgroundForMarqueeCSS = (url: string): CSSObject => {
     background: `url(${url})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundSize: 'contain'
+    backgroundSize: 'contain',
   }
 }

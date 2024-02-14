@@ -5,7 +5,6 @@ import googleBadge from './googleBadge.svg'
 import { glassCSS } from '../../../globalStyles'
 import { basicTransitionCSS } from '../../styles/styles'
 
-
 export const containerCSS: CSSObject = {
   width: '10rem',
   height: '3rem',
@@ -50,22 +49,22 @@ export default function AppStoreBadges() {
       }}
     >
       <div css={containerCSS}>
-     <Link
-        css={appleBadgeCSS}
-        to={'https://apps.apple.com/app/reveality/id1619973575'}
-        target="_blank"
-        rel="noopener"
-      ></Link>
+        <Link
+          css={appleBadgeCSS}
+          to={'https://apps.apple.com/app/reveality/id1619973575'}
+          target="_blank"
+          rel="noopener"
+        ></Link>
       </div>
-     
+
       <div css={containerCSS}>
-      <Link
-        css={googleBadgeCSS}
-        to={'https://play.google.com/store/apps/details?id=io.reveality.app'}
-        target="_blank"
-        rel="noopener"
-      ></Link>
-    </div>
+        <Link
+          css={googleBadgeCSS}
+          to={'https://play.google.com/store/apps/details?id=io.reveality.app'}
+          target="_blank"
+          rel="noopener"
+        ></Link>
+      </div>
     </div>
   )
 }

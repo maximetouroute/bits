@@ -27,7 +27,12 @@ interface OwnProps {
   location: any
   skipLanguageAutoRedirect: boolean
 }
-export default function LayoutRoot({ children, language, location, skipLanguageAutoRedirect=false }: OwnProps) {
+export default function LayoutRoot({
+  children,
+  language,
+  location,
+  skipLanguageAutoRedirect = false,
+}: OwnProps) {
   // const isItRootUrl =
   //   location.pathname === '/' ||
   //   location.pathname === '/fr' ||

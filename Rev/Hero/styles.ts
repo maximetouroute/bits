@@ -30,7 +30,7 @@ export const mainViewCSS: CSSObject = {
   // Space for navbar
   paddingTop: '4rem',
 
-  ...gradientBackgroundCSS
+  ...gradientBackgroundCSS,
 }
 
 export const mainViewInsideCSS: CSSObject = {
@@ -117,7 +117,6 @@ export const joinBetaCallCSS = (theme: Theme): CSSObject => {
 export const mainVideoCSS: CSSObject = {
   borderRadius: glassCSS.borderRadius,
   height: '70vh',
-
 }
 
 export const contactInfosCSS = (theme: Theme): CSSObject => {
