@@ -63,7 +63,7 @@ export const logoCSS: CSSObject = {
   alignItems: 'center',
   width: '7rem',
   height: `1.5rem`,
-
+  
   // marginBottom: 0,
   opacity: 0.9,
   paddingTop: '1rem',
@@ -101,7 +101,8 @@ export const linkCSS: CSSObject = {
 
   '&:hover': {
     ...basicTransitionCSS,
-    backgroundColor: 'rgba(250,250,250,0.5)',
+    // backgroundColor: 'rgba(250,250,250,0.5)',
+    backgroundColor: `#ffa038`,
   },
   // Vertical align text
   display: 'flex',

@@ -50,10 +50,10 @@ export default function LayoutRoot({
     palette: {
       mode: 'light',
       primary: {
-        main: '#2771cc', // Sky blue
+        main: '#DA7810', // Sky blue
       },
       secondary: {
-        main: '#649DE5', // Sky Blue Hover
+        main: '#ffa038', // Sky Blue Hover
       },
       info: {
         main: '#2A6DBF',
