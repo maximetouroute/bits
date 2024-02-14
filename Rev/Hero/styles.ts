@@ -2,7 +2,8 @@ import { CSSObject } from '@emotion/react'
 import { breakpointKey } from '../../styles/styles'
 import { Theme } from '@mui/material'
 import { themedACSS } from '../../styles/styles'
-import { glassCSS } from '../../../globalStyles'
+import { glassCSS, gradientBackgroundCSS } from '../../../globalStyles'
+
 export const responsiveContainerCSS: CSSObject = {
   display: 'flex',
   justifyContent: 'center',
@@ -26,6 +27,10 @@ export const mainViewCSS: CSSObject = {
   minHeight: '90vh',
   display: 'flex',
   flexDirection: 'column',
+  // Space for navbar
+  paddingTop: '4rem',
+
+  ...gradientBackgroundCSS
 }
 
 export const mainViewInsideCSS: CSSObject = {

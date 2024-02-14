@@ -25,9 +25,9 @@ export const gridNavBarCSS = {
   justifySelf: 'stretch',
   gridArea: 'nav',
   textAlign: 'right',
-  // position: 'sticky',
-  // top: 0,
-  // zIndex: 1,
+  position: 'fixed',
+  top: 0,
+  zIndex: 99,
   width: '100vw',
 
   // bottom nav menu
