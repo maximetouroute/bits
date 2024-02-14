@@ -4,6 +4,7 @@ import { glassCSS } from '../../../globalStyles'
 import { basicTransitionCSS } from '../../styles/styles'
 
 export const mobileNavbarCSS: CSSObject = {
+  paddingTop: '1rem',
   display: 'none',
   [breakpointKey('small')]: {
     display: 'inherit',
@@ -11,6 +12,7 @@ export const mobileNavbarCSS: CSSObject = {
 }
 
 export const desktopNavbarCSS: CSSObject = {
+  paddingTop: '1rem',
   [breakpointKey('small')]: {
     display: 'none',
   },
@@ -92,17 +94,19 @@ export const centralBarCSS: CSSObject = {
 export const linkCSS: CSSObject = {
   // textTransform: 'uppercase',
   fontWeight: 600,
-  color: '#34393A',
+  // color: '#34393A',
   padding: '1em',
   marginTop: '0.5em',
   marginBottom: '0.5em',
   textDecoration: 'none',
   borderRadius: `${2 * 1.5}rem`,
-
+  ...basicTransitionCSS,
+  color: '#08214A',
   '&:hover': {
     ...basicTransitionCSS,
     // backgroundColor: 'rgba(250,250,250,0.5)',
-    backgroundColor: `#ffa038`,
+    backgroundColor: `#1a58bc`,
+    color: 'white',
   },
   // Vertical align text
   display: 'flex',

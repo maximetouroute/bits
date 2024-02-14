@@ -10,6 +10,7 @@ import {
   gridCSS,
 } from './styles'
 import { useTheme } from '@mui/material'
+import { gradientBackgroundCSS } from '../../../globalStyles'
 
 interface OwnProps {
   posts: any
@@ -32,6 +33,9 @@ export default function PostGridFlat({ posts }: OwnProps) {
               to={`${post.frontmatter.path}#content`}
               key={post.id}
             >
+
+              <div
+              css={{width: '20rem', height:'10rem', ...gradientBackgroundCSS}}></div>
               <BgImage
                 image={gatsbyImage}
                 css={{

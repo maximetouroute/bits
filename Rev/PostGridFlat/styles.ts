@@ -13,6 +13,7 @@ export const gridCSS = (theme: Theme): CSSObject => {
     width: '100%',
     padding: 0,
     color: theme.palette.secondary.contrastText,
+    backgroundColor: theme.palette.text.primary,
     textAlign: 'center',
   }
 }

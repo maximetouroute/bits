@@ -3,7 +3,7 @@ import { CSSObject } from '@emotion/react'
 export const DEFAULT_MAIN_COLOR = '#1b1b1b'
 
 export const basicTransitionCSS: CSSObject = {
-  transition: 'all 100ms cubic-bezier(0.4, 0, 0.2, 1)',
+  transition: 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)',
 }
 
 export const themedACSS = (accentColor: string): CSSObject => {

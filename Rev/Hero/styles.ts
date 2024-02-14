@@ -28,7 +28,7 @@ export const mainViewCSS: CSSObject = {
   display: 'flex',
   flexDirection: 'column',
   // Space for navbar
-  paddingTop: '4rem',
+  paddingTop: '8rem',
 
   ...gradientBackgroundCSS,
 }
