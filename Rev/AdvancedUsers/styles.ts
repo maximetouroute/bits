@@ -31,6 +31,10 @@ export const mainViewCSS: CSSObject = {
   flexDirection: 'column',
   marginTop: '8rem',
   marginBottom: '8rem',
+  // Icarus
+  background: '#A2A2A2',
+backgroundImage: 'radial-gradient(at 50% 90%, #B8B4B3 0%, #3B3A38 100%)',
+backgroundBlendMode: 'normal,multiply',
 }
 
 export const mainViewInsideCSS: CSSObject = {

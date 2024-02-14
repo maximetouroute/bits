@@ -8,6 +8,7 @@ import {
   postSubtitleCSS,
   postTitleCSS,
   gridCSS,
+  backgroundImageCSS
 } from './styles'
 import { useTheme } from '@mui/material'
 import { gradientBackgroundCSS } from '../../../globalStyles'
@@ -34,17 +35,10 @@ export default function PostGridFlat({ posts }: OwnProps) {
               key={post.id}
             >
 
-              <div
-              css={{width: '20rem', height:'10rem', ...gradientBackgroundCSS}}></div>
+
               <BgImage
                 image={gatsbyImage}
-                css={{
-                  width: '100%',
-                  height: '100%',
-                  display: 'flex',
-                  alignItems: 'flex-end',
-                  justifyContent: 'stretch',
-                }}
+                css={backgroundImageCSS}
               >
                 <div css={postHeadCSS}>
                   <span css={postTitleCSS}>{post.frontmatter.title}</span>

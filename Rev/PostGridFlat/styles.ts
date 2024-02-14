@@ -13,7 +13,7 @@ export const gridCSS = (theme: Theme): CSSObject => {
     width: '100%',
     padding: 0,
     color: theme.palette.secondary.contrastText,
-    backgroundColor: theme.palette.text.primary,
+    // backgroundColor: theme.palette.text.primary,
     textAlign: 'center',
   }
 }
@@ -22,7 +22,8 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
   return {
     display: 'flex',
     flexDirection: 'column',
-
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     color: theme.palette.secondary.contrastText,
 
     // backgroundColor: 'transparent',
@@ -42,12 +43,15 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1)`,
     textDecoration: 'none', // Post is a link element
 
+    filter: 'contrast(0.95)',
+
     [breakpointKey('small')]: {
       width: '90vw',
       height: '90vh',
       maxHeight: '90vw',
       marginTop: '1em',
       marginCottom: '1em',
+      filter: 'contrast(1)',
     },
 
     [breakpointKey('normal')]: {
@@ -63,21 +67,33 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
       cursor: 'pointer',
       transform: 'none',
       opacity: 1,
-      color: `${color} !important`,
+      filter: 'contrast(1.05)'
+      // color: `${color} !important`,
     },
 
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
+
 
     borderRadius: glassCSS.borderRadius,
   }
 }
 
+export const backgroundImageCSS: CSSObject = {
+    width: '100%',
+    height: '100%',
+    borderRadius: "100px",
+    display: 'flex',
+    alignItems: 'flex-end',
+    justifyContent: 'stretch',
+
+    '&:after': {
+      borderRadius: glassCSS.borderRadius
+    }
+}
 export const postHeadCSS: CSSObject = {
   flexGrow: 1,
   padding: '1em',
+  margin: '2em',
   ...glassCSS,
-  borderRadius: 0,
 }
 
 export const postTitleCSS: CSSObject = {

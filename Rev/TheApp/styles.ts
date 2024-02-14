@@ -101,10 +101,11 @@ export const subjectTitleCSS = (theme: Theme): CSSObject => {
     // padding: '2rem',
     // paddingTop: '1rem',
     paddingBottom: '0rem',
-    borderRadius: '0.4rem',
-    fontSize: '1.75rem',
-    color: theme.palette.primary.main,
-    // backgroundColor: '#649de4',
+    fontSize: '1.25rem',
+    color: 'white',
+    backgroundColor: theme.palette.primary.main,
+    borderRadius: glassCSS.borderRadius,
+    padding: '1rem',
     userSelect: 'none',
   }
 }

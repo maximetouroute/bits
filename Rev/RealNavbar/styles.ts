@@ -100,13 +100,14 @@ export const linkCSS: CSSObject = {
   marginBottom: '0.5em',
   textDecoration: 'none',
   borderRadius: `${2 * 1.5}rem`,
-  ...basicTransitionCSS,
+  // ...basicTransitionCSS,
   color: '#08214A',
+
   '&:hover': {
-    ...basicTransitionCSS,
-    // backgroundColor: 'rgba(250,250,250,0.5)',
-    backgroundColor: `#1a58bc`,
-    color: 'white',
+    // ...basicTransitionCSS,
+    backgroundColor: 'rgba(0,0,0,0.1)',
+    // backgroundColor: `#1a58bc`,
+    // color: 'white',
   },
   // Vertical align text
   display: 'flex',
