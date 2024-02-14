@@ -63,24 +63,30 @@ export const clientLogoCSS: CSSObject = {
   },
 }
 
-export const imageBackgroundCSS = (url: string): CSSObject => {
+export const markeeContainerCSS: CSSObject = {
+  width: '99vw',
+};
+
+export const marqueChildCSS = (size: number): CSSObject =>
+{ 
+  return  { 
+  width: `${size}px`,
+height: `${size}px`,
+padding: `${size/4}px`,
+display: 'flex', 
+alignItems: 'center', 
+justifyContent: 'center'
+};
+};
+
+export const imageBackgroundForMarqueeCSS = (url: string): CSSObject => {
   return {
-    width: '100%',
-    height: '100%',
+    // use padding to tell width
+    minHeight: '100%',
+    minWidth: '100%',
     background: `url(${url})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundSize: 'contain',
-    opacity: 0.7,
-    // filter: 'grayscale(30%)',
-    ...basicTransitionCSS,
-
-    '&:active': {
-      ...basicTransitionCSS,
-      filter: 'none',
-      opacity: 1,
-    },
-
-    
+    backgroundSize: 'contain'
   }
 }
