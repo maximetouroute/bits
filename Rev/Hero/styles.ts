@@ -24,7 +24,7 @@ export const mainViewCSS: CSSObject = {
   ...responsiveContainerCSS,
   justifyContent: 'center',
   alignItems: 'center',
-  minHeight: '90vh',
+  minHeight: '95vh',
   display: 'flex',
   flexDirection: 'column',
   // Space for navbar
@@ -91,7 +91,7 @@ export const mainVideoContainerCSS: CSSObject = {
 }
 
 export const punchlineCSS: CSSObject = {
-  fontSize: '2rem',
+  fontSize: '3rem',
   [breakpointKey('small')]: {
     fontSize: '3rem',
   },

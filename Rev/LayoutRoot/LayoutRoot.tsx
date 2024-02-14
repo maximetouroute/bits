@@ -59,11 +59,14 @@ export default function LayoutRoot({
         main: '#2A6DBF',
       },
       background: {
-        default: '#fcf9e8',
+        default: '#fbfbfb',
         paper: 'transparent',
       },
       action: {
         hover: 'rgba(0,0,0,0.56)',
+      },
+      text: {
+        primary: '#131b4b',
       },
 
       // FOR TEXT ? #34393A

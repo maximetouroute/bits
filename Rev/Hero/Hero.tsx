@@ -51,10 +51,6 @@ export default function Hero({ langCode }: OwnProps) {
     <div css={mainViewCSS}>
       <div css={mainViewInsideCSS}>
         <div css={logoAndVideoContainerCSS}>
-          <div css={logoContainerCSS}>
-            <RevealityLogo />
-          </div>
-
           <h1 css={punchlineCSS}>{strings['punchline'][langCode]}</h1>
           <p css={punchlineParagraphCSS}>{strings['subline'][langCode]}</p>
           <p></p>
@@ -65,14 +61,14 @@ export default function Hero({ langCode }: OwnProps) {
             <AppStoreBadges />
           </div>
 
-          {/* <div css={contactInfosCSS}>
+          <div css={contactInfosCSS}>
             <p css={punchlineParagraphCSS}>
               {strings['aProject'][langCode]}{' '}
               <a href="mailto:contact@reveality.io">
                 {strings['reachUs'][langCode]}
               </a>
             </p>
-          </div> */}
+          </div>
         </div>
 
         <div></div>

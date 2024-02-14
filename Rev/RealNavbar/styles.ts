@@ -61,8 +61,8 @@ export const logoCSS: CSSObject = {
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
-  width: '2rem',
-  height: `${2 * 1.5}rem`,
+  width: '7rem',
+  height: `1.5rem`,
 
   // marginBottom: 0,
   opacity: 0.9,

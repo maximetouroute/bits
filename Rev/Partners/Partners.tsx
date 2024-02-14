@@ -29,6 +29,7 @@ const logoRawClient_6 = './../../../res/logoClient_carrnum.png'
 const logoRawClient_7 = './../../../res/logoClient_univLyon1.png'
 
 import logoClient_nimes from './../../../res/logoClient_nimes.svg'
+import logoClient_larayonne from './../../../res/logoClient_larayonne.svg'
 
 import logoPartner_idf from './../../../res/logoPartner_idf.svg'
 import logoPartner_stationf from './../../../res/logoPartner_stationf.svg'
@@ -60,6 +61,15 @@ export default function Partners({ langCode }: OwnProps) {
             <a
               css={imageBackgroundForMarqueeCSS(logoClient_nimes)}
               href={'https://nimesartethistoire.fr/'}
+              rel={'noopener noreferrer'}
+              target={'_blank'}
+            ></a>
+          </div>
+
+          <div css={marqueChildCSS(height)}>
+            <a
+              css={imageBackgroundForMarqueeCSS(logoClient_larayonne)}
+              href={'https://larayonne.org/'}
               rel={'noopener noreferrer'}
               target={'_blank'}
             ></a>

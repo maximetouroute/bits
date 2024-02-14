@@ -3,7 +3,7 @@ import { StringList } from '../../types'
 import { CSSObject } from '@emotion/react'
 
 const boldCSS: CSSObject = {
-  color: '#2771cc',
+  // color: '#2771cc',
 }
 const boldLightCSS: CSSObject = {
   color: '#649DE5',

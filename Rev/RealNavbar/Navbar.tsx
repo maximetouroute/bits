@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { LangCode } from '../../types'
-import Logo from './../RevealityLogo/RevealityLogo'
+import Logo from './../RevealityLogo/RevealityLogoHorizontal'
 import {
   containerCSS,
   logoCSS,
