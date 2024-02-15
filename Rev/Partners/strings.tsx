@@ -7,7 +7,7 @@ export const strings: StringList = {
     ['fr']: 'Ils nous font confiance',
   },
   coachs: {
-    ['en']: 'They accompany us',
+    ['en']: 'Our partners',
     ['fr']: 'Ils nous accompagnent',
   },
 }
