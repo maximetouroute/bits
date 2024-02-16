@@ -20,6 +20,7 @@ import {
   gridNavContentFooterCSS,
 } from './styles'
 import { bodyCSS } from '../../../globalStyles'
+import AppAppBar from '../AppBar/AppBar'
 
 interface OwnProps {
   children: any
@@ -63,7 +64,7 @@ export default function LayoutRoot({
         paper: 'transparent',
       },
       action: {
-        hover: 'rgba(0,0,0,0.56)',
+        hover: 'rgba(0,0,0,0.16)',
       },
       text: {
         primary: '#131b4b',
@@ -97,14 +98,16 @@ export default function LayoutRoot({
           {/* <MobileAppBar title={navbarConfig.name} /> */}
           {/* </div> */}
           <nav css={gridNavBarCSS}>
-            <HoloNavbar
+            <AppAppBar currentLangCode={language}
+              currentUrl={location.pathname}/>
+            {/* <HoloNavbar
               currentLangCode={language}
               currentUrl={location.pathname}
-            />
+            /> */}
             {/* <Navbar title={navbarConfig.name} links={navbarConfig.links[language].links} /> */}
           </nav>
           <div css={gridContentCSS}>{children}</div>
-          <div css={gridFooterCSS}>
+          <div css={gridFooterCSS} id={"contact"}>
             <RevealityFooter
               lang={language}
               customLinks={footerConfig[language].links}

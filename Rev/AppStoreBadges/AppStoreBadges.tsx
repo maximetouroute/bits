@@ -6,8 +6,8 @@ import { glassCSS } from '../../../globalStyles'
 import { basicTransitionCSS } from '../../styles/styles'
 
 export const containerCSS: CSSObject = {
-  width: '10rem',
-  height: '3rem',
+  width: '11rem',
+  height: '3.3rem',
   margin: '1rem',
   ...glassCSS,
 
