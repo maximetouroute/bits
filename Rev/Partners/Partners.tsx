@@ -49,6 +49,7 @@ export default function Partners({ langCode }: OwnProps) {
           alignItems: 'center',
           justifyContent: 'center',
           opacity: 0.7,
+          transform: 'scale(0.8)',
         }}
       >
         <div css={marqueChildCSS(height)}>
@@ -64,6 +65,15 @@ export default function Partners({ langCode }: OwnProps) {
           <a
             css={imageBackgroundForMarqueeCSS(logoPartner_polepixel)}
             href={'https://polepixel.fr/'}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          ></a>
+        </div>
+
+        <div css={marqueChildCSS(height)}>
+          <a
+            css={imageBackgroundForMarqueeCSS(logoPartner_bpi)}
+            href={'https://www.bpifrance.fr/'}
             rel={'noopener noreferrer'}
             target={'_blank'}
           ></a>
@@ -84,15 +94,6 @@ export default function Partners({ langCode }: OwnProps) {
             target={'_blank'}
           ></a>
         </div>
-        <div css={marqueChildCSS(height)}>
-          <a
-            css={imageBackgroundForMarqueeCSS(logoPartner_bpi)}
-            href={'https://www.bpifrance.fr/'}
-            rel={'noopener noreferrer'}
-            target={'_blank'}
-          ></a>
-        </div>
-
         <div css={marqueChildCSS(height)}>
           <a
             href={'https://www.theschoolab.com/en/'}

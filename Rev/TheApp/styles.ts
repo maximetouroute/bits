@@ -52,7 +52,7 @@ export const punchlineParagraphCSS: CSSObject = {
 export const howDoesItWorkCSS: CSSObject = {
   [breakpointKey('normal')]: {
     minWidth: '40rem',
-    maxWidth: '50rem',
+    // maxWidth: '50rem',
     alignItems: 'flex-start',
   },
   [breakpointKey('small')]: {
@@ -64,6 +64,7 @@ export const howDoesItWorkCSS: CSSObject = {
   },
   display: 'flex',
   justifyContent: 'center',
+  flexWrap: 'wrap',
 }
 
 export const sublineCSS: CSSObject = {

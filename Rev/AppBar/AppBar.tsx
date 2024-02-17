@@ -26,8 +26,8 @@ const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
 
 export const LOCAL: StringList = {
   theApp: {
-    ['en']: 'App',
-    ['fr']: 'Appli',
+    ['en']: 'The App',
+    ['fr']: `L'appli`,
   },
   about: {
     ['en']: 'About',
