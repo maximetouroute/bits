@@ -234,6 +234,12 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                 justifyContent: 'center',
               }}
             >
+
+              <Box       sx={{ my: 10,  display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center'}}>
+
               <Typography variant="h7" sx={{ textAlign: 'center', py: 3 }}>
                 {strings.joinNewsletter[lang]}
               </Typography>
@@ -243,6 +249,9 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                 mailchimpURL={MAILCHIMP_URL}
                 uniqueAntiSpamId={'b_8b4e477d425a1fcb90d90a287_7331d8e0bb'}
               />
+                </Box>
+
+              
             </div>
 
             <div css={insideCSS}>
@@ -328,7 +337,7 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                   )
                 })}
               </div>
-              <Typography variant="body2" sx={{ marginTop: '10rem' }}>
+              <Typography variant="body2" sx={{ marginTop: '3rem' }}>
                 Copyright 2024 Reveality
               </Typography>
             </div>

@@ -2,6 +2,7 @@ import { CSSObject } from '@emotion/react'
 import { Theme } from '@mui/material'
 import { breakpointKey } from '../../styles/styles'
 import { themedACSS } from '../../styles/styles'
+import { gradientBackground3CSS } from '../../../globalStyles'
 
 const blackLinkColor = '#4c4c4c'
 
@@ -149,6 +150,10 @@ export const coverBandCSS = (theme: Theme): CSSObject => {
     backgroundPosition: 'center center',
     // backgroundColor: theme.palette.secondary.main,
     // borderBottom: `10px solid ${theme.palette.secondary.main}`
+    // App bar space
+    paddingTop: '8rem',
+
+    ...gradientBackground3CSS
   }
 }
 
@@ -185,7 +190,7 @@ export const cardCSS: CSSObject = {
 
 export const pageCSS = (theme: Theme): CSSObject => {
   return {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.default,
     display: 'flex',
     justifyContent: 'center',
     a: {

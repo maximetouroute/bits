@@ -58,8 +58,9 @@ const menuItemStyle = {
 }
 
 const drawerTextStyle = {
-  py: '2rem',
+  p: '2rem',
   fontSize: '2rem',
+  textAlign: 'right'
 }
 
 const navbarStyle = (theme: Theme) => ({
@@ -257,6 +258,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   display: { xs: 'flex', md: 'none' },
                   alignItems: 'center',
                   justifyContent: 'center',
+                  marginLeft: 1.5
                 }}
                 onClick={() => scrollToSection('hero')}
               >
@@ -268,7 +270,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                 color="primary"
                 aria-label="menu"
                 onClick={toggleDrawer(true)}
-                sx={{ minWidth: '30px', p: '4px' }}
+                sx={{ p: '10px', borderRadius: '999px' }}
               >
                 <MenuIcon />
               </Button>
@@ -289,9 +291,9 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
             >
               <Box
                 sx={{
-                  minWidth: '70dvw',
+                  minWidth: '60dvw',
                   p: 2,
-                  backgroundColor: 'transparent',
+
                   ...glassStyle(theme),
                   borderRadius: 0,
                   flexGrow: 1,

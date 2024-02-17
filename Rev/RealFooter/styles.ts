@@ -6,7 +6,7 @@ import {
   injectLinkCSS,
 } from '../../styles/styles'
 import { Theme } from '@mui/material'
-
+import { gradientBackground4CSS } from '../../../globalStyles'
 const color = '#34393a'
 
 const $accentColorIdle = 'black' //rgb(77, 102, 153);
@@ -19,50 +19,30 @@ const $colorHover = $accentColorIdle
 const $underlineColor = `rgba(#649DE5, 0.3)`
 
 export const insideCSS: CSSObject = {
-  paddingTop: '3em',
-  marginBottom: '3em',
+
+  marginBottom: '1em',
   lineHeight: '1.4em',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-end',
   flexWrap: 'nowrap',
   [breakpointKey('small')]: {
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
 }
 
-export const separatorCSS: CSSObject = {
-  backgroundColor: color,
-  border: 'none',
-  height: '3px',
-  width: '50px',
-  display: 'flex',
-  alignSelf: 'center',
-  flexDirection: 'column',
-  margin: '0 auto',
-  marginTop: '1rem',
-  marginBottom: '1rem',
-}
 
 export const footerCSS: CSSObject = {
-  marginTop: '2rem',
   color: color,
-
-  [breakpointKey('normal')]: {
-    minWidth: '50rem',
-    maxWidth: '90rem',
-  },
-  [breakpointKey('small')]: {
-    minWidth: '90vw',
-  },
+  width: '100%',
+  ...gradientBackground4CSS
 }
 
 export const linksCSS = (theme: Theme): CSSObject => {
   return {
-    paddingTop: '2em',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -157,8 +137,6 @@ export const followUsCSS: CSSObject = {
 export const followUsStuffCSS = (theme: Theme): CSSObject => {
   return {
     fontSize: '2rem',
-    marginTop: '1rem',
-    marginBottom: '1rem',
     textAlign: 'center',
 
     a: {

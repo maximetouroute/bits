@@ -63,7 +63,7 @@ export default function LayoutRoot({
         main: '#2A6DBF',
       },
       background: {
-        default: '#fbfbfb',
+        default: 'hsla(300,40%,98%,1)',
         paper: 'transparent',
       },
       action: {
