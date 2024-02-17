@@ -55,11 +55,11 @@ const menuItemStyle = {
   px: '1.4rem',
   borderRadius: '3rem',
   // borderRadius: '999px'
-};
+}
 
 const drawerTextStyle = {
   py: '2rem',
-  fontSize: '2rem'
+  fontSize: '2rem',
 }
 
 const navbarStyle = (theme: Theme) => ({
@@ -79,7 +79,11 @@ const textStyle = {
   fontSize: '1rem',
 }
 
-const languageSwitcher = (theme: Theme, currentUrl: string, currentLangCode: LangCode) => {
+const languageSwitcher = (
+  theme: Theme,
+  currentUrl: string,
+  currentLangCode: LangCode
+) => {
   return (
     <>
       {Object.keys(supportedLangs).map((langCode: string, index: number) => {
@@ -88,7 +92,11 @@ const languageSwitcher = (theme: Theme, currentUrl: string, currentLangCode: Lan
           .replace(supportedLangs[currentLangCode].urlPrefix, '') // Remove language prefix
           .replace('//', '/') // Avoid possible double slash
         return (
-          <Typography variant="body2" color="text.primary" sx={{fontSize: {xs: '1.4rem', md:''}}}>
+          <Typography
+            variant="body2"
+            color="text.primary"
+            sx={{ fontSize: { xs: '1.4rem', md: '' } }}
+          >
             <Link
               key={index}
               to={baseUrl}
@@ -172,7 +180,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                 ...navbarStyle(theme),
                 display: { xs: 'none', md: 'flex' },
                 // manual gutter
-                px : navbarStyle(theme).py
+                px: navbarStyle(theme).py,
               }}
               disableGutters={true}
             >
@@ -301,40 +309,40 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   onClick={() => scrollToSection('portfolio')}
                   sx={{ borderRadius: '999px' }}
                 >
-                     <Typography sx={drawerTextStyle}> {LOCAL.portfolio[currentLangCode]}</Typography>
-                 
+                  <Typography sx={drawerTextStyle}>
+                    {' '}
+                    {LOCAL.portfolio[currentLangCode]}
+                  </Typography>
                 </MenuItem>
                 <MenuItem
                   onClick={() => scrollToSection('about')}
                   sx={{ borderRadius: '999px' }}
                 >
                   <Typography sx={drawerTextStyle}>
-                  {LOCAL.about[currentLangCode]}
+                    {LOCAL.about[currentLangCode]}
                   </Typography>
-                  
                 </MenuItem>
                 <MenuItem
                   onClick={() => scrollToSection('contact')}
                   sx={{ borderRadius: '999px' }}
                 >
-                  <Typography  sx={drawerTextStyle}>
-                  {LOCAL.contact[currentLangCode]}
+                  <Typography sx={drawerTextStyle}>
+                    {LOCAL.contact[currentLangCode]}
                   </Typography>
-                  
                 </MenuItem>
-                <Divider/>
+                <Divider />
                 <Box
-              sx={{
-                display: { xs: 'flex', md: 'none' },
-                gap: 0.5,
-                alignItems: 'flex-end',
-                justifyContent: 'center',
-                fontSize: '2rem',
-                my: 4
-              }}
-            >
-              {languageSwitcher(theme, currentUrl, currentLangCode)}
-            </Box>
+                  sx={{
+                    display: { xs: 'flex', md: 'none' },
+                    gap: 0.5,
+                    alignItems: 'flex-end',
+                    justifyContent: 'center',
+                    fontSize: '2rem',
+                    my: 4,
+                  }}
+                >
+                  {languageSwitcher(theme, currentUrl, currentLangCode)}
+                </Box>
               </Box>
             </Drawer>
 

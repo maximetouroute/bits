@@ -28,8 +28,8 @@ export const mainViewCSS: CSSObject = {
   alignItems: 'center',
   display: 'flex',
   flexDirection: 'column',
-  marginTop: '8rem',
-  marginBottom: '8rem',
+  paddingTop: '8rem',
+  paddingBottom: '8rem',
 }
 
 export const mainViewInsideCSS: CSSObject = {
@@ -43,12 +43,13 @@ export const mainViewInsideCSS: CSSObject = {
 }
 
 export const punchlineCSS: CSSObject = {
-  fontSize: '2rem',
-  [breakpointKey('small')]: {
-    fontSize: '3rem',
-  },
-  fontWeight: 900,
+  // fontSize: '2rem',
+  // [breakpointKey('small')]: {
+  //   fontSize: '3rem',
+  // },
+  // fontWeight: 900,
   textAlign: 'center',
+  marginBottom: '2rem',
 }
 
 export const punchlineParagraphCSS: CSSObject = {

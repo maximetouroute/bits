@@ -12,7 +12,7 @@ export const punchlineCSS: CSSObject = {
   [breakpointKey('small')]: {
     fontSize: '1.3rem',
   },
-  fontWeight: 900,
+  // fontWeight: 900,
   textAlign: 'center',
 }
 

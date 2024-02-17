@@ -8,7 +8,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import MusicNoteIcon from '@mui/icons-material/MusicNote'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import MailForm from '../mailchimpFormReveality/mailchimpFormPrivacyFriendly'
-
+import { Box } from '@mui/material'
 const MAILCHIMP_URL =
   'https://reveality.us5.list-manage.com/subscribe/post?u=8b4e477d425a1fcb90d90a287&amp;id=7331d8e0bb'
 
@@ -38,6 +38,7 @@ import {
   followUsCSS,
   followUsStuffCSS,
 } from './styles'
+import { Typography } from '@mui/material'
 
 interface OwnProps {
   customLinks: Array<NamedLink>
@@ -231,19 +232,12 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginTop: '2rem',
               }}
             >
-              <p
-                css={{
-                  fontSize: '1.2em',
-
-                  fontWeight: 600,
-                  marginBottom: '1em',
-                }}
-              >
+              <Typography variant="h7" sx={{ textAlign: 'center', py: 3 }}>
                 {strings.joinNewsletter[lang]}
-              </p>
+              </Typography>
+
               <MailForm
                 uniqueId={'footerForm'}
                 mailchimpURL={MAILCHIMP_URL}
@@ -252,10 +246,10 @@ export default function Footer({ customLinks, lang }: OwnProps) {
             </div>
 
             <div css={insideCSS}>
+              <Typography variant="h7" sx={{ textAlign: 'center' }}>
+                {strings.followUs[lang]}
+              </Typography>
               <div css={followUsCSS}>
-                <p css={headerCSS} css={headerCSS}>
-                  {strings.followUs[lang]}
-                </p>
                 <div css={followUsStuffCSS}>
                   <a
                     href={links.tiktok}
@@ -300,24 +294,12 @@ export default function Footer({ customLinks, lang }: OwnProps) {
               </div>
 
               <div css={contactCSS}>
-                <div css={contactInfosCSS} className={'contactInfos'}>
-                  <p>{strings.contact[lang]}</p>
-                  <p>
-                    {/* <strong>EMAIL</strong><br/> */}
-                    <a href="mailto:contact@reveality.io">
-                      contact@reveality.io
-                    </a>
-                  </p>
-                  {/* <p>
-                      <strong>Maxime TOUROUTE, CEO</strong><br/>
-                      <a href="telto:+33650847419"> +33 6 50 84 74 19</a>
-                    </p>
-                    <p>
-                      <strong>Tom VENIAT, CTO</strong><br/>
-                      <a href="telto:+33649760286"> +33 6 49 76 02 86</a>
-                    </p> */}
-                  {/* <Link to={'/contact'}>{strings.moreContacts[lang]}</Link> */}
-                </div>
+                <Typography
+                  variant="h6"
+                  sx={{ textAlign: 'center', py: 3, ...contactInfosCSS(theme) }}
+                >
+                  <a href="mailto:contact@reveality.io">contact@reveality.io</a>
+                </Typography>
               </div>
             </div>
 
@@ -327,20 +309,28 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                 alignItems: 'center',
                 justifyContent: 'center',
                 textAlign: 'center',
-                color: '#34393A',
+                // color: '#34393A',
                 ...insideCSS,
               }}
             >
-              <div css={linksCSS}>
+              <div css={linksCSS(theme)}>
                 {customLinks.map((link) => {
                   return (
-                    <Link key={link.name} to={link.path}>
-                      {link.name}
-                    </Link>
+                    <Typography variant="body1">
+                      <Link
+                        key={link.name}
+                        to={link.path}
+                        css={{ margin: '0.5rem' }}
+                      >
+                        {link.name}
+                      </Link>
+                    </Typography>
                   )
                 })}
               </div>
-              <p>Copyright 2024 Reveality</p>
+              <Typography variant="body2" sx={{ marginTop: '10rem' }}>
+                Copyright 2024 Reveality
+              </Typography>
             </div>
           </div>
         )

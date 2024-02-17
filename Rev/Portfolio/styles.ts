@@ -27,6 +27,8 @@ export const mainViewCSS: CSSObject = {
   flexDirection: 'column',
 
   backgroundColor: '#fcf8fc',
+  paddingTop: '4rem',
+  paddingBottom: '4rem',
 }
 
 export const mainViewInsideCSS: CSSObject = {

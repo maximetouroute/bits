@@ -4,9 +4,7 @@ import {
   mainViewCSS,
   howDoesItWorkCSS,
   howDoesItWorkPartCSS,
-  subjectTitleCSS,
   subjectVideoCSS,
-  subjectSublineCSS,
   sublineCSS,
   glassContainerCSS,
 } from './styles'
@@ -19,8 +17,17 @@ import subjectMix from './../../../pages/app_share.webm'
 import subjectRawSafariIos from './../../../pages/app_shoot.mp4'
 import subjectAlphaSafariIos from './../../../pages/app_create.mp4'
 import subjectMixSafariIos from './../../../pages/app_share.mp4'
-import { useTheme } from '@mui/material'
+import { Typography, useTheme } from '@mui/material'
+import { CSSObject } from '@emotion/react'
+import { Theme } from '@mui/material'
 
+const styledTitle = (theme: Theme): CSSObject => {
+  return {
+    backgroundColor: theme.palette.action.hover,
+    padding: '1rem',
+    borderRadius: '2rem',
+  }
+}
 interface OwnProps {
   langCode: LangCode
 }
@@ -28,18 +35,25 @@ export default function TheApp({ langCode }: OwnProps) {
   const theme = useTheme()
   return (
     <div css={mainViewCSS}>
-      <h1 css={{ ...punchlineCSS, marginTop: '8rem', marginBottom: '2rem' }}>
+      <Typography
+        variant="h3"
+        sx={{ ...punchlineCSS, marginTop: '8rem', marginBottom: '2rem' }}
+      >
         {strings['punchline'][langCode]}
-      </h1>
-      <p css={sublineCSS}>{strings['subline'][langCode]}</p>
+      </Typography>
+      <Typography variant="body1" sx={sublineCSS}>
+        {strings['subline'][langCode]}
+      </Typography>
+
       <div css={howDoesItWorkCSS}>
         <div css={howDoesItWorkPartCSS}>
-          <h3 css={subjectTitleCSS(theme)}>
+          <Typography variant="h5" sx={{ my: 2, ...styledTitle(theme) }}>
             {strings['experiment'][langCode]}
-          </h3>
-          <p css={subjectSublineCSS(theme)}>
+          </Typography>
+
+          <Typography variant="body1" sx={{ my: 2 }}>
             {strings['experimentDetails'][langCode]}
-          </p>
+          </Typography>
 
           <div css={glassContainerCSS}>
             <video autoPlay muted loop playsInline css={subjectVideoCSS}>
@@ -49,10 +63,13 @@ export default function TheApp({ langCode }: OwnProps) {
           </div>
         </div>
         <div css={howDoesItWorkPartCSS}>
-          <h3 css={subjectTitleCSS(theme)}>{strings['create'][langCode]}</h3>
-          <p css={subjectSublineCSS(theme)}>
+          <Typography variant="h5" sx={{ my: 2, ...styledTitle(theme) }}>
+            {strings['create'][langCode]}
+          </Typography>
+          <Typography variant="body1" sx={{ my: 2 }}>
             {strings['createDetails'][langCode]}
-          </p>
+          </Typography>
+
           <div css={glassContainerCSS}>
             <video autoPlay muted loop playsInline css={subjectVideoCSS}>
               <source src={subjectAlpha} type="video/webm" />
@@ -62,10 +79,14 @@ export default function TheApp({ langCode }: OwnProps) {
         </div>
 
         <div css={howDoesItWorkPartCSS}>
-          <h3 css={subjectTitleCSS(theme)}>{strings['publish'][langCode]}</h3>
-          <p css={subjectSublineCSS(theme)}>
+          <Typography variant="h5" sx={{ my: 2, ...styledTitle(theme) }}>
+            {strings['publish'][langCode]}
+          </Typography>
+
+          <Typography variant="body1" sx={{ my: 2, ...styledTitle }}>
             {strings['publishDetails'][langCode]}
-          </p>
+          </Typography>
+
           <div css={glassContainerCSS}>
             <video autoPlay muted loop playsInline css={subjectVideoCSS}>
               <source src={subjectMix} type="video/webm" />

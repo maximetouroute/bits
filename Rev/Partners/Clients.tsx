@@ -8,7 +8,7 @@ import {
 import { strings } from './strings'
 import { LangCode } from '../../types'
 import Marquee from 'react-fast-marquee'
-import { useTheme } from '@mui/material'
+import { Typography, useTheme } from '@mui/material'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby-link'
 /**
@@ -40,7 +40,9 @@ export default function Clients({ langCode }: OwnProps) {
 
   return (
     <>
-      <h3 css={punchlineCSS}>{strings['clients'][langCode]}</h3>
+      <Typography variant="h3" sx={punchlineCSS}>
+        {strings['clients'][langCode]}
+      </Typography>
 
       <div css={markeeContainerCSS}>
         <Marquee>

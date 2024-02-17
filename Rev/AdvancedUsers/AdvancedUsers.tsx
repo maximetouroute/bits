@@ -22,8 +22,8 @@ export default function AdvancedUsers({ langCode }: OwnProps) {
   return (
     <div css={mainViewCSS}>
       <div css={responsiveContainerInsideCSS}>
-        <h2 css={punchlineCSS}>{strings['punchline'][langCode]}</h2>
-        <p css={punchlineParagraphCSS}>{strings['subline'][langCode]}</p>
+        <h2 css={punchlineCSS}>{strings(theme)['punchline'][langCode]}</h2>
+        <p css={punchlineParagraphCSS}>{strings(theme)['subline'][langCode]}</p>
 
         <div css={clientsLogoGridCSS}>
           {ADVANCED_LOGOS.map((logo) => {
@@ -43,12 +43,14 @@ export default function AdvancedUsers({ langCode }: OwnProps) {
           })}
         </div>
 
-        <p css={punchlineParagraphCSS}>{strings['features'][langCode]}</p>
+        <p css={punchlineParagraphCSS}>
+          {strings(theme)['features'][langCode]}
+        </p>
 
         <div css={contactInfosCSS}>
           <p css={punchlineParagraphCSS}>
             <a href="mailto:contact@reveality.io">
-              {strings['contactUs'][langCode]}
+              {strings(theme)['contactUs'][langCode]}
             </a>
           </p>
         </div>

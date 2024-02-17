@@ -50,11 +50,14 @@ export default function LayoutRoot({
   const theme = createTheme({
     palette: {
       mode: 'light',
+      background: {
+        default: 'hsla(300,40%,98%,1)',
+      },
       primary: {
         main: '#5122dd', // Sky blue
       },
       secondary: {
-        main: '#5122dd', // Sky Blue Hover
+        main: '#2251dd', // Sky Blue Hover
       },
       info: {
         main: '#2A6DBF',

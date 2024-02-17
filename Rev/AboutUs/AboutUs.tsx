@@ -8,7 +8,7 @@ import {
 } from './styles'
 import { strings } from './strings'
 import { LangCode } from '../../types'
-import { useTheme } from '@mui/material'
+import { Typography, useTheme } from '@mui/material'
 
 interface OwnProps {
   langCode: LangCode
@@ -18,17 +18,24 @@ export default function AboutUs({ langCode }: OwnProps) {
   return (
     <div css={mainViewCSS}>
       <div css={responsiveContainerInsideCSS}>
-        <h2 css={punchlineCSS}>{strings['punchline'][langCode]}</h2>
-        <p css={punchlineParagraphCSS}>{strings['subline'][langCode]}</p>
+        <Typography variant="h3" sx={punchlineCSS}>
+          {strings(theme)['punchline'][langCode]}
+        </Typography>
 
-        <p css={punchlineParagraphCSS}>{strings['features'][langCode]}</p>
+        <Typography variant="body1" sx={{ textAlign: 'center' }}>
+          {strings(theme)['subline'][langCode]}
+        </Typography>
+
+        <Typography variant="body1" sx={{ textAlign: 'center' }}>
+          {strings(theme)['features'][langCode]}
+        </Typography>
 
         <div css={contactInfosCSS}>
-          <p css={punchlineParagraphCSS}>
+          <Typography variant="body1">
             <a href="mailto:contact@reveality.io">
-              {strings['contactUs'][langCode]}
+              {strings(theme)['contactUs'][langCode]}
             </a>
-          </p>
+          </Typography>
         </div>
       </div>
     </div>

@@ -10,6 +10,8 @@ import { LangCode } from '../../types'
 import Marquee from 'react-fast-marquee'
 import { useTheme } from '@mui/material'
 import { StaticImage } from 'gatsby-plugin-image'
+import { Typography } from '@mui/material'
+import Container from '@mui/material/Container'
 /**
  * Here, we use StaticImage when possible (url must be written in scope, thus no config file/function/loop possible
  * Otherwise svg (ideal)
@@ -35,69 +37,78 @@ export default function Partners({ langCode }: OwnProps) {
 
   return (
     <>
-      <h3 css={punchlineCSS}>{strings['coachs'][langCode]}</h3>
+      <Typography variant="h3" sx={punchlineCSS}>
+        {strings['coachs'][langCode]}
+      </Typography>
 
-      <div css={markeeContainerCSS}>
-        <Marquee>
-          <div css={marqueChildCSS(height)}>
-            <a
-              css={imageBackgroundForMarqueeCSS(logoPartner_idf)}
-              href={'https://www.iledefrance.fr'}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            ></a>
-          </div>
+      <Container
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'center',
+          opacity: 0.7,
+        }}
+      >
+        <div css={marqueChildCSS(height)}>
+          <a
+            css={imageBackgroundForMarqueeCSS(logoPartner_idf)}
+            href={'https://www.iledefrance.fr'}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          ></a>
+        </div>
 
-          <div css={marqueChildCSS(height)}>
-            <a
-              css={imageBackgroundForMarqueeCSS(logoPartner_polepixel)}
-              href={'https://polepixel.fr/'}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            ></a>
-          </div>
-          <div css={marqueChildCSS(height)}>
-            <a
-              css={imageBackgroundForMarqueeCSS(logoPartner_stationf)}
-              href={'https://stationf.co/'}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            ></a>
-          </div>
-          <div css={marqueChildCSS(height)}>
-            <a
-              css={imageBackgroundForMarqueeCSS(logoPartner_parisCo)}
-              href={'https://www.parisandco.com/'}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            ></a>
-          </div>
-          <div css={marqueChildCSS(height)}>
-            <a
-              css={imageBackgroundForMarqueeCSS(logoPartner_bpi)}
-              href={'https://www.bpifrance.fr/'}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            ></a>
-          </div>
+        <div css={marqueChildCSS(height)}>
+          <a
+            css={imageBackgroundForMarqueeCSS(logoPartner_polepixel)}
+            href={'https://polepixel.fr/'}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          ></a>
+        </div>
+        <div css={marqueChildCSS(height)}>
+          <a
+            css={imageBackgroundForMarqueeCSS(logoPartner_stationf)}
+            href={'https://stationf.co/'}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          ></a>
+        </div>
+        <div css={marqueChildCSS(height)}>
+          <a
+            css={imageBackgroundForMarqueeCSS(logoPartner_parisCo)}
+            href={'https://www.parisandco.com/'}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          ></a>
+        </div>
+        <div css={marqueChildCSS(height)}>
+          <a
+            css={imageBackgroundForMarqueeCSS(logoPartner_bpi)}
+            href={'https://www.bpifrance.fr/'}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          ></a>
+        </div>
 
-          <div css={marqueChildCSS(height)}>
-            <a
-              href={'https://www.theschoolab.com/en/'}
-              rel={'noopener noreferrer'}
-              target={'_blank'}
-            >
-              <StaticImage
-                src={logoRawPartner_1}
-                alt="Schoolab"
-                placeholder="blurred"
-                layout="fixed"
-                width={height}
-              />
-            </a>
-          </div>
-        </Marquee>
-      </div>
+        <div css={marqueChildCSS(height)}>
+          <a
+            href={'https://www.theschoolab.com/en/'}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          >
+            <StaticImage
+              src={logoRawPartner_1}
+              alt="Schoolab"
+              placeholder="blurred"
+              layout="fixed"
+              width={height}
+            />
+          </a>
+        </div>
+      </Container>
     </>
   )
 }

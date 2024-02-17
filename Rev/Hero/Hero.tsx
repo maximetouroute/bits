@@ -52,15 +52,15 @@ export default function Hero({ langCode }: OwnProps) {
       <div css={mainViewInsideCSS}>
         <div css={logoAndVideoContainerCSS}>
           <Typography variant="h1" sx={punchlineCSS}>
-          {strings['punchline'][langCode]}
+            {strings['punchline'][langCode]}
           </Typography>
           <Typography variant="body1" sx={punchlineParagraphCSS}>
-          {strings['subline'][langCode]}
+            {strings['subline'][langCode]}
           </Typography>
 
           <div css={badgeContainerCSS}>
             <Typography variant="h3" sx={joinBetaCallCSS(theme)}>
-            {strings['downloadApp'][langCode]}
+              {strings['downloadApp'][langCode]}
             </Typography>
             <AppStoreBadges />
           </div>
@@ -72,8 +72,6 @@ export default function Hero({ langCode }: OwnProps) {
                 {strings['reachUs'][langCode]}
               </a>
             </Typography>
-            
-           
           </div>
         </div>
 
