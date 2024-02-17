@@ -27,7 +27,6 @@ const logoRawClient_7 = './../../../res/logoClient_univLyon1.png'
 import logoClient_nimes from './../../../res/logoClient_nimes.svg'
 import logoClient_larayonne from './../../../res/logoClient_larayonne.svg'
 
-
 const height = 150
 
 // <a css={imageBackgroundForMarqueeCSS(logoAdvanced_unity)}>

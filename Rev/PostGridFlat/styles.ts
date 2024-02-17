@@ -67,27 +67,25 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
       cursor: 'pointer',
       transform: 'none',
       opacity: 1,
-      filter: 'contrast(1.05)'
+      filter: 'contrast(1.05)',
       // color: `${color} !important`,
     },
-
-
 
     borderRadius: glassCSS.borderRadius,
   }
 }
 
 export const backgroundImageCSS: CSSObject = {
-    width: '100%',
-    height: '100%',
-    borderRadius: "100px",
-    display: 'flex',
-    alignItems: 'flex-end',
-    justifyContent: 'stretch',
+  width: '100%',
+  height: '100%',
+  borderRadius: '100px',
+  display: 'flex',
+  alignItems: 'flex-end',
+  justifyContent: 'stretch',
 
-    '&:after': {
-      borderRadius: glassCSS.borderRadius
-    }
+  '&:after': {
+    borderRadius: glassCSS.borderRadius,
+  },
 }
 export const postHeadCSS: CSSObject = {
   flexGrow: 1,

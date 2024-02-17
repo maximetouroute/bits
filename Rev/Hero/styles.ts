@@ -91,6 +91,7 @@ export const mainVideoContainerCSS: CSSObject = {
 }
 
 export const punchlineCSS: CSSObject = {
+  color: '#28116F',
   fontSize: '3rem',
   [breakpointKey('small')]: {
     fontSize: '3rem',

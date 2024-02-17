@@ -51,10 +51,10 @@ export default function LayoutRoot({
     palette: {
       mode: 'light',
       primary: {
-        main: '#1a58bc', // Sky blue
+        main: '#5122dd', // Sky blue
       },
       secondary: {
-        main: '#1a58bc', // Sky Blue Hover
+        main: '#5122dd', // Sky Blue Hover
       },
       info: {
         main: '#2A6DBF',
@@ -64,11 +64,11 @@ export default function LayoutRoot({
         paper: 'transparent',
       },
       action: {
-        hover: 'rgba(0,0,0,0.16)',
+        hover: '#7b56eb38',
       },
       text: {
-        primary: '#131b4b',
-        secondary: '#1a58bc'
+        primary: '#28116F', //'#131b4b',
+        secondary: '#1a58bc',
       },
 
       // FOR TEXT ? #34393A
@@ -94,20 +94,13 @@ export default function LayoutRoot({
           }}
         />
         <div css={gridNavContentFooterCSS}>
-          {/* <div css={{ ...appBarCSS, ...customColorCSS(theme) }}> */}
-          {/* <MobileAppBar title={navbarConfig.name} /> */}
-          {/* </div> */}
-          <nav css={gridNavBarCSS}>
-            <AppAppBar currentLangCode={language}
-              currentUrl={location.pathname}/>
-            {/* <HoloNavbar
-              currentLangCode={language}
-              currentUrl={location.pathname}
-            /> */}
-            {/* <Navbar title={navbarConfig.name} links={navbarConfig.links[language].links} /> */}
-          </nav>
+          <AppAppBar
+            currentLangCode={language}
+            currentUrl={location.pathname}
+          />
+
           <div css={gridContentCSS}>{children}</div>
-          <div css={gridFooterCSS} id={"contact"}>
+          <div css={gridFooterCSS} id={'contact'}>
             <RevealityFooter
               lang={language}
               customLinks={footerConfig[language].links}

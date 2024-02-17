@@ -65,7 +65,7 @@ export const logoCSS: CSSObject = {
   alignItems: 'center',
   width: '7rem',
   height: `1.5rem`,
-  
+
   // marginBottom: 0,
   opacity: 0.9,
   paddingTop: '1rem',
