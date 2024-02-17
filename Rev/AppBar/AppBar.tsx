@@ -55,6 +55,11 @@ const menuItemStyle = {
   px: '1.4rem',
   borderRadius: '3rem',
   // borderRadius: '999px'
+};
+
+const drawerTextStyle = {
+  py: '2rem',
+  fontSize: '2rem'
 }
 
 const navbarStyle = (theme: Theme) => ({
@@ -64,8 +69,9 @@ const navbarStyle = (theme: Theme) => ({
   ...glassStyle(theme),
   height: '3rem',
   borderRadius: '3rem',
+  // flexGrow: 0,
   width: { md: 'fit-content', xs: '100%' },
-  p: '0.5rem',
+  py: '0.5rem',
 })
 
 const textStyle = {
@@ -73,7 +79,7 @@ const textStyle = {
   fontSize: '1rem',
 }
 
-const languageSwitcher = (currentUrl: string, currentLangCode: LangCode) => {
+const languageSwitcher = (theme: Theme, currentUrl: string, currentLangCode: LangCode) => {
   return (
     <>
       {Object.keys(supportedLangs).map((langCode: string, index: number) => {
@@ -82,14 +88,14 @@ const languageSwitcher = (currentUrl: string, currentLangCode: LangCode) => {
           .replace(supportedLangs[currentLangCode].urlPrefix, '') // Remove language prefix
           .replace('//', '/') // Avoid possible double slash
         return (
-          <Typography variant="body2" color="text.primary">
+          <Typography variant="body2" color="text.primary" sx={{fontSize: {xs: '1.4rem', md:''}}}>
             <Link
               key={index}
               to={baseUrl}
               onClick={() => {
                 updateDefaultLanguage(langCode as LangCode)
               }}
-              css={langLinkCSS(currentLangCode === langCode)}
+              css={langLinkCSS(theme, currentLangCode === langCode)}
             >
               {supportedLangs[langCode].shortName}
             </Link>
@@ -165,6 +171,8 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
               sx={{
                 ...navbarStyle(theme),
                 display: { xs: 'none', md: 'flex' },
+                // manual gutter
+                px : navbarStyle(theme).py
               }}
               disableGutters={true}
             >
@@ -285,7 +293,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   onClick={() => scrollToSection('theApp')}
                   sx={{ borderRadius: '999px' }}
                 >
-                  <Typography sx={textStyle}>
+                  <Typography sx={drawerTextStyle}>
                     {LOCAL.theApp[currentLangCode]}
                   </Typography>
                 </MenuItem>
@@ -293,20 +301,40 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   onClick={() => scrollToSection('portfolio')}
                   sx={{ borderRadius: '999px' }}
                 >
-                  {LOCAL.portfolio[currentLangCode]}
+                     <Typography sx={drawerTextStyle}> {LOCAL.portfolio[currentLangCode]}</Typography>
+                 
                 </MenuItem>
                 <MenuItem
                   onClick={() => scrollToSection('about')}
                   sx={{ borderRadius: '999px' }}
                 >
+                  <Typography sx={drawerTextStyle}>
                   {LOCAL.about[currentLangCode]}
+                  </Typography>
+                  
                 </MenuItem>
                 <MenuItem
                   onClick={() => scrollToSection('contact')}
                   sx={{ borderRadius: '999px' }}
                 >
+                  <Typography  sx={drawerTextStyle}>
                   {LOCAL.contact[currentLangCode]}
+                  </Typography>
+                  
                 </MenuItem>
+                <Divider/>
+                <Box
+              sx={{
+                display: { xs: 'flex', md: 'none' },
+                gap: 0.5,
+                alignItems: 'flex-end',
+                justifyContent: 'center',
+                fontSize: '2rem',
+                my: 4
+              }}
+            >
+              {languageSwitcher(theme, currentUrl, currentLangCode)}
+            </Box>
               </Box>
             </Drawer>
 
@@ -319,7 +347,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                 alignItems: 'center',
               }}
             >
-              {languageSwitcher(currentUrl, currentLangCode)}
+              {languageSwitcher(theme, currentUrl, currentLangCode)}
             </Box>
           </Box>
         </Container>

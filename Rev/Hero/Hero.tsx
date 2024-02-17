@@ -20,7 +20,7 @@ import RevealityLogo from '../RevealityLogo/RevealityLogo'
 import AppStoreBadges from '../AppStoreBadges/AppStoreBadges'
 import demoVideo from './../../../pages/home.webm'
 import demoVideoSafari from './../../../pages/home.mp4'
-import { useTheme } from '@mui/material'
+import { Typography, useTheme } from '@mui/material'
 import { glassCSS } from '../../../globalStyles'
 // const punchline = {
 //   en: (
@@ -51,23 +51,29 @@ export default function Hero({ langCode }: OwnProps) {
     <div css={mainViewCSS}>
       <div css={mainViewInsideCSS}>
         <div css={logoAndVideoContainerCSS}>
-          <h1 css={punchlineCSS}>{strings['punchline'][langCode]}</h1>
-          <p css={punchlineParagraphCSS}>{strings['subline'][langCode]}</p>
-          <p></p>
+          <Typography variant="h1" sx={punchlineCSS}>
+          {strings['punchline'][langCode]}
+          </Typography>
+          <Typography variant="body1" sx={punchlineParagraphCSS}>
+          {strings['subline'][langCode]}
+          </Typography>
+
           <div css={badgeContainerCSS}>
-            <h3 css={joinBetaCallCSS(theme)}>
-              {strings['downloadApp'][langCode]}
-            </h3>
+            <Typography variant="h3" sx={joinBetaCallCSS(theme)}>
+            {strings['downloadApp'][langCode]}
+            </Typography>
             <AppStoreBadges />
           </div>
 
           <div css={contactInfosCSS}>
-            <p css={punchlineParagraphCSS}>
+            <Typography variant="body1" sx={punchlineParagraphCSS}>
               {strings['aProject'][langCode]}{' '}
               <a href="mailto:contact@reveality.io">
                 {strings['reachUs'][langCode]}
               </a>
-            </p>
+            </Typography>
+            
+           
           </div>
         </div>
 

@@ -25,8 +25,6 @@ export const mainViewCSS: CSSObject = {
   alignItems: 'center',
   display: 'flex',
   flexDirection: 'column',
-  marginTop: '4rem',
-  marginBottom: '4rem',
 }
 
 export const mainViewInsideCSS: CSSObject = {

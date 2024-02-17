@@ -103,7 +103,7 @@ export const punchlineCSS: CSSObject = {
 export const punchlineParagraphCSS: CSSObject = {
   paddingLeft: '5rem',
   paddingRight: '5rem',
-  fontSize: '1.1em',
+  // fontSize: '1.1em',
   textAlign: 'center',
 }
 
