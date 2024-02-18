@@ -26,7 +26,7 @@ interface OwnProps {
   children: any
   language: any
   location: any
-  skipLanguageAutoRedirect: boolean
+  skipLanguageAutoRedirect?: boolean
 }
 export default function LayoutRoot({
   children,
@@ -54,13 +54,13 @@ export default function LayoutRoot({
         default: 'hsla(300,40%,98%,1)',
       },
       primary: {
-        main: '#5122dd', // Sky blue
+        main: '#5122dd',
       },
       secondary: {
-        main: '#2251dd', // Sky Blue Hover
+        main: '#2251dd',
       },
       info: {
-        main: '#2A6DBF',
+        main: '#2251dd',
       },
       background: {
         default: 'hsla(300,40%,98%,1)',
