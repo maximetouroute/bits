@@ -234,24 +234,25 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                 justifyContent: 'center',
               }}
             >
+              <Box
+                sx={{
+                  my: 10,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Typography variant="h7" sx={{ textAlign: 'center', py: 3 }}>
+                  {strings.joinNewsletter[lang]}
+                </Typography>
 
-              <Box       sx={{ my: 10,  display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center'}}>
-
-              <Typography variant="h7" sx={{ textAlign: 'center', py: 3 }}>
-                {strings.joinNewsletter[lang]}
-              </Typography>
-
-              <MailForm
-                uniqueId={'footerForm'}
-                mailchimpURL={MAILCHIMP_URL}
-                uniqueAntiSpamId={'b_8b4e477d425a1fcb90d90a287_7331d8e0bb'}
-              />
-                </Box>
-
-              
+                <MailForm
+                  uniqueId={'footerForm'}
+                  mailchimpURL={MAILCHIMP_URL}
+                  uniqueAntiSpamId={'b_8b4e477d425a1fcb90d90a287_7331d8e0bb'}
+                />
+              </Box>
             </div>
 
             <div css={insideCSS}>

@@ -29,6 +29,8 @@ export const pageCSS = (theme: Theme): CSSObject => {
       marginTop: 0,
       textAlign: 'justify',
     },
+    // For navabr
+    paddingTop: '8rem',
   }
 }
 

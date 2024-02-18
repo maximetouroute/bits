@@ -153,7 +153,7 @@ export const coverBandCSS = (theme: Theme): CSSObject => {
     // App bar space
     paddingTop: '8rem',
 
-    ...gradientBackground3CSS
+    ...gradientBackground3CSS,
   }
 }
 

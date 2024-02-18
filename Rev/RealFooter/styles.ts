@@ -19,7 +19,6 @@ const $colorHover = $accentColorIdle
 const $underlineColor = `rgba(#649DE5, 0.3)`
 
 export const insideCSS: CSSObject = {
-
   marginBottom: '1em',
   lineHeight: '1.4em',
   display: 'flex',
@@ -34,11 +33,10 @@ export const insideCSS: CSSObject = {
   },
 }
 
-
 export const footerCSS: CSSObject = {
   color: color,
   width: '100%',
-  ...gradientBackground4CSS
+  ...gradientBackground4CSS,
 }
 
 export const linksCSS = (theme: Theme): CSSObject => {

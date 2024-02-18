@@ -45,7 +45,7 @@ export default function LayoutRoot({
   }
   // Skip build, Browsers only
   if (typeof window !== 'undefined' && !skipLanguageAutoRedirect) {
-    languageAutoRedirect(language, location.pathname)
+    languageAutoRedirect(language, location.pathname + location.hash)
   }
   const theme = createTheme({
     palette: {

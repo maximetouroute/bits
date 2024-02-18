@@ -72,7 +72,7 @@ export const photoThumbnailCSS: CSSObject = {
     cursor: 'pointer',
     filter: 'contrast(1.2)',
     transform: 'scale(1.01)',
-  }
+  },
 }
 
 export const photoRowContainerCSS: CSSObject = {

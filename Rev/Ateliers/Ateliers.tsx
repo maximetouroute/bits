@@ -1,16 +1,16 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import Chip from '@mui/material/Chip';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Card from '@mui/material/Card'
+import Chip from '@mui/material/Chip'
+import CardActions from '@mui/material/CardActions'
+import CardContent from '@mui/material/CardContent'
+import Container from '@mui/material/Container'
+import Divider from '@mui/material/Divider'
+import Grid from '@mui/material/Grid'
+import Typography from '@mui/material/Typography'
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded'
 
 const tiers = [
   {
@@ -52,7 +52,7 @@ const tiers = [
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
   },
-];
+]
 
 export default function Ateliers() {
   return (
@@ -78,8 +78,8 @@ export default function Ateliers() {
           Pricing
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          Quickly build an effective pricing table for your potential customers with
-          this layout. <br />
+          Quickly build an effective pricing table for your potential customers
+          with this layout. <br />
           It&apos;s built with default Material UI components with little
           customization.
         </Typography>
@@ -116,7 +116,9 @@ export default function Ateliers() {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     color:
-                      tier.title === 'Professional' ? 'primary.contrastText' : '',
+                      tier.title === 'Professional'
+                        ? 'primary.contrastText'
+                        : '',
                   }}
                 >
                   <Typography component="h3" variant="h6">
@@ -215,5 +217,5 @@ export default function Ateliers() {
         ))}
       </Grid>
     </Container>
-  );
+  )
 }
