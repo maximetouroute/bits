@@ -133,7 +133,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
     setOpen(newOpen)
   }
 
-  const navigateToSection = (sectionId: string) => {
+  const navigateToSection = (langCode: LangCode, sectionId: string) => {
     const sectionElement = document.getElementById(sectionId)
     // Scroll if in page, navigate to root page if not
     if (sectionElement) {
@@ -145,7 +145,8 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
         behavior: 'smooth',
       })
     } else {
-      navigate(`/#${sectionId}`)
+      const langPrefix = langCode === 'fr' ? '/fr' : ''
+      navigate(`${langPrefix}/#${sectionId}`)
     }
     setOpen(false)
   }
@@ -177,7 +178,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                 justifyContent: 'center',
                 px: 0,
               }}
-              onClick={() => navigateToSection('hero')}
+              onClick={() => navigateToSection(currentLangCode, 'hero')}
             >
               <img src={logo} style={logoStyle} alt="logo of Reveality" />
             </Box>
@@ -202,7 +203,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                 }}
               >
                 <MenuItem
-                  onClick={() => navigateToSection('theApp')}
+                  onClick={() => navigateToSection(currentLangCode, 'theApp')}
                   sx={menuItemStyle}
                 >
                   <Typography
@@ -214,7 +215,9 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => navigateToSection('portfolio')}
+                  onClick={() =>
+                    navigateToSection(currentLangCode, 'portfolio')
+                  }
                   sx={menuItemStyle}
                 >
                   <Typography
@@ -226,7 +229,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => navigateToSection('about')}
+                  onClick={() => navigateToSection(currentLangCode, 'about')}
                   sx={menuItemStyle}
                 >
                   <Typography
@@ -250,7 +253,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => navigateToSection('contact')}
+                  onClick={() => navigateToSection(currentLangCode, 'contact')}
                   sx={menuItemStyle}
                 >
                   <Typography
@@ -279,7 +282,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   justifyContent: 'center',
                   marginLeft: 1.5,
                 }}
-                onClick={() => navigateToSection('hero')}
+                onClick={() => navigateToSection(currentLangCode, 'hero')}
               >
                 <img src={logo} style={logoStyle} alt="logo of Reveality" />
               </Box>
@@ -319,7 +322,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                 }}
               >
                 <MenuItem
-                  onClick={() => navigateToSection('theApp')}
+                  onClick={() => navigateToSection(currentLangCode, 'theApp')}
                   sx={{ borderRadius: '999px' }}
                 >
                   <Typography sx={drawerTextStyle}>
@@ -327,7 +330,9 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => navigateToSection('portfolio')}
+                  onClick={() =>
+                    navigateToSection(currentLangCode, 'portfolio')
+                  }
                   sx={{ borderRadius: '999px' }}
                 >
                   <Typography sx={drawerTextStyle}>
@@ -336,7 +341,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => navigateToSection('about')}
+                  onClick={() => navigateToSection(currentLangCode, 'about')}
                   sx={{ borderRadius: '999px' }}
                 >
                   <Typography sx={drawerTextStyle}>
@@ -344,7 +349,7 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
-                  onClick={() => navigateToSection('contact')}
+                  onClick={() => navigateToSection(currentLangCode, 'contact')}
                   sx={{ borderRadius: '999px' }}
                 >
                   <Typography sx={drawerTextStyle}>
