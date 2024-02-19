@@ -31,8 +31,7 @@ export const badgeContainerCSS: CSSObject = {
 
 export const responsiveContainerInsideCSS: CSSObject = {
   [breakpointKey('normal')]: {
-    minWidth: '60rem',
-    maxWidth: '80rem',
+    minWidth: '60vw',
   },
   [breakpointKey('small')]: {
     minWidth: '90vw',
@@ -259,16 +258,6 @@ export const marqueBlockCSS: CSSObject = {
 }
 ///
 
-export const subjectVideoCSS: CSSObject = {
-  borderRadius: '16px',
-  height: '50vh',
-  margin: '2em',
-  [breakpointKey('small')]: {
-    height: '60vh',
-    borderRadius: '18px',
-  },
-}
-
 export const subjectTitleCSS = (theme: Theme): CSSObject => {
   return {
     textAlign: 'center',
@@ -455,29 +444,6 @@ export const mainVideoContainerCSS: CSSObject = {
   alignItems: 'flex-start',
 }
 
-export const howDoesItWorkCSS: CSSObject = {
-  [breakpointKey('normal')]: {
-    minWidth: '40rem',
-    maxWidth: '50rem',
-    alignItems: 'flex-start',
-  },
-  [breakpointKey('small')]: {
-    minWidth: '90vw',
-    padding: '0.2rem',
-    paddingTop: '3rem',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  display: 'flex',
-  justifyContent: 'center',
-}
-
-export const howDoesItWorkPartCSS: CSSObject = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-}
-
 export const iframeVideoContainerCSS: CSSObject = {
   ...responsiveContainerInsideCSS,
   display: 'block',
@@ -496,4 +462,66 @@ export const iframeCSS: CSSObject = {
   left: '0px',
   width: '100%',
   height: '100%',
+}
+
+//// Three-column videos
+
+export const howDoesItWorkCSS: CSSObject = {
+  [breakpointKey('normal')]: {
+    minWidth: '40rem',
+    // maxWidth: '50rem',
+    alignItems: 'flex-start',
+  },
+  [breakpointKey('small')]: {
+    minWidth: '90vw',
+    padding: '0.2rem',
+    paddingTop: '3rem',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  display: 'flex',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+}
+
+export const sublineCSS: CSSObject = {
+  // fontSize: '1.1em',
+  textAlign: 'center',
+}
+export const howDoesItWorkPartCSS: CSSObject = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  marginTop: '2rem',
+}
+
+export const glassContainerCSS = (theme: Theme): CSSObject => {
+  return {
+    height: '60vh',
+    margin: '1rem',
+    marginLeft: '4rem',
+    marginRight: '4rem',
+    padding: '0.5em',
+
+    [breakpointKey('small')]: {
+      margin: '2rem',
+      height: '70vh',
+    },
+    backgroundColor: theme.palette.action.hover,
+    borderRadius: glassCSS.borderRadius,
+    boxShadow: `0 0 20px 3px ${theme.palette.action.hover}`,
+    // ...glassCSS
+  }
+}
+
+export const styledTitle = (theme: Theme): CSSObject => {
+  return {
+    backgroundColor: theme.palette.action.hover,
+    padding: '1rem',
+    borderRadius: '2rem',
+  }
+}
+export const subjectVideoCSS: CSSObject = {
+  height: '100%',
+  borderRadius: glassCSS.borderRadius,
 }

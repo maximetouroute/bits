@@ -341,6 +341,15 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                   </Typography>
                 </MenuItem>
                 <MenuItem
+                  onClick={() => navigate('education')}
+                  sx={{ borderRadius: '999px' }}
+                >
+                  <Typography sx={drawerTextStyle}>
+                    {LOCAL.education[currentLangCode]}
+                  </Typography>
+                </MenuItem>
+
+                <MenuItem
                   onClick={() => navigateToSection(currentLangCode, 'about')}
                   sx={{ borderRadius: '999px' }}
                 >
