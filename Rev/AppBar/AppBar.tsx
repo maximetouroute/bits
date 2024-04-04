@@ -48,7 +48,7 @@ export const LOCAL: StringList = {
 }
 
 const logoStyle = {
-  width: '90px',
+  width: '130px',
   height: 'auto',
   cursor: 'pointer',
 }
