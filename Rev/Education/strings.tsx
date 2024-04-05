@@ -7,42 +7,41 @@ import { Link } from 'gatsby'
 
 export const strings: StringList = {
   learnByDoing: {
-    en: `Learning by doing`,
-    fr: `Apprendre en pratiquant`,
+    en: `Teleport yourself in Augmented Reality!`,
+    fr: `Téléportez vous dans la Réalité Augmentée ! `,
   },
   learnByDoingSubtitle: {
     fr: (
       <>
-        L'application Reveality permet d'expérimenter les étapes de création de
+        Un atelier qui permet d'expérimenter les étapes de création de
         son propre double virtuel et de lui donner vie en Réalité Augmentée.
         <br />
-        Aucune compétence technique requise. <br />
-        Une expérience amusante et ludique mixant vidéo, corps et technologie.
-        Tous publics (7ans +).
+        Une expérience amusante et ludique mixant vidéo, corps et technologie.<br/>
+        <strong>Aucune compétence technique requise.</strong> <strong>Tous publics (7ans +)</strong>.
       </>
     ),
     en: (
       <>
-        The Reveality app allows users to experience the steps of creating their
-        own virtual double and bringing it to life in Augmented Reality. No
-        technical skills required. <br />A playful experience blending video,
-        body movements, and technology. Suitable for all audiences (ages 7+)
+        This workshop allows users to experience the steps of creating their
+        own virtual double and bringing it to life in Augmented Reality. <br />A playful experience blending video,
+        body movements, and technology. <br/><strong>No
+        technical skills required. Suitable for all audiences (ages 7+).</strong>
       </>
     ),
   },
 
   weShoot: {
-    fr: 'On se filme',
-    en: 'Filming',
+    fr: 'Filmez vous',
+    en: 'Film yourself',
   },
   weShootSubtitle: {
-    fr: 'Découvrir la captation et la post-production',
-    en: 'Discovering shooting and post-production',
+    fr: 'Découvrir à la captation et la post-production',
+    en: 'Learning shooting and post-production',
   },
 
   weReposition: {
-    fr: 'On se replace',
-    en: 'Repositionning',
+    fr: 'Replacez vous',
+    en: 'Reposition yourself',
   },
   weRepositionSubtitle: {
     fr: 'Appréhender les concepts de la Réalité Augmentée ',
@@ -50,28 +49,30 @@ export const strings: StringList = {
   },
 
   weEmbrace: {
-    fr: `On s'amuse !`,
-    en: 'Having fun!',
+    fr: `Créez votre contenu`,
+    en: 'Create your content',
   },
   weEmbraceSubtitle: {
-    fr: `S'emparer d'un processus créatif de A à Z`,
-    en: `Using a creative process from A to Z`,
+    fr: `Développer la créativté`,
+    en: `Developing creativity`,
   },
 
   imagesFrom: {
     fr: (
       <>
         Images d'un atelier réalisé avec la communauté créative AADN.{' '}
-        <Link to="/">En savoir plus</Link>
       </>
     ),
     en: (
       <>
         Images from a workshop conducted with the AADN creative community.{' '}
-        <Link to="/">Learn More</Link>
       </>
     ),
   },
+  learnMore: {
+    fr: 'En savoir plus',
+    en: 'Learn more'
+  }
 }
 
 export const educationPageStrings = stringBuilderEnFr([
@@ -131,13 +132,13 @@ export const educationPageStrings = stringBuilderEnFr([
   StringEnFr(`Retour à l'accueil`, `Back home`, `Retour à l'accueil`),
   StringEnFr(
     'partners',
-    'They conduct workshops with us',
-    'Ils animent des ateliers avec nous'
+    'They conduct workshops with Reveality',
+    'Ils animent des ateliers avec Reveality'
   ),
   StringEnFr(
     'punchline',
-    'Discover a full-fledged solution to learn Augmented Reality',
-    'Découvrez une solution complète pour initier à la Réalité Augmentée'
+    'Comment créer avec Reveality ? ',
+    'How to create with Reveality?'
   ),
   StringEnFr('Simple, Intuitif', `Easy to use`, `Simple, Intuitif`),
   StringEnFr(

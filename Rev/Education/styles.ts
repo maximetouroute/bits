@@ -18,7 +18,7 @@ export const revLinkCSS = (theme: Theme): CSSObject => {
     marginTop: '2rem',
     marginBottom: '2rem',
     ...themedACSS(theme.palette.primary.main),
-    fontSize: '1.5rem',
+    fontSize: '1rem',
   }
 }
 

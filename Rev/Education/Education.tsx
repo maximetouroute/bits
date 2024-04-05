@@ -166,7 +166,8 @@ export default function Education({ langCode }: OwnProps) {
               ...injectLinkCSS(theme),
             }}
           >
-            {strings.imagesFrom[langCode]}
+            {strings.imagesFrom[langCode]}<br/>
+            <Link to="/">{strings.learnMore[langCode]}</Link>
           </Typography>
           <Ateliers langCode={langCode} />
           <Typography
@@ -340,27 +341,7 @@ export default function Education({ langCode }: OwnProps) {
             </div>
           </div>
 
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginTop: '4rem',
-              marginBottom: '8rem',
-            }}
-          >
-            <Typography
-              variant="h3"
-              sx={{ textAlign: 'center', fontSize: '1em', fontWeight: 600 }}
-            >
-              {LOCAL['getApp']}
-            </Typography>
-            <AppStoreBadges />
-            {/* 
-          <h3 css={joinBetaCallCSS}></h3> */}
-            {/* <AppStoreBadges /> */}
-          </div>
+
 
           {/* </AccordionDetails>
       </Accordion> */}

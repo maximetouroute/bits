@@ -18,6 +18,7 @@ import { navigate, Link } from 'gatsby'
 import { StringList } from '../../types'
 import { supportedLangs } from '../../../locales/locales'
 import { langLinkCSS } from './styles'
+import { basicTransitionCSS } from '../../styles/styles'
 
 const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
   // console.log('update language to ', defaultLanguage)
@@ -177,6 +178,10 @@ function AppAppBar({ currentLangCode, currentUrl }: OwnProps) {
                 alignItems: 'flex-end',
                 justifyContent: 'center',
                 px: 0,
+                ...basicTransitionCSS,
+                '&:hover': {
+                  transform: 'scale(1.1)'
+                },
               }}
               onClick={() => navigateToSection(currentLangCode, 'hero')}
             >

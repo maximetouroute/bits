@@ -22,6 +22,7 @@ import SchoolIcon from '@mui/icons-material/School'
 import { useTheme } from '@emotion/react'
 import { StringList } from '../../types'
 import { LangCode } from '../../types'
+import { Fade } from '@mui/material'
 
 const iconStyle = {
   width: 20,
@@ -40,7 +41,7 @@ const strings: StringList = {
   ourOffersSubtitle: {
     fr: (
       <>
-        Ils s'adaptent à vous, votre lieu et votre public.
+        On s'adapte à vous, votre lieu et votre public.
         <br />
         <a href="mailto:contact@reveality.io">Contactez-nous</a> pour vos
         demandes sur mesure.
@@ -48,7 +49,7 @@ const strings: StringList = {
     ),
     en: (
       <>
-        We adapt them to your needs, venue and audience.
+        We adapt to your needs, venue and audience.
         <br />
         <a href="mailto:contact@reveality.io">Contact us</a> for custom
         requests.
@@ -75,8 +76,8 @@ const tiers = [
       {
         icon: <SchoolIcon sx={iconStyle} />,
         text: {
-          fr: 'Créer son premier contenu',
-          en: 'Creating your first content',
+          fr: 'Découvrir et créer avec notre aide',
+          en: 'Discover and create with our help',
         },
       },
       {
@@ -107,8 +108,8 @@ const tiers = [
       {
         icon: <SchoolIcon sx={iconStyle} />,
         text: {
-          fr: `S'emparer du processus créatif`,
-          en: 'Appropriating the creative process',
+          fr: `Apprendre à créer en autonomie`,
+          en: 'Learn to create by yourself',
         },
       },
       {
@@ -157,11 +158,6 @@ interface OwnProps {
 }
 export default function Ateliers({ langCode }: OwnProps) {
   const theme = useTheme()
-  console.log(tiers)
-  console.log(tiers[0])
-  console.log(tiers[0].title)
-  console.log(tiers[0].title[langCode])
-  console.log(langCode)
   return (
     <Container
       id="pricing"
@@ -195,6 +191,7 @@ export default function Ateliers({ langCode }: OwnProps) {
       </Box>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         {tiers.map((tier) => (
+          <Fade in={true}>
           <Grid item key={tier.title[langCode]} xs={12} md={4}>
             <Card
               sx={{
@@ -324,6 +321,7 @@ export default function Ateliers({ langCode }: OwnProps) {
               </CardActions>
             </Card>
           </Grid>
+          </Fade>
         ))}
       </Grid>
     </Container>
