@@ -88,10 +88,14 @@ export default function LayoutRoot({
     },
 
     typography: {
+      // fontFamily: ["Be Vietnam Pro", "Roboto", "sans-serif"].join(","),
+      // fontSize:   13,
+      // fontWeightRegular: 300,
       body1: {
         lineHeight: 1.8,
+        // letterSpacing: 2
       },
-    }
+    },
   })
 
   return (
