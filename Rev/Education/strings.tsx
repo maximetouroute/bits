@@ -57,15 +57,17 @@ export const strings: StringList = {
     en: `Developing creativity`,
   },
 
-  imagesFrom: {
+  getBrochureEducation: {
     fr: (
       <>
-        Images d'un atelier réalisé avec la communauté créative AADN.{' '}
+        Accédez à la <strong>brochure pédagogique</strong>, contactez nous via <a href="mailto:contact@reveality.io?subject=Accès brochure pédagogique&body=Bonjour,%0D%0A%0D%0A Pouvez-vous me donner accès à votre brochure pédagogique?%0D%0A%0D%0AMerci.">contact@reveality.io</a>.
       </>
     ),
+
+    
     en: (
       <>
-        Images from a workshop conducted with the AADN creative community.{' '}
+        Get access to the <strong>educational brochure</strong>, send us a mail at <a href="mailto:contact@reveality.io?subject=Access to educational brochure&body=Hello,%0D%0A%0D%0A Can you give me access to your educational brochure?%0D%0A%0D%0AThank you very much.">contact@reveality.io</a>.
       </>
     ),
   },

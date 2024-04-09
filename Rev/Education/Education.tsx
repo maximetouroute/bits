@@ -158,7 +158,7 @@ export default function Education({ langCode }: OwnProps) {
           </div>
 
           <Typography
-            variant="body2"
+            variant="body1"
             sx={{
               my: 4,
               ...styledTitle,
@@ -166,8 +166,9 @@ export default function Education({ langCode }: OwnProps) {
               ...injectLinkCSS(theme),
             }}
           >
-            {strings.imagesFrom[langCode]}<br/>
-            <Link to="/">{strings.learnMore[langCode]}</Link>
+
+            {strings.getBrochureEducation[langCode]}<br/>
+            {/* <Link to="/">{strings.learnMore[langCode]}</Link> */}
           </Typography>
           <Ateliers langCode={langCode} />
           <Typography
