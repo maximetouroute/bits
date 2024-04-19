@@ -1,22 +1,16 @@
 import React from 'react'
-import Footer from '../../Footer/Footer'
-import HoloNavbar from './../RealNavbar/Navbar'
 import RevealityFooter from './../RealFooter/Footer'
 import {
   ThemeProvider as MaterialThemeProvider,
   createTheme,
 } from '@mui/material/styles'
 import { ThemeProvider, Global } from '@emotion/react'
-import LanguageSwitcher from '../../Common/LanguageSwitcher/LanguageSwitcher'
 import { defaultLang } from '../../../locales/locales'
 import { languageAutoRedirect } from '../../Common/locales/localeUtils'
 import { navbarConfig, footerConfig } from '../../../globalConfig'
 import {
-  appBarCSS,
-  customColorCSS,
   gridContentCSS,
   gridFooterCSS,
-  gridNavBarCSS,
   gridNavContentFooterCSS,
 } from './styles'
 import { bodyCSS } from '../../../globalStyles'
