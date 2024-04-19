@@ -22,6 +22,8 @@ import demoVideo from './../../../pages/home.webm'
 import demoVideoSafari from './../../../pages/home.mp4'
 import { Typography, useTheme } from '@mui/material'
 import { glassCSS } from '../../../globalStyles'
+import poster720_1280 from './poster720_1280.png'
+
 // const punchline = {
 //   en: (
 //     <div css={}>
@@ -79,7 +81,7 @@ export default function Hero({ langCode }: OwnProps) {
 
         <div css={mainVideoContainerCSS}>
           <div css={{ ...glassCSS, padding: '1em' }}>
-            <video autoPlay muted loop playsInline css={mainVideoCSS}>
+            <video autoPlay muted loop playsInline css={mainVideoCSS} poster={poster720_1280}>
               <source src={demoVideo} type="video/webm" />
               <source src={demoVideoSafari} type="video/mp4" />
             </video>

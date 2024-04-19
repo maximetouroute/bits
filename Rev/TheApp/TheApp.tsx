@@ -20,6 +20,7 @@ import subjectMixSafariIos from './../../../pages/app_share.mp4'
 import { Typography, useTheme } from '@mui/material'
 import { CSSObject } from '@emotion/react'
 import { Theme } from '@mui/material'
+import poster540_1200 from './poster540_1200.png'
 
 const styledTitle = (theme: Theme): CSSObject => {
   return {
@@ -56,7 +57,7 @@ export default function TheApp({ langCode }: OwnProps) {
           </Typography>
 
           <div css={glassContainerCSS}>
-            <video autoPlay muted loop playsInline css={subjectVideoCSS}>
+            <video autoPlay muted loop playsInline css={subjectVideoCSS} poster={poster540_1200}>
               <source src={subjectRaw} type="video/webm" />
               <source src={subjectRawSafariIos} type="video/mp4" />
             </video>
@@ -71,7 +72,7 @@ export default function TheApp({ langCode }: OwnProps) {
           </Typography>
 
           <div css={glassContainerCSS}>
-            <video autoPlay muted loop playsInline css={subjectVideoCSS}>
+            <video autoPlay muted loop playsInline css={subjectVideoCSS} poster={poster540_1200}>
               <source src={subjectAlpha} type="video/webm" />
               <source src={subjectAlphaSafariIos} type="video/mp4" />
             </video>
@@ -88,7 +89,7 @@ export default function TheApp({ langCode }: OwnProps) {
           </Typography>
 
           <div css={glassContainerCSS}>
-            <video autoPlay muted loop playsInline css={subjectVideoCSS}>
+            <video autoPlay muted loop playsInline css={subjectVideoCSS} poster={poster540_1200}>
               <source src={subjectMix} type="video/webm" />
               <source src={subjectMixSafariIos} type="video/mp4" />
             </video>
