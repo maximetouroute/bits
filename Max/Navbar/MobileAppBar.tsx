@@ -19,11 +19,11 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
       fontSize: '1.1em',
       fontWeight: 600,
       padding: '1em',
-      color: theme.palette.secondary.contrastText,
+      color: theme.palette.primary.main,
       '&:hover': {
-        color: theme.palette.secondary.contrastText,
+        color: theme.palette.primary.main,
       },
-      boxShadow: `inset 0 -2px 0 0 ${theme.palette.secondary.contrastText}`,
+      boxShadow: `inset 0 -2px 0 0 ${theme.palette.primary.main}`,
     },
     // Final
     [breakpointKey('normal')]: {

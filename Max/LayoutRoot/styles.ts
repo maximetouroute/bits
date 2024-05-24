@@ -39,12 +39,6 @@ export const gridNavBarCSS = {
   },
 }
 
-export const customColorCSS = (theme: Theme): CSSObject => {
-  return {
-    backgroundColor: theme.palette.secondary.main,
-  }
-}
-
 export const gridContentCSS = {
   gridArea: 'content',
   borderTop: 0,

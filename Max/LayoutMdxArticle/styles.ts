@@ -28,7 +28,7 @@ export const nextPrevLinkInsideCoverCSS = (theme: Theme): CSSObject => {
     },
 
     a: {
-      ...themedACSS('#ffffff'),
+      ...themedACSS(theme.palette.primary.main),
       color: 'white',
       padding: '0.75em',
       textOverflow: 'ellipsis',
@@ -143,18 +143,15 @@ export const coverBandCSS = (theme: Theme): CSSObject => {
     textAlign: 'center',
     transition: 'opacity 1.5s ease',
     fontWeight: 600,
-    color: 'white',
     margin: '0 auto',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
-    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
   }
 }
 
 export const coverBandOverlayCSS = {
-  // background-color: $accentColor;
-  color: 'white',
   [breakpointKey('small')]: {
     padding: '2rem',
     paddingLeft: '1rem',

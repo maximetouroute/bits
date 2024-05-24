@@ -50,11 +50,11 @@ export default function LayoutRoot({
     palette: {
       mode: 'light',
       primary: {
-        main: accentColor ? accentColor : '#0C132C',
+        main: accentColor ? accentColor : '#09143C',
       },
       secondary: {
         main: accentColor ? accentColor : '#E4E4E4',
-        contrastText: accentColor ? '#F7F7F7' : '#0C132C',
+        // contrastText: accentColor ? '#F7F7F7' : '#0C132C',
       },
       background: {
         default: '#E4E4E4',
@@ -90,10 +90,10 @@ export default function LayoutRoot({
           }}
         />
         <div css={gridNavContentFooterCSS}>
-          <div css={{ ...appBarCSS, ...customColorCSS(theme) }}>
+          <div css={appBarCSS}>
             <MobileAppBar title={navbarConfig.name} />
           </div>
-          <nav css={{ ...gridNavBarCSS, ...customColorCSS(theme) }}>
+          <nav css={gridNavBarCSS}>
             <Navbar
               title={navbarConfig.name}
               links={navbarConfig.links[language].links}

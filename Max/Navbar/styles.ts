@@ -9,7 +9,7 @@ export const linkStyle = (theme: Theme): CSSObject => {
     margin: 0,
     marginRight: '2em',
     marginLeft: '2em',
-    color: theme.palette.secondary.contrastText,
+    color: theme.palette.primary.main,
     fontSize: '1.2em',
     border: 'solid 2px transparent',
     textDecoration: 'none',
@@ -19,7 +19,7 @@ export const linkStyle = (theme: Theme): CSSObject => {
       cursor: 'pointer',
       textDecoration: 'none',
       transition: 'all 0.1s ease-in-out 0s',
-      boxShadow: `0px 2px 0px ${theme.palette.secondary.contrastText}`,
+      boxShadow: `0px 2px 0px ${theme.palette.primary.main}`,
     },
 
     '&:active, &:focus': {
