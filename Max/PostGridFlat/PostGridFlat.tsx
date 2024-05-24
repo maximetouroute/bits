@@ -9,7 +9,8 @@ import {
   postTitleCSS,
   gridCSS,
 } from './styles'
-import { useTheme } from '@mui/material'
+import { Typography, useTheme } from '@mui/material'
+import { makeAccentColor } from '../accentColorCreator'
 
 interface OwnProps {
   posts: any
@@ -31,7 +32,7 @@ export default function PostGridFlat({ posts }: OwnProps) {
                 ...postCSS(
                   theme,
                   customColor
-                    ? post.frontmatter.image.colors.vibrant
+                    ? makeAccentColor(post.frontmatter.image.colors.vibrant)
                     : theme.palette.primary.main
                 ),
               }}
@@ -39,8 +40,8 @@ export default function PostGridFlat({ posts }: OwnProps) {
               key={post.id}
             >
               <div css={postHeadCSS}>
-                <span css={postTitleCSS}>{post.frontmatter.title}</span>
-                <span css={postSubtitleCSS}>{post.frontmatter.subtitle} </span>
+                <Typography style={postTitleCSS}>{post.frontmatter.title}</Typography>
+                <Typography style={postSubtitleCSS}>{post.frontmatter.subtitle}</Typography>
               </div>
               <BgImage image={gatsbyImage} css={postPictureCSS} />
             </Link>

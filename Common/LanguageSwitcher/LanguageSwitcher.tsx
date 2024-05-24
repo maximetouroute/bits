@@ -4,6 +4,7 @@ import { supportedLangs } from '../../../locales/locales'
 import { LangCode } from '../../types'
 import { useTheme } from '@emotion/react'
 import { containerCSS } from './styles'
+import { Typography } from '@mui/material'
 
 const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
   // console.log('update language to ', defaultLanguage)
@@ -35,7 +36,9 @@ export default function LanguageSwitcher({
               updateDefaultLanguage(langCode as LangCode)
             }}
           >
+            <Typography>
             {supportedLangs[langCode].humanName}
+            </Typography>
           </Link>
         )
       })}

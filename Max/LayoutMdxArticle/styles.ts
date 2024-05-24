@@ -1,25 +1,24 @@
 import { CSSObject } from '@emotion/react'
 import { Theme } from '@mui/material'
 import { breakpointKey } from '../../styles/styles'
-import { themedACSS } from '../../styles/styles'
 
 export const nextPrevLinkCSS = (theme: Theme): CSSObject => {
   return {
-    marginTop: '4rem',
+    marginTop: '8rem',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     [breakpointKey('small')]: {
       // better style in case it takes two lines
       justifyContent: 'space-around',
-      marginTop: '2em',
+      marginTop: '4rem',
     },
 
     a: {
-      ...themedACSS(theme.palette.primary.main),
+      // ...themedACSS(theme.palette.primary.main),
       padding: '0.75em',
-      textOverflow: 'ellipsis',
-      marginBottom: '1em',
+      // textOverflow: 'ellipsis',
+      // marginBottom: '1em',
     },
   }
 }
@@ -53,9 +52,10 @@ export const subtextCSS: CSSObject = {
   justifyContent: 'center',
   animation: 'fadein 1s',
   fontSize: '1.6rem',
-  fontWeight: 400,
+  fontWeight: 300,
   lineHeight: '1.8em',
   textAlign: 'center',
+  fontStyle: 'italic'
 }
 
 export const punchlineCSS: CSSObject = {

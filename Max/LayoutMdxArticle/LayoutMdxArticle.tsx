@@ -12,7 +12,9 @@ import {
   subtextCSS,
 } from './styles'
 import { articleCSS, cardCSS } from '../articleStyles'
-import { Container, Typography } from '@mui/material'
+import { Container, Typography, Button } from '@mui/material'
+import { makeAccentColor } from '../accentColorCreator'
+
 
 export default function Template({
   data: { mdx },
@@ -20,10 +22,14 @@ export default function Template({
   location,
   pageContext: { previousPost, nextPost, langCode },
 }) {
+
   // content is at false is no previous or next
   const previousPostHtml = previousPost ? (
+    
     <Link to={`${previousPost.frontmatter.path}#content`}>
+      <Button variant="text" style={{color: makeAccentColor(previousPost.frontmatter.image.colors.vibrant)}}>
       ← {previousPost.frontmatter.title}
+    </Button>
     </Link>
   ) : (
     <div></div>
@@ -31,18 +37,20 @@ export default function Template({
   const nextPostHtml = nextPost ? (
     nextPost && (
       <Link to={`${nextPost.frontmatter.path}#content`}>
+        <Button variant="text" style={{color: makeAccentColor(nextPost.frontmatter.image.colors.vibrant)}}>
         {nextPost.frontmatter.title} →
+        </Button>
       </Link>
     )
   ) : (
     <div></div>
   )
-
+  const accentColor = makeAccentColor(mdx.frontmatter.image.colors.vibrant)
   return (
     <LayoutRoot
       language={mdx.frontmatter.language}
       location={{ ...location }}
-      accentColor={mdx.frontmatter.image.colors.darkVibrant}
+      accentColor={accentColor}
     >
       <SEO
         title={mdx.frontmatter.title}
@@ -76,11 +84,12 @@ export default function Template({
         >
           <div css={articleCSS}>
             <MDXProvider components={SHORTCODES}>{children}</MDXProvider>
-            <div css={nextPrevLinkCSS}>
+           
+          </div>
+          <div css={nextPrevLinkCSS}>
               {previousPostHtml}
               {nextPostHtml}
             </div>
-          </div>
         </article>
         </Container>
       </div>

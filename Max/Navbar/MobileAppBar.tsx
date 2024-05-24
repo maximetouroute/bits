@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { CSSObject } from '@emotion/react'
-import { Theme } from '@mui/material'
+import { Theme, Typography } from '@mui/material'
 import { breakpointKey } from '../../styles/styles'
-import { linkStyle } from './styles'
+import { linkCSS } from './styles'
 
 const mobileAppBarCSS = (theme: Theme): CSSObject => {
   return {
@@ -15,7 +15,7 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
     alignItems: 'center',
 
     a: {
-      ...linkStyle(theme),
+      ...linkCSS(theme),
       fontSize: '1.1em',
       fontWeight: 600,
       padding: '1em',
@@ -40,7 +40,10 @@ export default function MobileAppBar({ title }: OwnProps) {
   return (
     <div css={mobileAppBarCSS}>
       <Link activeClassName="" to="/">
+        <Typography>
         {title}
+        </Typography>
+        
       </Link>
     </div>
   )

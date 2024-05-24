@@ -14,7 +14,6 @@ import { navbarConfig, footerConfig } from '../../../globalConfig'
 import { supportedLangs } from '../../../locales/locales'
 import {
   appBarCSS,
-  customColorCSS,
   gridContentCSS,
   gridFooterCSS,
   gridNavBarCSS,
@@ -62,12 +61,13 @@ export default function LayoutRoot({
       },
 
       info: {
-        main: '#588CF6',
+        main: '#182A6E',
       },
 
       action: {
         active: accentColor ? accentColor : '#0C132C',
       },
+
       // action: {
       //   hover: 'rgba(0,0,0,0.56)',
       // },
@@ -78,6 +78,18 @@ export default function LayoutRoot({
       // two indexes within its tonal palette.
       // E.g., shift from Red 500 to Red 300 or Red 700.
       tonalOffset: 0.2,
+    },
+    typography: {
+      fontFamily: ["Be Vietnam Pro", "Roboto", "sans-serif"].join(","),
+    },
+    components: {
+      MuiChip: {
+        styleOverrides: {
+          root: {
+            borderRadius: 8, // Set your desired border radius for buttons
+          },
+        },
+      },
     },
   })
 
@@ -97,6 +109,8 @@ export default function LayoutRoot({
             <Navbar
               title={navbarConfig.name}
               links={navbarConfig.links[language].links}
+              currentLangCode={language}
+              currentUrl={location.pathname}
             />
           </nav>
           <div css={gridContentCSS}>{children}</div>

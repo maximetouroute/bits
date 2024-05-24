@@ -2,6 +2,7 @@ import React from 'react'
 import { grettingCSS, heroCSS, punchlineCSS, lastLineCSS } from './styles'
 import { strings } from './strings'
 import { LangCode, LangReactElement } from '../../types'
+import { Typography } from '@mui/material'
 
 const punchline: LangReactElement = {
   en: (
@@ -37,13 +38,16 @@ interface OwnProps {
 export default function Hero({ langCode }: OwnProps) {
   return (
     <div css={heroCSS}>
-      <div css={grettingCSS}>{strings.hello[langCode]}</div>
-      {punchline[langCode]}
-      <p css={lastLineCSS}>
-        {strings.checkOut[langCode]}
+      <Typography variant="h3" style={grettingCSS}>{strings.hello[langCode]}</Typography>
+      <Typography>{punchline[langCode]}</Typography>
+     
+      <Typography variant="h6" style={lastLineCSS}>
+      {strings.checkOut[langCode]}
         <br />
-        <b css={{ fontStyle: 'none' }}>↓</b>
-      </p>
+      </Typography>
+      <Typography variant="body1" style={{fontSize: '2rem'}}>
+      ↓
+      </Typography>
     </div>
   )
 }

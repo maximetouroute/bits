@@ -12,6 +12,7 @@ import {
 } from './styles'
 import { useTheme } from '@emotion/react'
 import { NamedLink } from '../types'
+import { Typography } from '@mui/material'
 
 interface OwnProps {
   customLinks: Array<NamedLink>
@@ -198,12 +199,16 @@ export default function Footer({ customLinks }: OwnProps) {
             <div css={linksCSS(theme)}>
               {customLinks.map((link) => (
                 <Link key={link.path} to={link.path}>
+                  <Typography>
                   {link.name}
+                  </Typography>
                 </Link>
               ))}
             </div>
 
+            <Typography variant="body2">
             {author && authorBlockPersonal()}
+              </Typography> 
           </div>
         )
       }}

@@ -23,22 +23,21 @@ export const grettingCSS: CSSObject = {
   display: 'flex',
   fontSize: '3.25rem',
   marginBottom: '2rem',
-  fontWeight: 600,
 }
 
 export const punchlineCSS: CSSObject = {
   fontSize: '1.4rem',
   lineHeight: '2rem',
-  fontWeight: 400,
   fontStyle: 'italic',
   marginBottom: 0,
+  fontWeight: 300
 }
 
 export const lastLineCSS: CSSObject = {
   marginTop: '2rem',
   fontSize: '1.4rem',
   lineHeight: '3rem',
-  fontWeight: 400,
   fontStyle: 'italic',
+  fontWeight: 400,
   marginBottom: 0,
 }

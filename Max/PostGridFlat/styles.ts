@@ -67,6 +67,7 @@ export const postCSS = (theme: Theme, color: string): CSSObject => {
 export const postHeadCSS: CSSObject = {
   display: 'flex',
   flexDirection: 'column',
+  filter: 'saturate(1.4)'
 }
 
 export const postTitleCSS: CSSObject = {
@@ -90,5 +91,7 @@ export const postPictureCSS: CSSObject = {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center top',
-  borderRadius: '10px',
+  '&:after': {
+    borderRadius: '4px',
+  },
 }
