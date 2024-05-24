@@ -6,16 +6,14 @@ import SEO from '../../SEO/SEO'
 import { graphql, Link } from 'gatsby'
 import { SHORTCODES } from '../../mdx-components/shortcodes'
 import {
-  nextPrevLinkInsideCoverCSS,
   nextPrevLinkCSS,
   articleCSS,
   coverBandCSS,
-  coverBandOverlayCSS,
   punchlineCSS,
   subtextCSS,
   pageCSS,
-  cardCSS,
 } from './styles'
+import { Container, Typography } from '@mui/material'
 
 export default function Template({
   data: { mdx },
@@ -45,7 +43,7 @@ export default function Template({
     <LayoutRoot
       language={mdx.frontmatter.language}
       location={{ ...location }}
-      accentColor={mdx.frontmatter.image.colors.vibrant}
+      accentColor={mdx.frontmatter.image.colors.darkVibrant}
     >
       <SEO
         title={mdx.frontmatter.title}
@@ -58,46 +56,34 @@ export default function Template({
         article={true}
         langCode={langCode}
       />
-      <div css={(theme) => coverBandCSS(theme)} id="content">
-        <div css={coverBandOverlayCSS}>
-          <h1 css={punchlineCSS}>{mdx.frontmatter.title}</h1>
-          <h2 css={subtextCSS}>
-            <p>
-              <strong>{mdx.frontmatter.subtitle} </strong>
-              <br />{' '}
-            </p>
-          </h2>
-        </div>
-        <div css={nextPrevLinkInsideCoverCSS}>
+      <div css={coverBandCSS} id="content">
+        <Typography variant="h1" style={punchlineCSS}>
+        {mdx.frontmatter.title}
+        </Typography>
+        <Typography variant="h2" style={subtextCSS}>
+        {mdx.frontmatter.subtitle}
+        </Typography>
+        <div css={nextPrevLinkCSS}>
           {previousPostHtml}
           {nextPostHtml}
         </div>
       </div>
 
-      <div css={(theme) => pageCSS(theme)}>
+      <div css={pageCSS}>
+        <Container maxWidth="md">
         <article
-          css={cardCSS}
           itemScope
           itemType="http://schema.org/BlogPosting"
         >
-          {/* css={theme => ({backgroundColor: theme.colors.accent})} */}
           <div css={articleCSS}>
-            <br />
-            <br />
-            {/* <div css={colorCSS(mdx.frontmatter.image.colors.vibrant)}></div>
-            <div css={colorCSS(mdx.frontmatter.image.colors.darkVibrant)}></div>
-            <div css={colorCSS(mdx.frontmatter.image.colors.lightVibrant)}></div>
-            <div css={colorCSS(mdx.frontmatter.image.colors.muted)}></div>
-            <div css={colorCSS(mdx.frontmatter.image.colors.darkMuted)}></div>
-            <div css={colorCSS(mdx.frontmatter.image.colors.lightMuted)}></div> */}
-            {/* {JSON.stringify(mdx.frontmatter.image.colors)}*/}
             <MDXProvider components={SHORTCODES}>{children}</MDXProvider>
-            <div css={(theme) => nextPrevLinkCSS(theme)}>
+            <div css={nextPrevLinkCSS}>
               {previousPostHtml}
               {nextPostHtml}
             </div>
           </div>
         </article>
+        </Container>
       </div>
     </LayoutRoot>
   )
