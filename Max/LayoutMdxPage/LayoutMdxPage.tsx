@@ -5,8 +5,8 @@ import LayoutRoot from '../LayoutRoot/LayoutRoot'
 import 'moment'
 import SEO from '../../SEO/SEO'
 import { SHORTCODES } from '../../mdx-components/shortcodes'
-import { contentCSS, headerCSS, pageCSS, cardCSS } from './styles'
-import { articleCSS } from '../LayoutMdxArticle/styles'
+import { articleCSS, cardCSS } from '../articleStyles'
+import { Container } from '@mui/material'
 
 export default function Template({
   data: { mdx },
@@ -14,7 +14,6 @@ export default function Template({
   location,
   pageContext: { langCode },
 }) {
-  // console.log('mdx', data, langCode);
   return (
     <LayoutRoot language={mdx.frontmatter.language} location={{ ...location }}>
       <SEO
@@ -26,13 +25,14 @@ export default function Template({
         article={true}
         langCode={langCode}
       />
-      <div css={(theme) => pageCSS(theme)}>
-        <article css={{ ...cardCSS, ...contentCSS }} id="content">
-          <header css={headerCSS}></header>
+      <div css={cardCSS}>
+      <Container maxWidth="md">
+        <article id="content">
           <div css={articleCSS} itemProp="articleBody">
             <MDXProvider components={SHORTCODES}>{children}</MDXProvider>
           </div>
         </article>
+        </Container>
       </div>
     </LayoutRoot>
   )

@@ -7,12 +7,11 @@ import { graphql, Link } from 'gatsby'
 import { SHORTCODES } from '../../mdx-components/shortcodes'
 import {
   nextPrevLinkCSS,
-  articleCSS,
   coverBandCSS,
   punchlineCSS,
   subtextCSS,
-  pageCSS,
 } from './styles'
+import { articleCSS, cardCSS } from '../articleStyles'
 import { Container, Typography } from '@mui/material'
 
 export default function Template({
@@ -69,7 +68,7 @@ export default function Template({
         </div>
       </div>
 
-      <div css={pageCSS}>
+      <div css={cardCSS}>
         <Container maxWidth="md">
         <article
           itemScope
