@@ -10,8 +10,6 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import { LangCode } from '../../types'
 import { containerCSS } from './styles'
 
-// type Tags = 'mapping' | 'software' | 'xr' | 'other';
-
 const strings: Record<string, Record<LangCode, string>> = {
   all: {
     en: 'All',
@@ -41,8 +39,6 @@ export default function PostFilterer({
   langCode,
   onFilteredPosts,
 }: OwnProps) {
-  const theme = useTheme()
-
   const [showMappings, setShowMappings] = useState(false)
   const [showXr, setShowXr] = useState(false)
   const [showSoftware, setShowSoftware] = useState(false)

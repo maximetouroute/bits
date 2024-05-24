@@ -1,4 +1,4 @@
-import { LangCode, LangRecord } from '../../types'
+import { LangRecord } from '../../types'
 
 export const strings: LangRecord = {
   hello: {
