@@ -48,7 +48,7 @@ export default function MobileNavbar({ links }: OwnProps) {
         return <RssFeedRoundedIcon />
       case 'SOBRE MÌ':
       case 'A PROPOS':
-      case 'A PROPOS':
+      case 'ABOUT':
         return <PersonRoundedIcon />
       default:
         return <></>
