@@ -9,7 +9,6 @@ import Divider from '@mui/material/Divider'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
-import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { glassCSS } from '../../../globalStyles'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
@@ -44,7 +43,7 @@ const strings: StringList = {
         On s'adapte à vous, votre lieu et votre public.
         <br />
         <a href="mailto:contact@reveality.io">Contactez-nous</a> pour vos
-        demandes sur mesure.
+        demandes sur mesure et accéder à la <strong>brochure pédagogique</strong>.
       </>
     ),
     en: (
@@ -52,7 +51,7 @@ const strings: StringList = {
         We adapt to your needs, venue and audience.
         <br />
         <a href="mailto:contact@reveality.io">Contact us</a> for custom
-        requests.
+        requests and get access to the <strong>educational brochure</strong>.
       </>
     ),
   },
@@ -60,14 +59,14 @@ const strings: StringList = {
 
 const tiers = [
   {
-    title: { fr: 'En continu', en: 'Come and go' },
+    title: { fr: 'Découverte', en: 'Discovery' },
     cover: (
       <StaticImage src="./continu.jpg" css={coverStyle} aspectRatio={1.5} />
     ),
     description: [
       {
         icon: <AccessTimeIcon sx={iconStyle} />,
-        text: { fr: '5-10min par personne', en: '5-10mns per person' },
+        text: { fr: '5 - 10min par personne', en: '5-10mns per person' },
       },
       {
         icon: <GroupsIcon sx={iconStyle} />,
@@ -76,8 +75,8 @@ const tiers = [
       {
         icon: <SchoolIcon sx={iconStyle} />,
         text: {
-          fr: 'Découvrir et créer avec notre aide',
-          en: 'Discover and create with our help',
+          fr: 'Créer son 1er contenu',
+          en: 'Create your first content',
         },
       },
       {
@@ -92,18 +91,18 @@ const tiers = [
     buttonVariant: 'outlined',
   },
   {
-    title: { fr: 'En atelier', en: 'Workshop' },
+    title: { fr: "Initiation", en: 'Initiation' },
     cover: (
       <StaticImage src="./workshop-2.jpg" css={coverStyle} aspectRatio={1.5} />
     ),
     description: [
       {
         icon: <AccessTimeIcon sx={iconStyle} />,
-        text: { fr: '30min - 1h30', en: '30mns - 1h30' },
+        text: { fr: '1 - 2hrs', en: '1 - 2hrs' },
       },
       {
         icon: <GroupsIcon sx={iconStyle} />,
-        text: { fr: '6-15 participants', en: '6-15 persons' },
+        text: { fr: "Jusqu'à 30 participants", en: 'Up to 30 participants' },
       },
       {
         icon: <SchoolIcon sx={iconStyle} />,
@@ -123,6 +122,39 @@ const tiers = [
     buttonText: { fr: 'Nous contacter', en: 'Contact us' },
     buttonVariant: 'outlined',
   },
+  {
+    title: { fr: "Création", en: 'Creation' },
+    cover: (
+      <StaticImage src="./workshop-2.jpg" css={coverStyle} aspectRatio={1.5} />
+    ),
+    description: [
+      {
+        icon: <AccessTimeIcon sx={iconStyle} />,
+        text: { fr: '4h et +', en: '4+ hrs' },
+      },
+      {
+        icon: <GroupsIcon sx={iconStyle} />,
+        text: { fr: "Jusqu'à 30 participants", en: 'Up to 30 participants' },
+      },
+      {
+        icon: <SchoolIcon sx={iconStyle} />,
+        text: {
+          fr: `Réaliser un parcours en Réalité Augmentée`,
+          en: 'Create an augmented reality tour',
+        },
+      },
+      {
+        icon: <AutoAwesomeIcon sx={iconStyle} />,
+        text: {
+          fr: `Idéal pour : modules de formation, écoles, universités, artistes, pros`,
+          en: 'Ideal for: training modules, schools, universities, artists, professionals.',
+        },
+      },
+    ],
+    buttonText: { fr: 'Nous contacter', en: 'Contact us' },
+    buttonVariant: 'outlined',
+  },
+
 
   {
     title: { fr: 'Sans nous !', en: 'Without us!' },

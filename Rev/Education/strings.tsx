@@ -1,11 +1,21 @@
 import { stringBuilderEnFr } from '../../../locales/strings'
 import { StringEnFr } from '../../../locales/strings'
-import { Theme } from '@mui/material'
 import { StringList } from '../../types'
 import React from 'react'
-import { Link } from 'gatsby'
 
 export const strings: StringList = {
+
+  exhibitTitle : {
+    en: 'Showcase your creation',
+    fr: 'Montrez vos créations'
+  },
+  exhibit: {
+    en:<>
+    The content created during the workshops is showcased through an <strong>Augmented Reality exhibition</strong> in your space.<br/>We tailor the workshops to align with your goals.</>,
+    fr: <>
+   Les contenus créés lors des ateliers sont mis en valeur à travers une <strong>exposition en Réalité Augmentée</strong> dans votre espace.<br/>
+   Nous adaptons les ateliers pour qu'ils correspondent à vos thématiques, programmation, enjeux.</>
+  },
   learnByDoing: {
     en: `Teleport yourself in Augmented Reality!`,
     fr: `Téléportez vous dans la Réalité Augmentée ! `,
@@ -56,24 +66,14 @@ export const strings: StringList = {
     fr: `Développer la créativté`,
     en: `Developing creativity`,
   },
-
-  getBrochureEducation: {
-    fr: (
-      <>
-        Accédez à la <strong>brochure pédagogique</strong>, contactez nous via <a href="mailto:contact@reveality.io?subject=Accès brochure pédagogique&body=Bonjour,%0D%0A%0D%0A Pouvez-vous me donner accès à votre brochure pédagogique?%0D%0A%0D%0AMerci.">contact@reveality.io</a>.
-      </>
-    ),
-
-    
-    en: (
-      <>
-        Get access to the <strong>educational brochure</strong>, send us a mail at <a href="mailto:contact@reveality.io?subject=Access to educational brochure&body=Hello,%0D%0A%0D%0A Can you give me access to your educational brochure?%0D%0A%0D%0AThank you very much.">contact@reveality.io</a>.
-      </>
-    ),
-  },
   learnMore: {
     fr: 'En savoir plus',
     en: 'Learn more'
+  },
+
+  aboutTheAppPunchline: {
+    fr: 'Animez des ateliers sans nous !',
+    en: 'Conduct workshops without us!'
   }
 }
 

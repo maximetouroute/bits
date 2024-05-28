@@ -34,11 +34,10 @@ import { injectLinkCSS } from '../../styles/styles'
 import { glassStyle } from '../../../globalStyles'
 import { gradientBackgroundCSS } from '../../../globalStyles'
 import { EDUCATION_LOGOS } from '../../../logos'
-import AppStoreBadges from '../AppStoreBadges/AppStoreBadges'
 import { Typography, useTheme } from '@mui/material'
 import { LangCode } from '../../types'
 import Ateliers from '../Ateliers/Ateliers'
-import { Box, Container } from '@mui/material'
+import { Container } from '@mui/material'
 
 import atelierFilme from './film_vp9.mp4'
 import atelierReplace from './replace_vp9.mp4'
@@ -157,20 +156,69 @@ export default function Education({ langCode }: OwnProps) {
             </div>
           </div>
 
+
+
+          <Typography
+             variant="h3"
+             sx={{
+               ...subjectTitleCSS(theme),
+               marginTop: 5,
+               marginBottom: 2,
+             }}
+          >
+           {strings.exhibitTitle[langCode]}
+          </Typography>
+
+
           <Typography
             variant="body1"
             sx={{
-              my: 4,
               ...styledTitle,
               textAlign: 'center',
               ...injectLinkCSS(theme),
             }}
           >
 
-            {strings.getBrochureEducation[langCode]}<br/>
-            {/* <Link to="/">{strings.learnMore[langCode]}</Link> */}
+{strings.exhibit[langCode]}
           </Typography>
+
+          <div css={{ ...responsiveContainerCSS }}>
+            <div
+              css={{
+                // ...responsiveContainerInsideCSS,
+                width: '50%',
+                display: 'block',
+                paddingBottom: '28.125%', //'56.25%',
+                position: 'relative',
+                height: '0px',
+                overflow: 'hidden',
+                margin: '0px',
+                marginBottom: '3rem',
+                marginTop: '3rem',
+                borderRadius: glassStyle(theme).borderRadius,
+              }}
+            >
+              <iframe
+                css={{
+                  position: 'absolute',
+                  top: '0px',
+                  left: '0px',
+                  width: '100%',
+                  height: '100%',
+                }}
+                src="https://www.youtube.com/embed/vt0_-g1ZKxk?si=cKMll6BtcDYf7aK2?rel=0&color=white&modestbranding=1"
+                title="Restitution d'un atelier en parcours de Réalité Augmentée"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+
           <Ateliers langCode={langCode} />
+
+
+
           <Typography
             variant="h6"
             sx={{ ...subjectTitleCSS, textAlign: 'center' }}
@@ -207,19 +255,22 @@ export default function Education({ langCode }: OwnProps) {
           id="panel1-header"
           sx={{ py: 3, flexDirection: "column", border: 'none' }}
         > */}
-          <Typography
+
+
+
+
+
+          {/* <Typography
             variant="h5"
             sx={{
               ...subjectTitleCSS(theme),
               mt: 15,
             }}
           >
-            {LOCAL['punchline']}
-          </Typography>
-          {/* </AccordionSummary>
-        <AccordionDetails> */}
+           {strings.howToCreateTitle[langCode]}
+          </Typography> */}
 
-          <div css={{ ...responsiveContainerCSS }}>
+          {/* <div css={{ ...responsiveContainerCSS }}>
             <div
               css={{
                 // ...responsiveContainerInsideCSS,
@@ -250,7 +301,11 @@ export default function Education({ langCode }: OwnProps) {
                 allowFullScreen
               ></iframe>
             </div>
-          </div>
+          </div> */}
+          {/* </AccordionSummary>
+        <AccordionDetails> */}
+
+          {/* 
 
           <div css={responsiveContainerCSS}>
             <div
@@ -340,7 +395,7 @@ export default function Education({ langCode }: OwnProps) {
                 </Typography>
               </div>
             </div>
-          </div>
+          </div> */}
 
 
 
