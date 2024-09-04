@@ -21,6 +21,7 @@ import { Typography, useTheme } from '@mui/material'
 import { CSSObject } from '@emotion/react'
 import { Theme } from '@mui/material'
 import poster540_1200 from './poster540_1200.png'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const styledTitle = (theme: Theme): CSSObject => {
   return {
@@ -36,12 +37,16 @@ export default function TheApp({ langCode }: OwnProps) {
   const theme = useTheme()
   return (
     <div css={mainViewCSS}>
+
+     
       <Typography
         variant="h3"
         sx={{ ...punchlineCSS, marginTop: '8rem', marginBottom: '2rem' }}
       >
+       
         {strings['punchline'][langCode]}
       </Typography>
+      <StaticImage src={"Revy_logo.png"} width={200}/>
       <Typography variant="body1" sx={sublineCSS}>
         {strings['subline'][langCode]}
       </Typography>

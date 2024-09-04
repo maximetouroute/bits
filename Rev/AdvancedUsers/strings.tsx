@@ -15,13 +15,13 @@ export const strings = (theme: Theme): StringList => {
     punchline: {
       ['en']: (
         <>
-          Made by and for <strong css={boldCSS(theme)}>digital artists</strong>
+          Made by and for <strong css={boldCSS(theme)}>digital creators</strong>
         </>
       ),
       ['fr']: (
         <>
           Fait par et pour les{' '}
-          <strong css={boldCSS(theme)}>artistes numériques</strong>
+          <strong css={boldCSS(theme)}>créateur·ices numériques</strong>
         </>
       ),
     },

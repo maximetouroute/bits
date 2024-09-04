@@ -26,7 +26,7 @@ export const strings = (theme: Theme): StringList => {
       ),
       ['fr']: (
         <>
-          Nous sommes une équipe d’artistes numériques, médiat.eur.ice.s et
+          Nous sommes une équipe d’artistes numériques, médiat·eur·ice·s et
           ingénieurs en mission pour débloquer le potentiel créatif de la
           Réalité Augmentée.
         </>

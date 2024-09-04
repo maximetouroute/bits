@@ -13,30 +13,27 @@ export const strings: StringList = {
   punchline: {
     ['en']: (
       <>
-        Tell your stories with <strong css={boldCSS}>Augmented Reality</strong>
+        Become an <strong css={boldCSS}>AR(T)</strong> creator
       </>
     ),
     ['fr']: (
       <>
-        Racontez vos histoires en{' '}
-        <strong css={boldCSS}>Réalité Augmentée</strong>
+        Devenez créateur⸱ice {' '}
+        <strong css={boldCSS}>d'AR(T)</strong>
       </>
     ),
   },
   subline: {
     ['en']: (
       <>
-        Reveality is a toolkit for artists and cultural institutions looking to
-        craft <strong css={boldCSS}>creative</strong> and{' '}
-        <strong css={boldCSS}>engaging</strong> experiences.
+        Reveality is a toolkit designed to
+        craft cultural projects with <strong css={boldCSS}>Augmented Reality (AR)</strong>.
       </>
     ),
     ['fr']: (
       <>
-        Reveality est une boite à outils à destination des artistes et
-        institutions culturelles qui veulent créer des expériences{' '}
-        <strong css={boldCSS}>créatives</strong> et{' '}
-        <strong css={boldCSS}>captivantes</strong>.
+        Reveality est une boite à outils à conçue pour la création d'expériences culturelles
+        <strong css={boldCSS}> en Réalité Augmentée (AR)</strong>.
       </>
     ),
   },

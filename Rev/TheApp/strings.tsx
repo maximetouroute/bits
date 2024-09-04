@@ -3,19 +3,23 @@ import { StringList } from '../../types'
 
 export const strings: StringList = {
   punchline: {
-    ['en']: `A single app for creators and the public`,
-    ['fr']: `Une seule appli pour les créateurs et le public`,
+    ['en']: `One app to create and showcase your projects`,
+    ['fr']: `Une appli pour créer et diffuser vos projets`,
   },
   subline: {
     ['en']: (
       <>
-        A gateway to discover and begin creating.
-        <br /> Free, maintained, and compatible with most smartphones.
+        A gateway to discover and begin creating. 
+        <br /> 
+        A stable and shared solution to distribute your content.
+        <br /> 
+        Free, maintained, and compatible with most smartphones.
       </>
     ),
     ['fr']: (
       <>
         Une porte d'entrée pour découvrir et commencer à créer. <br />
+        Une solution mutualisée et stable pour diffuser vos contenus <br />
         Gratuite, maintenue, et compatible avec la majorité des smartphones.
       </>
     ),
