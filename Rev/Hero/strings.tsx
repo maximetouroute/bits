@@ -27,7 +27,7 @@ export const strings: StringList = {
     ['en']: (
       <>
         Reveality is a toolkit designed to
-        craft cultural projects with <strong css={boldCSS}>Augmented Reality (AR)</strong>.
+        craft cultural experiences with <strong css={boldCSS}>Augmented Reality (AR)</strong>.
       </>
     ),
     ['fr']: (
