@@ -7,10 +7,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import MusicNoteIcon from '@mui/icons-material/MusicNote'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import MailForm from '../mailchimpFormReveality/mailchimpFormPrivacyFriendly'
+import NewsletterForm from '../newsletterFormReveality/newsletterForm'
 import { Box } from '@mui/material'
 const MAILCHIMP_URL =
   'https://reveality.us5.list-manage.com/subscribe/post?u=8b4e477d425a1fcb90d90a287&amp;id=7331d8e0bb'
+const BREVO_URL = "https://ab7fab4d.sibforms.com/serve/MUIFAMC79nZZcqgeTbb4jM-4bGnflf7fjDRnIHl0C8mDmoh8KdzWLsUaAcN_u3WZ1EpP6hSsbR6i2um8koMQ6FHi0A_13UA2o-DZGvxVSS8k12LGfs5UUgruIadXkw2swgQTFP4is_B8fLlGQ5aa3dseEFH5xqvxwSxvclmG1TDlb5e4A9Qv6ONbw9mIcPOtERSXl_HHrfp0iPkw"
+const MAILCHIMP_ANTISPAM_ID = 'b_8b4e477d425a1fcb90d90a287_7331d8e0bb';
+
 
 const propTypes = {
   links: PropTypes.array,
@@ -247,10 +250,10 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                   {strings.joinNewsletter[lang]}
                 </Typography>
 
-                <MailForm
+                <NewsletterForm
                   uniqueId={'footerForm'}
-                  mailchimpURL={MAILCHIMP_URL}
-                  uniqueAntiSpamId={'b_8b4e477d425a1fcb90d90a287_7331d8e0bb'}
+                  newsletterPostURL={BREVO_URL}
+                  uniqueAntiSpamId={''}
                 />
               </Box>
             </div>

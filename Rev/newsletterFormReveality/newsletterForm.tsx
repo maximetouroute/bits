@@ -18,20 +18,20 @@ import { glassStyle } from '../../../globalStyles'
 
 interface OwnProps {
   uniqueId: string
-  mailchimpURL: string
+  newsletterPostURL: string
   uniqueAntiSpamId: string
 }
 
 export default function emailListForm({
   uniqueId,
-  mailchimpURL,
+  newsletterPostURL,
   uniqueAntiSpamId,
 }: OwnProps) {
   const theme = useTheme()
   return (
     <Box
       component="form"
-      action={mailchimpURL}
+      action={newsletterPostURL}
       method="post"
       id="mc-embedded-subscribe-form"
       name="mc-embedded-subscribe-form"
