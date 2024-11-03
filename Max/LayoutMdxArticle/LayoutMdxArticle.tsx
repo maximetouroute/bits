@@ -25,9 +25,9 @@ export default function Template({
 
   // content is at false is no previous or next
   const previousPostHtml = previousPost ? (
-    
+
     <Link to={`${previousPost.frontmatter.path}#content`}>
-      <Button variant="text" style={{color: makeAccentColor(previousPost.frontmatter.image.colors.vibrant)}}>
+      <Button variant="text" style={{color:  mdx.frontmatter.color ? mdx.frontmatter.color : makeAccentColor(mdx.frontmatter.image.colors.vibrant)}}>
       ← {previousPost.frontmatter.title}
     </Button>
     </Link>
@@ -37,7 +37,7 @@ export default function Template({
   const nextPostHtml = nextPost ? (
     nextPost && (
       <Link to={`${nextPost.frontmatter.path}#content`}>
-        <Button variant="text" style={{color: makeAccentColor(nextPost.frontmatter.image.colors.vibrant)}}>
+        <Button variant="text" style={{color: mdx.frontmatter.color ? mdx.frontmatter.color : makeAccentColor(mdx.frontmatter.image.colors.vibrant)}}>
         {nextPost.frontmatter.title} →
         </Button>
       </Link>
@@ -45,7 +45,8 @@ export default function Template({
   ) : (
     <div></div>
   )
-  const accentColor = makeAccentColor(mdx.frontmatter.image.colors.vibrant)
+  const accentColor = mdx.frontmatter.color ? mdx.frontmatter.color : makeAccentColor(mdx.frontmatter.image.colors.vibrant);
+
   return (
     <LayoutRoot
       language={mdx.frontmatter.language}
@@ -109,6 +110,7 @@ export const articlePageQuery = graphql`
         subtitle
         language
         description
+        color
         embeddedImagesLocal {
           ...modernGatImage
         }

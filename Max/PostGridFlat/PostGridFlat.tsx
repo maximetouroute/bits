@@ -32,7 +32,7 @@ export default function PostGridFlat({ posts }: OwnProps) {
                 ...postCSS(
                   theme,
                   customColor
-                    ? makeAccentColor(post.frontmatter.image.colors.vibrant)
+                    ? post.frontmatter.color ? post.frontmatter.color : makeAccentColor(post.frontmatter.image.colors.vibrant)
                     : theme.palette.primary.main
                 ),
               }}
