@@ -16,8 +16,8 @@ import {
         // contrastText: accentColor ? '#F7F7F7' : '#0C132C',
       },
       background: {
-        default: '#E4E4E4',
-        paper: '#fafafa',
+        default: '#F9F9F9',
+        paper: '#F9F9F9',
       },
 
       info: {
