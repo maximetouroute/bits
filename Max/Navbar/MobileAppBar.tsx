@@ -40,7 +40,7 @@ export default function MobileAppBar({ title }: OwnProps) {
   return (
     <div css={mobileAppBarCSS}>
       <Link activeClassName="" to="/">
-        <Typography>
+        <Typography fontWeight={900}>
         {title}
         </Typography>
         

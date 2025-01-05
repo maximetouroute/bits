@@ -2,13 +2,11 @@ import { LangRecord } from '../../types'
 
 export const strings: LangRecord = {
   hello: {
-    en: 'Hello! 👋',
-    fr: 'Coucou ! 👋',
-    es: '¡Hola! 👋'
+    en: 'Welcome 👋',
+    fr: 'Bienvenue 👋',
   },
   checkOut: {
-    en: 'Check out my latest works!',
+    en: 'Here are my latest projects',
     fr: 'Voici mes derniers projets',
-    es: '¡Echa un vistazo a mis últimas obras!'
   },
 }

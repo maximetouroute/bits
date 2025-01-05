@@ -93,7 +93,7 @@ export default function Navbar({ title, links, currentUrl, currentLangCode }: Ow
     return (
       <>
         <div css={logoCSS}>
-          <Typography>
+          <Typography fontWeight={900}>
           {title}
          </Typography>
         </div>
