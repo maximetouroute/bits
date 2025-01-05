@@ -2,7 +2,7 @@
   "name": "bits",
   "description": "Bits for Gatsby websites",
   "version": "2.0.0",
-  "author": "Maxime Touroute <maxime.touroute@gmail.com>",
+  "author": "Maxime Touroute <contact@maximetouroute.com>",
   "licence": "MIT",
   "engines": {
     "node": ">=12.14.1"
