@@ -21,7 +21,7 @@ export const grettingCSS: CSSObject = {
   justifyContent: 'center',
   alignItems: 'center',
   display: 'flex',
-  fontSize: '3.25rem',
+  fontSize: '2.5rem',
   marginBottom: '2rem',
 }
 

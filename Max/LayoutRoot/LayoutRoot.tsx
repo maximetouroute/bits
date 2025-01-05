@@ -58,7 +58,10 @@ export default function LayoutRoot({
         />
         <div css={gridNavContentFooterCSS}>
           <div css={appBarCSS}>
-            <MobileAppBar title={navbarConfig.name} />
+            <MobileAppBar title={navbarConfig.name} 
+             currentLangCode={language}
+             currentUrl={location.pathname}
+             />
           </div>
           <nav css={gridNavBarCSS}>
             <Navbar

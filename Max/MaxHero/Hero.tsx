@@ -17,7 +17,7 @@ const punchline: LangReactElement = {
   fr: (
     <div css={punchlineCSS}>
       Je crée des expériences{' '}
-      <b css={{ color: '#588CF6' }}> d'art numérique</b> et je développe des{' '}
+      <b css={{ color: '#0B4ACB' }}> d'art numérique</b> et je développe des{' '}
       <b css={{ color: '#ad206d' }}>logiciels</b> pour les artistes et
       structures culturelles.
       <br/><br/>
@@ -30,7 +30,7 @@ interface OwnProps {
 export default function Hero({ langCode }: OwnProps) {
   return (
     <div css={heroCSS}>
-      <Typography variant="h3" style={grettingCSS}>{strings.hello[langCode]}</Typography>
+      <Typography variant="h4" style={grettingCSS}>{strings.hello[langCode]}</Typography>
       <Typography>{punchline[langCode]}</Typography>
      
       <Typography variant="h6" style={lastLineCSS}>

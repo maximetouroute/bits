@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { CSSObject } from '@emotion/react'
-import { Theme, Typography } from '@mui/material'
+import { CSSObject, useTheme } from '@emotion/react'
+import { Stack, Theme, Typography } from '@mui/material'
 import { breakpointKey } from '../../styles/styles'
 import { linkCSS } from './styles'
+import { LangCode } from '../../types'
+import { languageSwitcher } from './languageSwitcher'
 
-const mobileAppBarCSS = (theme: Theme): CSSObject => {
+const mobileAppBarCSS = (theme: Theme
+): CSSObject => {
   return {
     paddingBottom: '1em',
     paddingTop: '1em',
@@ -33,18 +36,29 @@ const mobileAppBarCSS = (theme: Theme): CSSObject => {
 }
 
 interface OwnProps {
-  title: string
+  title: string;
+  currentLangCode: LangCode;
+  currentUrl: string;
 }
 
-export default function MobileAppBar({ title }: OwnProps) {
+export default function MobileAppBar({ title, currentLangCode, currentUrl }: OwnProps) {
+  const theme = useTheme();
   return (
+    <Stack>
     <div css={mobileAppBarCSS}>
+      
       <Link activeClassName="" to="/">
         <Typography fontWeight={900}>
         {title}
         </Typography>
         
       </Link>
+      
     </div>
+    
+    <div css={{alignSelf: 'center', justifyContent: 'flex-end', display:'flex'}}>
+    {languageSwitcher(theme, currentUrl, currentLangCode)}
+    </div>
+    </Stack>
   )
 }

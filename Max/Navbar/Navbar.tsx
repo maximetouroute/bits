@@ -8,12 +8,11 @@ import {
   smallAppbarCSS,
   activeLinkCSS,
   logoCSS,
-  langLinkCSS,
   linkCSS
 } from './styles'
 import { Typography } from '@mui/material'
 import { LangCode  } from '../../types'
-import { supportedLangs } from '../../../locales/locales'
+import { languageSwitcher } from './languageSwitcher';
 
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -45,46 +44,7 @@ interface OwnProps {
   currentUrl: string
 }
 
-const updateDefaultLanguage = (defaultLanguage: LangCode): void => {
-  // console.log('update language to ', defaultLanguage)
-  window.localStorage.setItem('language', defaultLanguage)
-}
 
-
-const languageSwitcher = (
-  theme: Theme,
-  currentUrl: string,
-  currentLangCode: LangCode
-) => {
-  return (
-    <>
-      {Object.keys(supportedLangs).map((langCode: string, index: number) => {
-        // alert(this.props.currentUrl);
-        const baseUrl = currentUrl
-          .replace(supportedLangs[currentLangCode].urlPrefix, '') // Remove language prefix
-          .replace('//', '/') // Avoid possible double slash
-        return (
-          <Typography
-            variant="body2"
-            color="text.primary"
-            sx={{ fontSize: { xs: '1.4rem', md: '' } }}
-          >
-            <Link
-              key={index}
-              to={baseUrl}
-              onClick={() => {
-                updateDefaultLanguage(langCode as LangCode)
-              }}
-              css={langLinkCSS(theme, currentLangCode === langCode)}
-            >
-              {supportedLangs[langCode].shortName}
-            </Link>
-          </Typography>
-        )
-      })}
-    </>
-  )
-}
 
 export default function Navbar({ title, links, currentUrl, currentLangCode }: OwnProps) {
   const theme = useTheme()
@@ -113,7 +73,6 @@ export default function Navbar({ title, links, currentUrl, currentLangCode }: Ow
           
          
         ))}
-        
         
         <div css={{alignSelf: 'center', justifyContent: 'flex-end', display:'flex'}}>
         {languageSwitcher(theme, currentUrl, currentLangCode)}
