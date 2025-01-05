@@ -15,7 +15,7 @@ export interface FooterConfig {
 }
 
 // Modern Lang types
-export type LangCode = 'en' | 'fr' | 'es'
+export type LangCode = 'en' | 'fr';
 export type LangString =  Record<LangCode, string>;
 export type LangReactElement = Record<LangCode, ReactString>;
 export type LangRecord = Record<string, LangString>;
