@@ -7,10 +7,10 @@ export const basicTransitionCSS: CSSObject = {
 }
 
 export const themedACSS = (accentColor: string): CSSObject => {
-  const underlineColor = `${accentColor}94` //`rgba(${accentColor}, 0.3)`; //rgba(150,150,150, 0.5);
+  const underlineColor = `${accentColor}50` //`rgba(${accentColor}, 0.3)`; //rgba(150,150,150, 0.5);
   return {
     textDecoration: 'none',
-    borderBottom: `4px solid ${underlineColor}`,
+    borderBottom: `2px solid ${underlineColor}`,
     color: 'black',
     lineHeight: 1.5,
     ...basicTransitionCSS,
