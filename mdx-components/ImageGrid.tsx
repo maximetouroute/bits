@@ -9,9 +9,10 @@ const containerCSS: CSSObjet = {
 interface OwnProps {
   props: any[] // Expect Gatsby images array
   indices: number[]
+  gridSize?: number;
 }
 
-export function ImageGrid({ props, indices = [] }: OwnProps) {
+export function ImageGrid({ props, indices = [], gridSize=3 }: OwnProps) {
   // No indices = show all
   const localImages =
     indices.length === 0
@@ -20,7 +21,7 @@ export function ImageGrid({ props, indices = [] }: OwnProps) {
 
   return (
     <div css={containerCSS}>
-      <PhotoGrid gatsbyImagesWithThumbs={localImages} />{' '}
+      <PhotoGrid gatsbyImagesWithThumbs={localImages} gridSize={gridSize}/>{' '}
     </div>
   )
 }

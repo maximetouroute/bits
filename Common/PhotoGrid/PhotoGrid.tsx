@@ -7,6 +7,7 @@ import { BgImage } from 'gbimage-bridge'
 import { photoGridCSS, photoRowContainerCSS, photoThumbnailCSS } from './styles'
 const photoGridProptypes = {
   gatsbyImagesWithThumbs: PropTypes.array.isRequired,
+  gridSize: PropTypes.number.isRequired
 }
 export class PhotoGrid extends React.Component {
   constructor(props) {
@@ -15,10 +16,11 @@ export class PhotoGrid extends React.Component {
     this.state = {
       photoIndex: 0,
       isOpen: false,
+      gridSize: props.gridSize
     }
   }
 
-  generatePicture(gatsbyThumb, index, margin) {
+  generatePicture(gatsbyThumb, index, margin, gridSize: number) {
     const gatsbyImg = getImage(gatsbyThumb)
     // let className = margin ? `photoThumbnail marginRight` : `photoThumbnail`;
     // TODO: marginRight: no trace of it.
@@ -26,7 +28,7 @@ export class PhotoGrid extends React.Component {
       <BgImage
         key={index}
         image={gatsbyImg}
-        css={margin ? { ...photoThumbnailCSS } : { photoThumbnailCSS }}
+        css={margin ? { ...photoThumbnailCSS(gridSize) } : { ...photoThumbnailCSS(gridSize) }}
         onClick={() => this.setState({ isOpen: true, photoIndex: index })}
       />
     )
@@ -49,7 +51,8 @@ export class PhotoGrid extends React.Component {
             this.generatePicture(
               gatsbyThumbs[i + columnIndex],
               i + columnIndex,
-              true
+              true,
+              numberPerRow
             )
           )
         } else {
@@ -57,13 +60,14 @@ export class PhotoGrid extends React.Component {
             this.generatePicture(
               gatsbyThumbs[i + columnIndex],
               i + columnIndex,
-              false
+              false,
+              numberPerRow
             )
           )
         }
       }
       photoGrid.push(
-        <div key={i} css={photoRowContainerCSS}>
+        <div key={i} css={photoRowContainerCSS(numberPerRow)}>
           {photoRow}
         </div>
       )
@@ -106,7 +110,7 @@ export class PhotoGrid extends React.Component {
           />
         )}
 
-        <div css={photoGridCSS}>{this.generateGrid(thumbs)}</div>
+        <div css={photoGridCSS}>{this.generateGrid(thumbs, this.state.gridSize)}</div>
       </div>
     )
   }

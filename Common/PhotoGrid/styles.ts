@@ -10,11 +10,20 @@ const $thumbSizeNormal = 32 // %
 const $thumbSizeSmall = 33 // %
 const $thumbsPerRow = 3
 
+
+const $thumbSizeNormal_Grid2 = 48 // %
+const $thumbSizeSmall_grid2 = 49 // %
+const $thumbsPerRow_grid2 = 2
+
+
+
+
 const $backgroundColorForText = '#fafafa'
-function rowMarginForThumbSize(photoSize: number): CSSObject {
+function rowMarginForThumbSize(photoSize: number, photosPerRow: number): CSSObject {
+  
   return {
     marginBottom: `${
-      (100 - $thumbsPerRow * photoSize) / (-1 + $thumbsPerRow)
+      (100 - photosPerRow * photoSize) / (-1 + photosPerRow)
     }%`,
 
     //  margin-bottom: calc(#{100-$thumbsPerRow * $photoSize}/#{-1+$thumbsPerRow});
@@ -51,14 +60,15 @@ export const photoGridCSS: CSSObject = {
   padding: 0,
 }
 
-export const photoThumbnailCSS: CSSObject = {
+export const photoThumbnailCSS = (gridSize: number): CSSObject => {
+  return {
   [breakpointKey('normal')]: {
-    width: `${$thumbSizeNormal}%`,
-    paddingTop: `${$thumbSizeNormal}%`,
+    width: `${98/gridSize}%`,
+    paddingTop: `${98/gridSize}%`,
   },
   [breakpointKey('small')]: {
-    width: `${$thumbSizeSmall}%`,
-    paddingTop: `${$thumbSizeSmall}%`,
+    width: `${98/gridSize}%`,
+    paddingTop: `${98/gridSize}%`,
   },
 
   backgroundColor: 'white',
@@ -70,20 +80,25 @@ export const photoThumbnailCSS: CSSObject = {
   '&:hover': {
     // box-shadow: inset 0 0 0px 100000px rgba(0, 0, 0, 0.2); // easy way to get a black overlay
     cursor: 'pointer',
-    filter: 'contrast(1.2)',
+    filter: 'contrast(1.05)',
     transform: 'scale(1.01)',
   },
-}
+};
 
-export const photoRowContainerCSS: CSSObject = {
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-between',
-  width: '100%',
-  [breakpointKey('normal')]: {
-    ...rowMarginForThumbSize($thumbSizeNormal),
-  },
-  [breakpointKey('small')]: {
-    ...rowMarginForThumbSize($thumbSizeSmall),
-  },
+};
+
+export const photoRowContainerCSS = (gridSize: number): CSSObject => {
+  const thumbSize = 98 / gridSize;
+  return {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    [breakpointKey('normal')]: {
+      ...rowMarginForThumbSize(thumbSize, gridSize),
+    },
+    [breakpointKey('small')]: {
+      ...rowMarginForThumbSize(thumbSize, gridSize),
+    },
+  }
 }
