@@ -27,6 +27,7 @@ export default function Footer({ customLinks }: OwnProps) {
           siteMetadata: {
             author,
             authorMail,
+            authorPhone,
             socialLinks: {
               twitter,
               facebook,
@@ -56,6 +57,10 @@ export default function Footer({ customLinks }: OwnProps) {
               <div css={mailCSS(theme)}>
                 <a href={`mailto:${authorMail}`}>{authorMail}</a>
               </div>
+              <br/>
+              {authorMail && <div css={mailCSS(theme)}>
+               <a href={`tel:${authorPhone}`}>{authorPhone}</a>
+              </div>}
               <br />
               <br />
             </>
@@ -222,6 +227,7 @@ const query = graphql`
       siteMetadata {
         author
         authorMail
+        authorPhone
         socialLinks {
           twitter
           facebook
